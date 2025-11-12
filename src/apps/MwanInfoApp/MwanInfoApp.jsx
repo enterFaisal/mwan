@@ -19,14 +19,10 @@ const MwanInfoApp = ({ onBack }) => {
   return (
     <div className="min-h-screen relative bg-mwan-dark">
       <BrandBackdrop />
-      <Header title="اكتشف موان" showLogo={true} />
-      
-      <div className="container mx-auto px-6 py-8">
-        {/* Back to Main Menu Button */}
-        <div className="mb-6">
-          <BackButton onClick={onBack} label="العودة للقائمة الرئيسية" />
-        </div>
-
+      <div className="relative z-10">
+        <Header />
+        
+        <div className="container mx-auto px-6 pt-32 pb-8">
         {/* Content Area */}
         <div className="animate-fade-in">
           {activeScreen === 'home' ? (
@@ -37,6 +33,7 @@ const MwanInfoApp = ({ onBack }) => {
               onBack={handleBackToHome} 
             />
           )}
+        </div>
         </div>
       </div>
     </div>

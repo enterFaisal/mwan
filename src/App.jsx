@@ -12,9 +12,10 @@ function Landing() {
   return (
     <div className="min-h-screen relative bg-mwan-dark">
       <BrandBackdrop />
-      <Header showLogo={true} />
-      
-      <main className="container mx-auto px-6 py-12">
+      <div className="relative z-10">
+        <Header />
+        
+        <main className="container mx-auto px-6 pt-32 pb-12">
         {/* Welcome Section */}
         <div className="text-center mb-16 animate-fade-in">
           <h1 className="text-5xl md:text-6xl font-bold mb-6 text-white">
@@ -123,6 +124,7 @@ function Landing() {
           </div>
         </div>
       </main>
+      </div>
     </div>
   );
 }

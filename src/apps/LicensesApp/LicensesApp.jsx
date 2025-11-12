@@ -20,17 +20,16 @@ const LicensesApp = ({ onBack }) => {
   return (
     <div className="min-h-screen relative bg-mwan-dark">
       <BrandBackdrop />
-      <Header title="التراخيص ووثيقة النقل الإلكترونية" showLogo={true} />
-      
-      <div className="container mx-auto px-6 py-8">
-        {/* Back Button */}
-        <div className="mb-6">
-          {view === 'home' ? (
-            <BackButton onClick={onBack} label="العودة للقائمة الرئيسية" />
-          ) : (
+      <div className="relative z-10">
+        <Header />
+        
+        <div className="container mx-auto px-6 pt-32 pb-8">
+        {/* Back Button - only show on sub-pages */}
+        {view !== 'home' && (
+          <div className="mb-6">
             <BackButton onClick={handleBackToHome} label="العودة" />
-          )}
-        </div>
+          </div>
+        )}
 
         {/* Content Area */}
         <div className="animate-fade-in">
@@ -45,6 +44,7 @@ const LicensesApp = ({ onBack }) => {
           {view === 'emanifest' && (
             <EmanifestSection onBack={handleBackToHome} />
           )}
+        </div>
         </div>
       </div>
     </div>

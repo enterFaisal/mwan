@@ -1,27 +1,16 @@
 import React from 'react';
 import logo from '../../logo.png';
 
-const Header = ({ title, showLogo = true }) => {
+const Header = () => {
   return (
-    <header className="w-full bg-mwan-dark shadow-xl">
-      {/* Brand top accent */}
-      <div className="h-2 bg-mwan-green w-full" />
-      <div className="container mx-auto px-6 py-4 flex items-center justify-between">
-        {showLogo && (
-          <div className="flex items-center gap-4">
-            {/* Logo slot - replace src with official asset when available */}
-            <img
-              src={logo}
-              alt="MWAN"
-              className="w-64 h-24 object-contain hidden sm:block"
-            />
-
-          </div>
-        )}
-
-        {title && (
-          <h2 className="text-3xl font-extrabold text-white text-center flex-1">{title}</h2>
-        )}
+    <header className="w-full relative z-20">
+      {/* Logo in top right (top left in RTL) */}
+      <div className="absolute top-6 right-6">
+        <img
+          src={logo}
+          alt="MWAN"
+          className="h-20 w-auto object-contain"
+        />
       </div>
     </header>
   );
