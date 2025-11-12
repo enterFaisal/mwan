@@ -4,6 +4,7 @@ import BackButton from '../../components/BackButton';
 import HomeScreen from './HomeScreen';
 import OpportunitiesSection from './OpportunitiesSection';
 import PlanSection from './PlanSection';
+import BrandBackdrop from '../../components/BrandBackdrop';
 
 const InvestmentApp = ({ onBack }) => {
   const [view, setView] = useState('home'); // 'home', 'opportunities', 'plan'
@@ -17,7 +18,8 @@ const InvestmentApp = ({ onBack }) => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-mwan-dark via-gray-900 to-mwan-dark">
+    <div className="min-h-screen relative bg-mwan-dark">
+      <BrandBackdrop />
       <Header title="الفرص الاستثمارية" showLogo={true} />
       
       <div className="container mx-auto px-6 py-8">

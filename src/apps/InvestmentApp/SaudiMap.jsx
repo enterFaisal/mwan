@@ -1,125 +1,100 @@
-import React from 'react';
+import React, { useMemo } from 'react';
+import { ComposableMap, Geographies, Geography, Marker } from 'react-simple-maps';
+import { feature } from 'topojson-client';
+import worldData from 'world-atlas/countries-110m.json';
 
 const SaudiMap = ({ selectedCity, onCitySelect }) => {
+  // Build a GeoJSON for KSA (id 682 is ISO numeric code for Saudi Arabia)
+  const saudiGeo = useMemo(() => {
+    const countries = feature(worldData, worldData.objects.countries).features;
+    const sa = countries.find((f) => f.id === 682);
+    return { type: 'FeatureCollection', features: sa ? [sa] : [] };
+  }, []);
+
+  // City markers with [lon, lat]
   const cities = [
-    { id: 'riyadh', name: 'الرياض', cx: 350, cy: 280 },
-    { id: 'jeddah', name: 'جدة', cx: 180, cy: 290 },
-    { id: 'makkah', name: 'مكة', cx: 200, cy: 310 },
-    { id: 'madinah', name: 'المدينة', cx: 190, cy: 230 },
-    { id: 'dammam', name: 'الدمام', cx: 450, cy: 270 },
-    { id: 'tabuk', name: 'تبوك', cx: 220, cy: 150 },
-    { id: 'qassim', name: 'القصيم', cx: 280, cy: 240 }
+    { id: 'riyadh', name: 'الرياض', coords: [46.6753, 24.7136] },
+    { id: 'jeddah', name: 'جدة', coords: [39.19797, 21.48581] },
+    { id: 'makkah', name: 'مكة', coords: [39.8262, 21.4225] },
+    { id: 'madinah', name: 'المدينة', coords: [39.6122, 24.4709] },
+    { id: 'dammam', name: 'الدمام', coords: [50.1000, 26.4333] },
+    { id: 'tabuk', name: 'تبوك', coords: [36.5715, 28.3833] },
+    { id: 'qassim', name: 'القصيم', coords: [43.7667, 26.3333] },
   ];
 
   return (
-    <div className="w-full h-full flex items-center justify-center p-4">
-      <svg
-        viewBox="0 0 600 500"
-        className="w-full h-full max-w-2xl"
-        style={{ filter: 'drop-shadow(0 0 10px rgba(29, 185, 84, 0.3))' }}
+    <div className="w-full h-full p-2">
+      <ComposableMap
+        projection="geoMercator"
+        projectionConfig={{
+          center: [43, 24], // Center roughly on KSA
+          scale: 1400,
+        }}
+        width={800}
+        height={600}
+        style={{ width: '100%', height: '100%' }}
       >
-        {/* Saudi Arabia Outline (Simplified) */}
-        <path
-          d="M 100 200 L 150 120 L 250 100 L 320 110 L 380 130 L 450 150 L 520 180 L 540 220 L 550 270 L 540 320 L 510 360 L 450 390 L 380 400 L 320 390 L 260 380 L 200 360 L 150 330 L 110 290 L 90 250 Z"
-          fill="rgba(29, 185, 84, 0.1)"
-          stroke="#1DB954"
-          strokeWidth="3"
-          className="transition-all duration-300"
-        />
+        <Geographies geography={saudiGeo}>
+          {({ geographies }) =>
+            geographies.map((geo) => (
+              <Geography
+                key={geo.rsmKey}
+                geography={geo}
+                fill="rgba(0, 157, 79, 0.12)" // brand green tint
+                stroke="#009d4f"
+                strokeWidth={2}
+                style={{
+                  default: { outline: 'none' },
+                  hover: { fill: 'rgba(0, 157, 79, 0.18)', outline: 'none' },
+                  pressed: { fill: 'rgba(0, 157, 79, 0.22)', outline: 'none' },
+                }}
+              />
+            ))
+          }
+        </Geographies>
 
-        {/* Grid Lines for Visual Effect */}
-        <g opacity="0.1" stroke="#1DB954" strokeWidth="0.5">
-          {[...Array(10)].map((_, i) => (
-            <line key={`v${i}`} x1={60 + i * 50} y1="50" x2={60 + i * 50} y2="450" />
-          ))}
-          {[...Array(10)].map((_, i) => (
-            <line key={`h${i}`} x1="60" y1={50 + i * 40} x2="560" y2={50 + i * 40} />
-          ))}
-        </g>
-
-        {/* Cities */}
         {cities.map((city) => {
           const isSelected = selectedCity === city.id;
           const isOtherSelected = selectedCity && selectedCity !== city.id;
-          
           return (
-            <g
+            <Marker
               key={city.id}
+              coordinates={city.coords}
               onClick={() => onCitySelect(city.id)}
-              className="cursor-pointer transition-all duration-300"
-              style={{ 
-                opacity: isOtherSelected ? 0.4 : 1,
-                transform: isSelected ? 'scale(1.2)' : 'scale(1)',
-                transformOrigin: `${city.cx}px ${city.cy}px`
-              }}
             >
-              {/* Glow Effect for Selected */}
+              {/* Glow */}
               {isSelected && (
-                <circle
-                  cx={city.cx}
-                  cy={city.cy}
-                  r="30"
-                  fill="none"
-                  stroke="#1DB954"
-                  strokeWidth="2"
-                  opacity="0.5"
-                  className="animate-pulse"
-                />
+                <circle r={10} fill="none" stroke="#009d4f" strokeWidth={2} opacity={0.6} />
               )}
-
-              {/* City Marker */}
+              {/* Dot */}
               <circle
-                cx={city.cx}
-                cy={city.cy}
-                r="12"
-                fill={isSelected ? '#1DB954' : '#D0E0D9'}
-                stroke={isSelected ? '#FFFFFF' : '#1DB954'}
-                strokeWidth="2"
-                className="transition-all duration-300 hover:fill-mwan-green hover:stroke-white"
+                r={6}
+                fill={isSelected ? '#009d4f' : '#D0E0D9'}
+                stroke={isSelected ? '#FFFFFF' : '#009d4f'}
+                strokeWidth={2}
+                style={{
+                  cursor: 'pointer',
+                  opacity: isOtherSelected ? 0.5 : 1,
+                }}
               />
-
-              {/* City Pin */}
-              <path
-                d={`M ${city.cx} ${city.cy - 12} L ${city.cx} ${city.cy - 25}`}
-                stroke={isSelected ? '#1DB954' : '#D0E0D9'}
-                strokeWidth="2"
-                strokeLinecap="round"
-              />
-
-              {/* City Name */}
+              {/* Label */}
               <text
-                x={city.cx}
-                y={city.cy + 35}
+                y={18}
                 textAnchor="middle"
-                fill="white"
-                fontSize="16"
-                fontWeight={isSelected ? 'bold' : 'normal'}
-                className="transition-all duration-300"
+                style={{
+                  fontFamily: 'Poppins, sans-serif',
+                  fontSize: 12,
+                  fontWeight: isSelected ? 700 : 500,
+                  fill: '#FFFFFF',
+                  opacity: isOtherSelected ? 0.6 : 1,
+                }}
               >
                 {city.name}
               </text>
-
-              {/* Hover Effect */}
-              <circle
-                cx={city.cx}
-                cy={city.cy}
-                r="25"
-                fill="transparent"
-                className="hover:fill-mwan-green hover:fill-opacity-20 transition-all duration-300"
-              />
-            </g>
+            </Marker>
           );
         })}
-
-        {/* Legend */}
-        <g transform="translate(60, 420)">
-          <circle cx="10" cy="10" r="8" fill="#1DB954" stroke="white" strokeWidth="2" />
-          <text x="25" y="15" fill="white" fontSize="14">مدينة محددة</text>
-          
-          <circle cx="120" cy="10" r="8" fill="#D0E0D9" stroke="#1DB954" strokeWidth="2" />
-          <text x="135" y="15" fill="white" fontSize="14">مدن أخرى</text>
-        </g>
-      </svg>
+      </ComposableMap>
     </div>
   );
 };

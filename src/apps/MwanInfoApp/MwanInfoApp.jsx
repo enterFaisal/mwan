@@ -3,6 +3,7 @@ import Header from '../../components/Header';
 import BackButton from '../../components/BackButton';
 import HomeScreen from './HomeScreen';
 import ContentScreen from './ContentScreen';
+import BrandBackdrop from '../../components/BrandBackdrop';
 
 const MwanInfoApp = ({ onBack }) => {
   const [activeScreen, setActiveScreen] = useState('home');
@@ -16,7 +17,8 @@ const MwanInfoApp = ({ onBack }) => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-mwan-dark via-gray-900 to-mwan-dark">
+    <div className="min-h-screen relative bg-mwan-dark">
+      <BrandBackdrop />
       <Header title="اكتشف موان" showLogo={true} />
       
       <div className="container mx-auto px-6 py-8">

@@ -7,9 +7,13 @@ export default {
   theme: {
     extend: {
       colors: {
-        'mwan-dark': '#0D2C3B',
-        'mwan-green': '#1DB954',
-        'mwan-light': '#D0E0D9',
+        // MWAN Brand (from brand guide)
+        // Primary Dark Blue (Pantone 303 C)
+        'mwan-dark': '#002b3c',
+        // Primary Green (Pantone 3482 C)
+        'mwan-green': '#009d4f',
+        // Supporting light tone used for surfaces
+        'mwan-light': '#E6F2EC',
         'mwan-white': '#FFFFFF',
       },
       fontFamily: {

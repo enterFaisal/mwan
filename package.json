@@ -9,8 +9,13 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "d3-geo": "^3.1.1",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^7.9.5",
+    "react-simple-maps": "^3.0.0",
+    "topojson-client": "^3.1.0",
+    "world-atlas": "^2.0.2"
   },
   "devDependencies": {
     "@types/react": "^18.2.43",
@@ -23,4 +28,3 @@
     "vite": "^5.0.8"
   }
 }
-

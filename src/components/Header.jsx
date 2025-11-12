@@ -1,23 +1,26 @@
 import React from 'react';
+import logo from '../../logo.png';
 
 const Header = ({ title, showLogo = true }) => {
   return (
-    <header className="w-full bg-gradient-to-l from-mwan-dark to-gray-800 border-b-4 border-mwan-green shadow-xl">
+    <header className="w-full bg-mwan-dark shadow-xl">
+      {/* Brand top accent */}
+      <div className="h-2 bg-mwan-green w-full" />
       <div className="container mx-auto px-6 py-4 flex items-center justify-between">
         {showLogo && (
           <div className="flex items-center gap-4">
-            <div className="w-16 h-16 bg-mwan-green rounded-full flex items-center justify-center text-3xl font-bold text-white shadow-lg">
-              ♻️
-            </div>
-            <div>
-              <h1 className="text-2xl font-bold text-white">موان MWAN</h1>
-              <p className="text-sm text-gray-300">المركز الوطني لإدارة النفايات</p>
-            </div>
+            {/* Logo slot - replace src with official asset when available */}
+            <img
+              src={logo}
+              alt="MWAN"
+              className="w-64 h-24 object-contain hidden sm:block"
+            />
+
           </div>
         )}
-        
+
         {title && (
-          <h2 className="text-3xl font-bold text-white text-center flex-1">{title}</h2>
+          <h2 className="text-3xl font-extrabold text-white text-center flex-1">{title}</h2>
         )}
       </div>
     </header>
