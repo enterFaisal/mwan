@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { driverJourney } from '../../../data/emanifestData';
+import { driverJourney } from '../../../data/emanifestData.js';
 import BackButton from '../../../components/BackButton';
 import Button from '../../../components/Button';
 

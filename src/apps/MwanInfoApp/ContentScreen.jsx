@@ -1,5 +1,5 @@
 import React from 'react';
-import { mwanInfoData } from '../../data/mwanInfoData';
+import { mwanInfoData } from '../../data/mwanInfoData.jsx';
 import BackButton from '../../components/BackButton';
 
 const ContentScreen = ({ screenId, onBack }) => {

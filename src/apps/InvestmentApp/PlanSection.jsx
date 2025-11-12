@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { strategicPlanData } from '../../data/investmentData';
+import { strategicPlanData } from '../../data/investmentData.js';
 import BackButton from '../../components/BackButton';
 
 const PlanSection = ({ onBack }) => {

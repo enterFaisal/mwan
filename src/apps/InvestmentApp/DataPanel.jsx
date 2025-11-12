@@ -1,5 +1,5 @@
 import React from 'react';
-import { investmentData } from '../../data/investmentData';
+import { investmentData } from '../../data/investmentData.js';
 
 const DataPanel = ({ selectedCity }) => {
   if (!selectedCity) {

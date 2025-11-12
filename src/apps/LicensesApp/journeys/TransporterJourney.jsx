@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { transporterJourney } from '../../../data/emanifestData';
+import { transporterJourney } from '../../../data/emanifestData.js';
 import BackButton from '../../../components/BackButton';
 import Button from '../../../components/Button';
 

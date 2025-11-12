@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { emanifestIntro } from '../../data/emanifestData';
+import { emanifestIntro } from '../../data/emanifestData.js';
 import BackButton from '../../components/BackButton';
 import ProducerJourney from './journeys/ProducerJourney';
 import TransporterJourney from './journeys/TransporterJourney';

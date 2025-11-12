@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { facilityJourney } from '../../../data/emanifestData';
+import { facilityJourney } from '../../../data/emanifestData.js';
 import BackButton from '../../../components/BackButton';
 import Button from '../../../components/Button';
 

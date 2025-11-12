@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { licensesData } from '../../data/licensesData';
+import { licensesData } from '../../data/licensesData.jsx';
 import BackButton from '../../components/BackButton';
 
 const LicensesSection = ({ onBack }) => {
