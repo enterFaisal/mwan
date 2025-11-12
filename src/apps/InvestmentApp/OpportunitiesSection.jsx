@@ -1,9 +1,28 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import SaudiMap from './SaudiMap';
 import DataPanel from './DataPanel';
 
 const OpportunitiesSection = ({ onBack }) => {
   const [selectedCity, setSelectedCity] = useState(null);
+  const dataPanelRef = useRef(null);
+
+  const handleCitySelect = (cityId) => {
+    setSelectedCity(cityId);
+    
+    // Auto-scroll to data panel on long screens when city is selected
+    if (cityId && dataPanelRef.current) {
+      setTimeout(() => {
+        const element = dataPanelRef.current;
+        const elementTop = element.getBoundingClientRect().top + window.pageYOffset;
+        const offset = 100; // Offset from top
+        
+        window.scrollTo({
+          top: elementTop - offset,
+          behavior: 'smooth'
+        });
+      }, 400);
+    }
+  };
 
   return (
     <div className="max-w-7xl mx-auto animate-fade-in">
@@ -29,7 +48,7 @@ const OpportunitiesSection = ({ onBack }) => {
           <div className="flex-1">
             <SaudiMap 
               selectedCity={selectedCity} 
-              onCitySelect={setSelectedCity}
+              onCitySelect={handleCitySelect}
             />
           </div>
           {!selectedCity && (
@@ -42,7 +61,7 @@ const OpportunitiesSection = ({ onBack }) => {
         </div>
 
         {/* Right Column - Data Panel */}
-        <div className="min-h-[600px]">
+        <div ref={dataPanelRef} className="min-h-[600px]">
           <DataPanel selectedCity={selectedCity} />
         </div>
       </div>

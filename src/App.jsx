@@ -24,20 +24,7 @@ function Landing() {
           <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
             المركز الوطني لإدارة النفايات - نحو مستقبل مستدام
           </p>
-          <div className="mt-8 flex justify-center gap-4 flex-wrap">
-            <div className="card bg-mwan-green/20 border-mwan-green inline-block">
-              <p className="text-4xl font-bold text-mwan-green">420</p>
-              <p className="text-sm text-white">مليار ريال فرص استثمارية</p>
-            </div>
-            <div className="card bg-mwan-green/20 border-mwan-green inline-block">
-              <p className="text-4xl font-bold text-mwan-green">90%</p>
-              <p className="text-sm text-white">نسبة التحويل من المرادم</p>
-            </div>
-            <div className="card bg-mwan-green/20 border-mwan-green inline-block">
-              <p className="text-4xl font-bold text-mwan-green">76,000+</p>
-              <p className="text-sm text-white">فرصة عمل مباشرة</p>
-            </div>
-          </div>
+
         </div>
 
         {/* App Selection */}

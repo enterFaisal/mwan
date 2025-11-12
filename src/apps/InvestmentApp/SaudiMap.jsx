@@ -24,8 +24,8 @@ const SaudiMap = ({ selectedCity, onCitySelect }) => {
   const cities = useMemo(
     () => [
       { id: 'riyadh', name: 'الرياض', lat: 24.7136, lng: 46.6753 },
-      { id: 'jeddah', name: 'جدة', lat: 21.4858, lng: 39.1979 },
-      { id: 'makkah', name: 'مكة', lat: 21.4225, lng: 39.8262 },
+      { id: 'jeddah', name: 'جدة', lat: 21.8858, lng: 39.1979 },
+      { id: 'makkah', name: 'مكة', lat: 21.3025, lng: 40.6062 },
       { id: 'madinah', name: 'المدينة', lat: 24.4709, lng: 39.6122 },
       { id: 'dammam', name: 'الدمام', lat: 26.4333, lng: 50.1 },
       { id: 'tabuk', name: 'تبوك', lat: 28.3833, lng: 36.5715 },
@@ -38,11 +38,18 @@ const SaudiMap = ({ selectedCity, onCitySelect }) => {
     const container = containerRef.current;
     if (!container || !saudiFeature) return;
 
-    // Init renderer
-    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+    // Init renderer with tone mapping for better colors
+    const renderer = new THREE.WebGLRenderer({ 
+      antialias: true, 
+      alpha: true,
+      powerPreference: 'high-performance'
+    });
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     renderer.setSize(container.clientWidth, container.clientHeight);
     renderer.shadowMap.enabled = true;
+    renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+    renderer.toneMapping = THREE.ACESFilmicToneMapping;
+    renderer.toneMappingExposure = 1.2;
     container.appendChild(renderer.domElement);
     rendererRef.current = renderer;
 
@@ -56,29 +63,45 @@ const SaudiMap = ({ selectedCity, onCitySelect }) => {
       0.1,
       2000
     );
-    // Move camera back a bit more so the whole plate fits
-    camera.position.set(0, 190, 560);
+    camera.position.set(0, 220, 580);
     cameraRef.current = camera;
 
-    // Lights
-    scene.add(new THREE.AmbientLight(0xffffff, 0.6));
+    // Enhanced Lighting for more dramatic 3D effect
+    scene.add(new THREE.AmbientLight(0xffffff, 0.35));
 
-    const keyLight = new THREE.DirectionalLight(0xffffff, 0.9);
-    keyLight.position.set(-200, 300, 200);
+    const hemiLight = new THREE.HemisphereLight(0x87CEEB, 0x0a3d28, 0.5);
+    scene.add(hemiLight);
+
+    // Stronger key light from top-left
+    const keyLight = new THREE.DirectionalLight(0xffffff, 1.4);
+    keyLight.position.set(-300, 400, 300);
     keyLight.castShadow = true;
-    keyLight.shadow.mapSize.set(1024, 1024);
+    keyLight.shadow.mapSize.set(2048, 2048);
+    keyLight.shadow.camera.near = 100;
+    keyLight.shadow.camera.far = 1000;
+    keyLight.shadow.camera.left = -400;
+    keyLight.shadow.camera.right = 400;
+    keyLight.shadow.camera.top = 400;
+    keyLight.shadow.camera.bottom = -400;
+    keyLight.shadow.bias = -0.001;
     scene.add(keyLight);
 
-    const rimLight = new THREE.DirectionalLight(0x77ffbb, 0.4);
-    rimLight.position.set(250, 200, -150);
+    // Rim light for edge definition
+    const rimLight = new THREE.DirectionalLight(0x00ff88, 0.7);
+    rimLight.position.set(350, 180, -200);
     scene.add(rimLight);
 
-    // Ground shadow catcher
+    // Fill light
+    const fillLight = new THREE.DirectionalLight(0x4db8ff, 0.4);
+    fillLight.position.set(-150, 100, -300);
+    scene.add(fillLight);
+
+    // Ground shadow catcher with darker shadow
     const groundGeo = new THREE.PlaneGeometry(2000, 2000);
-    const groundMat = new THREE.ShadowMaterial({ opacity: 0.15 });
+    const groundMat = new THREE.ShadowMaterial({ opacity: 0.35 });
     const ground = new THREE.Mesh(groundGeo, groundMat);
     ground.rotation.x = -Math.PI / 2;
-    ground.position.y = -8;
+    ground.position.y = -20;
     ground.receiveShadow = true;
     scene.add(ground);
 
@@ -86,31 +109,28 @@ const SaudiMap = ({ selectedCity, onCitySelect }) => {
     const plateGroup = new THREE.Group();
     scene.add(plateGroup);
     plateGroupRef.current = plateGroup;
-    // Scale down the whole plate further to ensure full visibility
     plateGroup.scale.setScalar(0.45);
-    // Lift the plate slightly so it appears higher in the frame
-    plateGroup.position.y = 56;
+    plateGroup.position.y = 200;
+    plateGroup.rotation.y = 0.22;
+    plateGroup.rotation.x = -0.05;
 
     // Build extruded KSA plate from GeoJSON
     const featureCollection = { type: 'FeatureCollection', features: [saudiFeature] };
 
-    // Fit projection to a smaller virtual size; we center later
     const fitWidth = 700;
     const fitHeight = 700;
     const projection = geoMercator().fitSize([fitWidth, fitHeight], featureCollection);
 
-    // Helper to project lon/lat to x,y and center
     const centerX = fitWidth / 2;
     const centerY = fitHeight / 2;
     const project = ([lng, lat]) => {
       const [x, y] = projection([lng, lat]);
-      return new THREE.Vector2(x - centerX, centerY - y); // invert Y to make up positive
+      return new THREE.Vector2(x - centerX, centerY - y);
     };
 
     const shapes = [];
 
     const addPolygon = (coords) => {
-      // coords: [ [ [lng,lat], ... ] outer, [hole], ... ]
       const outer = coords[0];
       if (!outer || outer.length < 3) return;
 
@@ -121,7 +141,6 @@ const SaudiMap = ({ selectedCity, onCitySelect }) => {
         else shape.lineTo(v.x, v.y);
       });
 
-      // Holes
       for (let h = 1; h < coords.length; h++) {
         const holeRing = coords[h];
         if (!holeRing || holeRing.length < 3) continue;
@@ -144,39 +163,54 @@ const SaudiMap = ({ selectedCity, onCitySelect }) => {
       geom.coordinates.forEach(addPolygon);
     }
 
-    const depth = 12; // plate thickness
+    const depth = 32; // Much deeper extrusion for stronger 3D
     const extrudeGeometry = new THREE.ExtrudeGeometry(shapes, {
       depth,
       bevelEnabled: true,
-      bevelSize: 1.2,
-      bevelThickness: 1.2,
+      bevelSize: 3.0,
+      bevelThickness: 3.0,
       bevelOffset: 0,
-      bevelSegments: 2,
-      curveSegments: 8,
+      bevelSegments: 4,
+      curveSegments: 12,
     });
 
-    // Center geometry
     extrudeGeometry.center();
 
-    const plateMaterial = new THREE.MeshStandardMaterial({
-      color: new THREE.Color('#009d4f'),
-      metalness: 0.2,
-      roughness: 0.55,
-      emissive: new THREE.Color('#003a23'),
-      emissiveIntensity: 0.12,
+    // MWAN brand materials
+    const capMaterial = new THREE.MeshPhysicalMaterial({
+      color: new THREE.Color('#009d4f'), // MWAN brand green
+      roughness: 0.35,
+      metalness: 0.25,
+      clearcoat: 0.9,
+      clearcoatRoughness: 0.25,
+      reflectivity: 0.6,
+      envMapIntensity: 1.2,
     });
 
-    const plateMesh = new THREE.Mesh(extrudeGeometry, plateMaterial);
+    const sideMaterial = new THREE.MeshStandardMaterial({
+      color: new THREE.Color('#006835'), // Darker MWAN green for sides
+      roughness: 0.75,
+      metalness: 0.15,
+      emissive: new THREE.Color('#002b3c'),
+      emissiveIntensity: 0.08,
+    });
+
+    const plateMesh = new THREE.Mesh(extrudeGeometry, [capMaterial, sideMaterial]);
     plateMesh.castShadow = true;
-    plateMesh.receiveShadow = false;
-    plateMesh.rotation.x = -Math.PI * 0.12; // subtle tilt
+    plateMesh.receiveShadow = true;
+    plateMesh.rotation.x = -Math.PI * 0.20; // More pronounced tilt
     plateGroup.add(plateMesh);
 
-    // Outline
-    const edges = new THREE.EdgesGeometry(extrudeGeometry);
+    // Enhanced outline with glow effect
+    const edges = new THREE.EdgesGeometry(extrudeGeometry, 15);
     const line = new THREE.LineSegments(
       edges,
-      new THREE.LineBasicMaterial({ color: '#00c46a', linewidth: 1 })
+      new THREE.LineBasicMaterial({ 
+        color: '#1DB954', // MWAN accent green
+        linewidth: 1.5,
+        transparent: true,
+        opacity: 0.75
+      })
     );
     line.rotation.copy(plateMesh.rotation);
     plateGroup.add(line);
@@ -185,37 +219,59 @@ const SaudiMap = ({ selectedCity, onCitySelect }) => {
     const markersGroup = new THREE.Group();
     markersGroupRef.current = markersGroup;
 
-    const markerMaterial = new THREE.MeshStandardMaterial({ color: '#D0E0D9' });
-    const markerSelectedMaterial = new THREE.MeshStandardMaterial({ color: '#1DB954' });
-    // Bigger marker size
-    const markerGeom = new THREE.SphereGeometry(15, 24, 24);
-
-    const cityToMesh = new Map();
+    const markerGeom = new THREE.SphereGeometry(15, 32, 32);
 
     cities.forEach((city) => {
       const v = project([city.lng, city.lat]);
-      // Find z on top surface (half depth + bevel approx)
-      const marker = new THREE.Mesh(markerGeom, markerMaterial.clone());
-      marker.position.set(v.x, v.y, depth / 2 + 2);
+      
+      const markerMat = new THREE.MeshPhysicalMaterial({ 
+        color: '#D0E0D9',
+        roughness: 0.2,
+        metalness: 0.3,
+        clearcoat: 0.8,
+        clearcoatRoughness: 0.2,
+      });
+      
+      const marker = new THREE.Mesh(markerGeom, markerMat);
+      marker.position.set(v.x, v.y, depth / 2 + 3);
       marker.castShadow = true;
       marker.userData = { id: city.id, name: city.name };
-      cityToMesh.set(city.id, marker);
       markersGroup.add(marker);
 
-      // Label (sprite-like using small plane)
+      // Add a subtle glow ring under each marker
+      const ringGeo = new THREE.RingGeometry(16, 20, 32);
+      const ringMat = new THREE.MeshBasicMaterial({
+        color: '#1DB954', // MWAN accent green
+        transparent: true,
+        opacity: 0.3,
+        side: THREE.DoubleSide
+      });
+      const ring = new THREE.Mesh(ringGeo, ringMat);
+      ring.position.set(v.x, v.y, depth / 2 + 1);
+      ring.rotation.x = -Math.PI / 2;
+      markersGroup.add(ring);
+
       const labelCanvas = document.createElement('canvas');
       const ctx = labelCanvas.getContext('2d');
-      const fontSize = 90; // larger font
-      ctx.font = `600 ${fontSize}px Poppins, sans-serif`;
+      const fontSize = 90;
+      ctx.font = `700 ${fontSize}px Poppins, sans-serif`;
       const textWidth = ctx.measureText(city.name).width;
-      labelCanvas.width = Math.ceil(textWidth + 40);
-      labelCanvas.height = fontSize + 28;
+      labelCanvas.width = Math.ceil(textWidth + 50);
+      labelCanvas.height = fontSize + 36;
 
-      // redraw with proper size
       const ctx2 = labelCanvas.getContext('2d');
-      ctx2.font = `600 ${fontSize}px Poppins, sans-serif`;
-      ctx2.fillStyle = 'rgba(0,0,0,0.5)';
+      ctx2.font = `700 ${fontSize}px Poppins, sans-serif`;
+      
+      // Add subtle glow to text background
+      ctx2.shadowColor = 'rgba(0, 0, 0, 0.8)';
+      ctx2.shadowBlur = 12;
+      ctx2.shadowOffsetX = 0;
+      ctx2.shadowOffsetY = 4;
+      
+      ctx2.fillStyle = 'rgba(0,0,0,0.6)';
       ctx2.fillRect(0, 0, labelCanvas.width, labelCanvas.height);
+      
+      ctx2.shadowColor = 'transparent';
       ctx2.fillStyle = '#ffffff';
       ctx2.textBaseline = 'middle';
       ctx2.textAlign = 'center';
@@ -225,26 +281,32 @@ const SaudiMap = ({ selectedCity, onCitySelect }) => {
       texture.anisotropy = renderer.capabilities.getMaxAnisotropy();
       const labelMat = new THREE.SpriteMaterial({ map: texture, transparent: true });
       const label = new THREE.Sprite(labelMat);
-      const scale = 0.25; // larger label scale
+      const scale = 0.26;
       label.scale.set(labelCanvas.width * scale, labelCanvas.height * scale, 1);
-      label.position.set(v.x, v.y, depth / 2 + 104);
+      label.position.set(v.x, v.y, depth / 2 + 68);
       markersGroup.add(label);
     });
 
-    // Set initial selected state
     const updateMarkerSelection = () => {
       markersGroup.children.forEach((obj) => {
-        if (obj.isMesh) {
+        if (obj.isMesh && obj.geometry.type === 'SphereGeometry') {
           const isSelected = obj.userData && obj.userData.id === selectedCity;
           obj.material.color.set(isSelected ? '#1DB954' : '#D0E0D9');
-          obj.scale.setScalar(isSelected ? 1.25 : 1);
+          obj.scale.setScalar(isSelected ? 1.4 : 1);
+          
+          if (isSelected) {
+            obj.material.emissive = new THREE.Color('#1DB954');
+            obj.material.emissiveIntensity = 0.5;
+          } else {
+            obj.material.emissive = new THREE.Color('#000000');
+            obj.material.emissiveIntensity = 0;
+          }
         }
       });
     };
 
     updateMarkerSelection();
 
-    // Add markers to plate group (so they tilt together)
     markersGroup.rotation.copy(plateMesh.rotation);
     plateGroup.add(markersGroup);
 
@@ -255,7 +317,6 @@ const SaudiMap = ({ selectedCity, onCitySelect }) => {
     };
     animate();
 
-    // Events: resize
     const onResize = () => {
       if (!container) return;
       const w = container.clientWidth;
@@ -265,7 +326,6 @@ const SaudiMap = ({ selectedCity, onCitySelect }) => {
       camera.updateProjectionMatrix();
     };
 
-    // Events: click picking
     const onClick = (event) => {
       const rect = renderer.domElement.getBoundingClientRect();
       mouse.x = ((event.clientX - rect.left) / rect.width) * 2 - 1;
@@ -289,7 +349,6 @@ const SaudiMap = ({ selectedCity, onCitySelect }) => {
       window.removeEventListener('resize', onResize);
       renderer.domElement.removeEventListener('click', onClick);
 
-      // Cleanup scene
       scene.traverse((obj) => {
         if (obj.geometry) obj.geometry.dispose();
         if (obj.material) {
@@ -305,21 +364,28 @@ const SaudiMap = ({ selectedCity, onCitySelect }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [saudiFeature]);
 
-  // React to selection changes (after initial mount)
   useEffect(() => {
     const markersGroup = markersGroupRef.current;
     if (!markersGroup) return;
     markersGroup.children.forEach((obj) => {
-      if (obj.isMesh) {
+      if (obj.isMesh && obj.geometry.type === 'SphereGeometry') {
         const isSelected = obj.userData && obj.userData.id === selectedCity;
         obj.material.color.set(isSelected ? '#1DB954' : '#D0E0D9');
-        obj.scale.setScalar(isSelected ? 1.25 : 1);
+        obj.scale.setScalar(isSelected ? 1.4 : 1);
+        
+        if (isSelected) {
+          obj.material.emissive = new THREE.Color('#1DB954');
+          obj.material.emissiveIntensity = 0.5;
+        } else {
+          obj.material.emissive = new THREE.Color('#000000');
+          obj.material.emissiveIntensity = 0;
+        }
       }
     });
   }, [selectedCity]);
 
   return (
-    <div ref={containerRef} className="w-full h-[420px] rounded-2xl bg-white/5 border border-mwan-green/20 relative overflow-hidden" />
+    <div ref={containerRef} className="w-full h-[560px] rounded-2xl bg-white/5 border border-mwan-green/20 relative overflow-hidden" />
   );
 };
 
