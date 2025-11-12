@@ -1,0 +1,147 @@
+import React, { useState } from 'react';
+import Header from './components/Header';
+import MwanInfoApp from './apps/MwanInfoApp/MwanInfoApp';
+import LicensesApp from './apps/LicensesApp/LicensesApp';
+import InvestmentApp from './apps/InvestmentApp/InvestmentApp';
+
+function App() {
+  const [activeApp, setActiveApp] = useState(null);
+
+  // Reset to landing page
+  const handleBackToHome = () => {
+    setActiveApp(null);
+  };
+
+  // Render active app
+  if (activeApp === 'mwan-info') {
+    return <MwanInfoApp onBack={handleBackToHome} />;
+  }
+
+  if (activeApp === 'licenses') {
+    return <LicensesApp onBack={handleBackToHome} />;
+  }
+
+  if (activeApp === 'investment') {
+    return <InvestmentApp onBack={handleBackToHome} />;
+  }
+
+  // Landing Page
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-mwan-dark via-gray-900 to-mwan-dark">
+      <Header showLogo={true} />
+      
+      <main className="container mx-auto px-6 py-12">
+        {/* Welcome Section */}
+        <div className="text-center mb-16 animate-fade-in">
+          <h1 className="text-5xl md:text-6xl font-bold mb-6 text-white">
+            مرحباً بكم في جناح موان
+          </h1>
+          <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+            المركز الوطني لإدارة النفايات - نحو مستقبل مستدام
+          </p>
+          <div className="mt-8 flex justify-center gap-4 flex-wrap">
+            <div className="card bg-mwan-green/20 border-mwan-green inline-block">
+              <p className="text-4xl font-bold text-mwan-green">420</p>
+              <p className="text-sm text-white">مليار ريال فرص استثمارية</p>
+            </div>
+            <div className="card bg-mwan-green/20 border-mwan-green inline-block">
+              <p className="text-4xl font-bold text-mwan-green">90%</p>
+              <p className="text-sm text-white">نسبة التحويل من المرادم</p>
+            </div>
+            <div className="card bg-mwan-green/20 border-mwan-green inline-block">
+              <p className="text-4xl font-bold text-mwan-green">76,000+</p>
+              <p className="text-sm text-white">فرصة عمل مباشرة</p>
+            </div>
+          </div>
+        </div>
+
+        {/* App Selection */}
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-3xl font-bold text-center mb-12 text-mwan-green">
+            اختر التطبيق التفاعلي
+          </h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* App 1: Discover MWAN */}
+            <button
+              onClick={() => setActiveApp('mwan-info')}
+              className="group relative bg-gradient-to-br from-mwan-light/20 to-white/10 hover:from-mwan-light/30 hover:to-white/20 p-8 rounded-3xl shadow-2xl border-2 border-mwan-light/30 hover:border-mwan-green transition-all duration-300 transform hover:scale-105 hover:-translate-y-2 min-h-[320px] flex flex-col items-center justify-center gap-6"
+            >
+              <div className="text-7xl mb-4 transition-transform group-hover:scale-110">
+                🏢
+              </div>
+              <h3 className="text-2xl font-bold text-white text-center">
+                اكتشف موان
+              </h3>
+              <p className="text-base text-gray-300 text-center leading-relaxed">
+                تعرف على دور المركز ومهامه، الأنظمة والتشريعات، برنامج يديم، ومكتسبات الاستراتيجية
+              </p>
+              <div className="absolute bottom-4 right-4 text-mwan-green opacity-0 group-hover:opacity-100 transition-opacity">
+                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                </svg>
+              </div>
+            </button>
+
+            {/* App 2: Licenses & E-Manifest */}
+            <button
+              onClick={() => setActiveApp('licenses')}
+              className="group relative bg-gradient-to-br from-mwan-green/20 to-green-900/20 hover:from-mwan-green/30 hover:to-green-900/30 p-8 rounded-3xl shadow-2xl border-2 border-mwan-green/30 hover:border-mwan-green transition-all duration-300 transform hover:scale-105 hover:-translate-y-2 min-h-[320px] flex flex-col items-center justify-center gap-6"
+            >
+              <div className="text-7xl mb-4 transition-transform group-hover:scale-110">
+                📋
+              </div>
+              <h3 className="text-2xl font-bold text-white text-center">
+                التراخيص ووثيقة النقل
+              </h3>
+              <p className="text-base text-gray-300 text-center leading-relaxed">
+                استكشف منظومة التراخيص والتصاريح، وجرّب محاكاة وثيقة النقل الإلكترونية
+              </p>
+              <div className="absolute bottom-4 right-4 text-mwan-green opacity-0 group-hover:opacity-100 transition-opacity">
+                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                </svg>
+              </div>
+            </button>
+
+            {/* App 3: Investment Opportunities */}
+            <button
+              onClick={() => setActiveApp('investment')}
+              className="group relative bg-gradient-to-br from-yellow-600/20 to-orange-900/20 hover:from-yellow-600/30 hover:to-orange-900/30 p-8 rounded-3xl shadow-2xl border-2 border-yellow-600/30 hover:border-yellow-500 transition-all duration-300 transform hover:scale-105 hover:-translate-y-2 min-h-[320px] flex flex-col items-center justify-center gap-6"
+            >
+              <div className="text-7xl mb-4 transition-transform group-hover:scale-110">
+                💼
+              </div>
+              <h3 className="text-2xl font-bold text-white text-center">
+                الفرص الاستثمارية
+              </h3>
+              <p className="text-base text-gray-300 text-center leading-relaxed">
+                اكتشف الفرص الاستثمارية على خريطة المملكة والمخطط الاستراتيجي الشامل
+              </p>
+              <div className="absolute bottom-4 right-4 text-yellow-500 opacity-0 group-hover:opacity-100 transition-opacity">
+                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                </svg>
+              </div>
+            </button>
+          </div>
+        </div>
+
+        {/* Footer Info */}
+        <div className="mt-20 text-center animate-fade-in">
+          <div className="card inline-block bg-white/5">
+            <p className="text-lg text-gray-300">
+              تطبيق تفاعلي مصمم خصيصاً لجناح موان في المعارض والفعاليات
+            </p>
+            <p className="text-sm text-gray-400 mt-2">
+              المس أي تطبيق للبدء في استكشاف المحتوى
+            </p>
+          </div>
+        </div>
+      </main>
+    </div>
+  );
+}
+
+export default App;
+

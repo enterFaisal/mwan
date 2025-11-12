@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0D2C3B;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1DB954;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #15883e;
+}
+
+/* Button base styles */
+@layer components {
+  .btn-primary {
+    @apply bg-mwan-green hover:bg-green-600 text-white font-bold py-4 px-8 rounded-2xl shadow-lg transition-all duration-300 transform hover:scale-105 active:scale-95 min-h-[60px] flex items-center justify-center text-lg;
+  }
+  
+  .btn-secondary {
+    @apply bg-mwan-light hover:bg-gray-300 text-mwan-dark font-bold py-4 px-8 rounded-2xl shadow-lg transition-all duration-300 transform hover:scale-105 active:scale-95 min-h-[60px] flex items-center justify-center text-lg;
+  }
+  
+  .btn-back {
+    @apply bg-gray-700 hover:bg-gray-600 text-white font-semibold py-3 px-6 rounded-xl shadow-md transition-all duration-200 flex items-center gap-2 min-h-[50px];
+  }
+  
+  .card {
+    @apply bg-white/10 backdrop-blur-sm rounded-2xl p-6 shadow-xl border border-white/20;
+  }
+  
+  .container-main {
+    @apply min-h-screen w-full p-8;
+  }
+}
+
+/* Smooth transitions */
+.fade-enter {
+  opacity: 0;
+}
+
+.fade-enter-active {
+  opacity: 1;
+  transition: opacity 300ms ease-in;
+}
+
+.fade-exit {
+  opacity: 1;
+}
+
+.fade-exit-active {
+  opacity: 0;
+  transition: opacity 300ms ease-out;
+}
+
