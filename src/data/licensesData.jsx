@@ -183,47 +183,78 @@ export const licensesData = {
       },
       {
         id: 'process',
-        title: 'كل ما نسهل مسار الرخص والتصريح',
+        title: 'كل ما يسهل مسار الرخص والتصريح',
         content: (
-          <div className="space-y-8">
+          <div className="space-y-10">
             <h3 className="text-3xl font-bold mb-8 text-center bg-gradient-to-r from-mwan-green to-emerald-500 bg-clip-text text-transparent">
-              كل ما نسهل مسار الرخص والتصريح
+              كل ما يسهل مسار الرخص والتصريح
             </h3>
             
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {/* دليل التسجيل */}
-              <a
-                href="https://mwan.gov.sa"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group bg-gradient-to-br from-mwan-green/20 to-emerald-600/20 hover:from-mwan-green/30 hover:to-emerald-600/30 p-8 rounded-3xl border-2 border-mwan-green/50 hover:border-mwan-green shadow-xl hover:shadow-2xl hover:shadow-mwan-green/30 transition-all transform hover:scale-105 text-center"
-              >
-                <div className="text-6xl mb-6 transition-transform group-hover:scale-110">📘</div>
-                <h4 className="text-xl font-bold text-white">دليل التسجيل</h4>
-              </a>
+            {/* Video Section */}
+            <section className="mb-12">
+              <div className="bg-gradient-to-br from-mwan-green/10 to-emerald-600/10 border-2 border-mwan-green/30 rounded-3xl p-6 shadow-2xl">
+                <h4 className="text-2xl font-bold text-white mb-6 text-center">دليل التسجيل</h4>
+                <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
+                  <iframe
+                    className="absolute top-0 left-0 w-full h-full rounded-2xl"
+                    src="https://www.youtube.com/embed/oh_ab2qTWSU"
+                    title="دليل التسجيل"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  ></iframe>
+                </div>
+              </div>
+            </section>
 
-              {/* باركود المنصة للتسجيل */}
-              <a
-                href="https://mwan.gov.sa"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group bg-gradient-to-br from-mwan-green/20 to-emerald-600/20 hover:from-mwan-green/30 hover:to-emerald-600/30 p-8 rounded-3xl border-2 border-mwan-green/50 hover:border-mwan-green shadow-xl hover:shadow-2xl hover:shadow-mwan-green/30 transition-all transform hover:scale-105 text-center"
-              >
-                <div className="text-6xl mb-6 transition-transform group-hover:scale-110">📱</div>
-                <h4 className="text-xl font-bold text-white">باركود المنصة للتسجيل</h4>
-              </a>
+            {/* QR Codes Section */}
+            <section>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                {/* Licensed Companies QR Code */}
+                <div className="bg-gradient-to-br from-mwan-green/10 to-emerald-600/10 border-2 border-mwan-green/30 rounded-3xl p-8 shadow-2xl text-center">
+                  <h4 className="text-2xl font-bold text-white mb-6">رابط الجهات المرخصة</h4>
+                  <div className="bg-white p-6 rounded-2xl inline-block shadow-xl">
+                    <img 
+                      src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://mwan.gov.sa/licened_companies&color=000000&bgcolor=FFFFFF" 
+                      alt="QR Code - الجهات المرخصة" 
+                      className="w-64 h-64"
+                      loading="lazy"
+                    />
+                  </div>
+                  <p className="text-white text-lg mt-6 font-semibold">امسح الرمز للاطلاع على الجهات المرخصة</p>
+                  <a 
+                    href="https://mwan.gov.sa/licened_companies" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="inline-block mt-4 text-mwan-green hover:text-emerald-400 transition-colors underline text-lg"
+                  >
+                    أو اضغط هنا للزيارة
+                  </a>
+                </div>
 
-              {/* باركود الاطلاع على الدخول المرخصة و المصرحة */}
-              <a
-                href="https://mwan.gov.sa"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group bg-gradient-to-br from-mwan-green/20 to-emerald-600/20 hover:from-mwan-green/30 hover:to-emerald-600/30 p-8 rounded-3xl border-2 border-mwan-green/50 hover:border-mwan-green shadow-xl hover:shadow-2xl hover:shadow-mwan-green/30 transition-all transform hover:scale-105 text-center"
-              >
-                <div className="text-6xl mb-6 transition-transform group-hover:scale-110">🔍</div>
-                <h4 className="text-xl font-bold text-white">باركود الاطلاع على الدخول المرخصة و المصرحة</h4>
-              </a>
-            </div>
+                {/* Permitted Companies QR Code */}
+                <div className="bg-gradient-to-br from-mwan-green/10 to-emerald-600/10 border-2 border-mwan-green/30 rounded-3xl p-8 shadow-2xl text-center">
+                  <h4 className="text-2xl font-bold text-white mb-6">رابط الجهات المصرحة</h4>
+                  <div className="bg-white p-6 rounded-2xl inline-block shadow-xl">
+                    <img 
+                      src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://mwan.gov.sa/permited_companies&color=000000&bgcolor=FFFFFF" 
+                      alt="QR Code - الجهات المصرحة" 
+                      className="w-64 h-64"
+                      loading="lazy"
+                    />
+                  </div>
+                  <p className="text-white text-lg mt-6 font-semibold">امسح الرمز للاطلاع على الجهات المصرحة</p>
+                  <a 
+                    href="https://mwan.gov.sa/permited_companies" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="inline-block mt-4 text-mwan-green hover:text-emerald-400 transition-colors underline text-lg"
+                  >
+                    أو اضغط هنا للزيارة
+                  </a>
+                </div>
+              </div>
+            </section>
           </div>
         )
       }
