@@ -176,23 +176,13 @@ const SaudiMap = ({ selectedCity, onCitySelect }) => {
 
     extrudeGeometry.center();
 
-    // MWAN brand materials
-    const capMaterial = new THREE.MeshPhysicalMaterial({
-      color: new THREE.Color('#009d4f'), // MWAN brand green
-      roughness: 0.35,
-      metalness: 0.25,
-      clearcoat: 0.9,
-      clearcoatRoughness: 0.25,
-      reflectivity: 0.6,
-      envMapIntensity: 1.2,
+    // MWAN brand materials (toon/flat for cartoony look)
+    const capMaterial = new THREE.MeshToonMaterial({
+      color: new THREE.Color('#009d4f')
     });
 
-    const sideMaterial = new THREE.MeshStandardMaterial({
-      color: new THREE.Color('#006835'), // Darker MWAN green for sides
-      roughness: 0.75,
-      metalness: 0.15,
-      emissive: new THREE.Color('#002b3c'),
-      emissiveIntensity: 0.08,
+    const sideMaterial = new THREE.MeshToonMaterial({
+      color: new THREE.Color('#006835')
     });
 
     const plateMesh = new THREE.Mesh(extrudeGeometry, [capMaterial, sideMaterial]);
@@ -201,15 +191,26 @@ const SaudiMap = ({ selectedCity, onCitySelect }) => {
     plateMesh.rotation.x = -Math.PI * 0.20; // More pronounced tilt
     plateGroup.add(plateMesh);
 
-    // Enhanced outline with glow effect
-    const edges = new THREE.EdgesGeometry(extrudeGeometry, 15);
+    // Bold cartoony outline around the plate
+    const plateOutlineGeom = extrudeGeometry.clone();
+    const plateOutline = new THREE.Mesh(
+      plateOutlineGeom,
+      new THREE.MeshBasicMaterial({ color: '#08242f', side: THREE.BackSide })
+    );
+    plateOutline.rotation.copy(plateMesh.rotation);
+    plateOutline.scale.multiplyScalar(1.015);
+    plateOutline.position.z -= 0.6;
+    plateGroup.add(plateOutline);
+
+    // Subtle outline that matches the map color
+    const edges = new THREE.EdgesGeometry(extrudeGeometry, 20);
     const line = new THREE.LineSegments(
       edges,
       new THREE.LineBasicMaterial({ 
-        color: '#1DB954', // MWAN accent green
-        linewidth: 1.5,
+        color: '#009d4f', // Same as map color for seamless look
+        linewidth: 1,
         transparent: true,
-        opacity: 0.75
+        opacity: 0.25
       })
     );
     line.rotation.copy(plateMesh.rotation);
@@ -219,31 +220,97 @@ const SaudiMap = ({ selectedCity, onCitySelect }) => {
     const markersGroup = new THREE.Group();
     markersGroupRef.current = markersGroup;
 
-    const markerGeom = new THREE.SphereGeometry(15, 32, 32);
+    // Quaternions to align Y-axis geometries to Z up/down
+    const yToPosZ = new THREE.Quaternion().setFromUnitVectors(
+      new THREE.Vector3(0, 1, 0),
+      new THREE.Vector3(0, 0, 1)
+    );
+    const yToNegZ = new THREE.Quaternion().setFromUnitVectors(
+      new THREE.Vector3(0, 1, 0),
+      new THREE.Vector3(0, 0, -1)
+    );
+
+    // Helper to draw a 2D cartoony pin to a texture
+    const createPinTexture = (fillColor = '#E5ECE9', strokeColor = '#0b1e27', strokeOpacity = 0.5) => {
+      const w = 96;
+      const h = 128;
+      const canvas = document.createElement('canvas');
+      canvas.width = w;
+      canvas.height = h;
+      const ctx = canvas.getContext('2d');
+      ctx.clearRect(0, 0, w, h);
+      ctx.save();
+      ctx.translate(w / 2, h / 2 - 6);
+      // Drop/body
+      ctx.beginPath();
+      const r = 26;
+      ctx.arc(0, -10, r, Math.PI, 0, false);
+      ctx.lineTo(10, 26);
+      ctx.quadraticCurveTo(0, 44, -10, 26);
+      ctx.closePath();
+      // Fill
+      ctx.fillStyle = fillColor;
+      ctx.fill();
+      // Stroke with reduced opacity
+      ctx.lineWidth = 4;
+      ctx.strokeStyle = strokeColor;
+      ctx.globalAlpha = strokeOpacity;
+      ctx.stroke();
+      ctx.globalAlpha = 1.0;
+      // Subtle shine
+      ctx.beginPath();
+      ctx.fillStyle = 'rgba(255,255,255,0.5)';
+      ctx.arc(-10, -24, 5, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.restore();
+      const tex = new THREE.CanvasTexture(canvas);
+      tex.colorSpace = THREE.SRGBColorSpace;
+      tex.anisotropy = renderer.capabilities.getMaxAnisotropy?.() || 1;
+      tex.needsUpdate = true;
+      return tex;
+    };
+
+    // Precompute textures for default and selected states with softer colors
+    const pinTexDefault = createPinTexture('#B8C9C3', '#0b1e27', 0.4);
+    const pinTexSelected = createPinTexture('#1DB954', '#0b1e27', 0.5);
+    // Special textures for Al-Madinah (muted gold)
+    const pinTexMadinahDefault = createPinTexture('#D4B85C', '#0b1e27', 0.4);
+    const pinTexMadinahSelected = createPinTexture('#E8C96A', '#0b1e27', 0.5);
 
     cities.forEach((city) => {
       const v = project([city.lng, city.lat]);
+      const baseZ = depth / 2 + 1;
       
-      const markerMat = new THREE.MeshPhysicalMaterial({ 
-        color: '#D0E0D9',
-        roughness: 0.2,
-        metalness: 0.3,
-        clearcoat: 0.8,
-        clearcoatRoughness: 0.2,
+      const isMadinah = city.id === 'madinah';
+      
+      const spriteMat = new THREE.SpriteMaterial({ 
+        map: isMadinah ? pinTexMadinahDefault : pinTexDefault, 
+        transparent: true 
       });
-      
-      const marker = new THREE.Mesh(markerGeom, markerMat);
-      marker.position.set(v.x, v.y, depth / 2 + 3);
-      marker.castShadow = true;
-      marker.userData = { id: city.id, name: city.name };
-      markersGroup.add(marker);
+      const sprite = new THREE.Sprite(spriteMat);
+      sprite.position.set(v.x, v.y, baseZ + 36);
+      // Scale sprite in world units (larger for Madinah)
+      const baseW = isMadinah ? 48 : 36;
+      const baseH = isMadinah ? 64 : 48;
+      const selW = isMadinah ? 60 : 43;
+      const selH = isMadinah ? 80 : 56;
+      sprite.scale.set(baseW, baseH, 1);
+      sprite.userData = { 
+        id: city.id, 
+        name: city.name, 
+        markerType: 'spritePin', 
+        normalMap: isMadinah ? pinTexMadinahDefault : pinTexDefault, 
+        selectedMap: isMadinah ? pinTexMadinahSelected : pinTexSelected,
+        baseW, baseH, selW, selH, isMadinah
+      };
+      markersGroup.add(sprite);
 
-      // Add a subtle glow ring under each marker
-      const ringGeo = new THREE.RingGeometry(16, 20, 32);
+      // Add a subtle glow ring under each marker (reduced opacity)
+      const ringGeo = new THREE.RingGeometry(isMadinah ? 20 : 16, isMadinah ? 28 : 20, 32);
       const ringMat = new THREE.MeshBasicMaterial({
-        color: '#1DB954', // MWAN accent green
+        color: isMadinah ? '#D4B85C' : '#1DB954', // Muted gold for Madinah
         transparent: true,
-        opacity: 0.3,
+        opacity: isMadinah ? 0.25 : 0.18,
         side: THREE.DoubleSide
       });
       const ring = new THREE.Mesh(ringGeo, ringMat);
@@ -254,25 +321,26 @@ const SaudiMap = ({ selectedCity, onCitySelect }) => {
       const labelCanvas = document.createElement('canvas');
       const ctx = labelCanvas.getContext('2d');
       const fontSize = 90;
-      ctx.font = `700 ${fontSize}px Poppins, sans-serif`;
+      ctx.font = `600 ${fontSize}px Poppins, sans-serif`;
       const textWidth = ctx.measureText(city.name).width;
       labelCanvas.width = Math.ceil(textWidth + 50);
       labelCanvas.height = fontSize + 36;
 
       const ctx2 = labelCanvas.getContext('2d');
-      ctx2.font = `700 ${fontSize}px Poppins, sans-serif`;
+      ctx2.font = `600 ${fontSize}px Poppins, sans-serif`;
       
-      // Add subtle glow to text background
-      ctx2.shadowColor = 'rgba(0, 0, 0, 0.8)';
-      ctx2.shadowBlur = 12;
+      // Softer shadow with reduced intensity
+      ctx2.shadowColor = 'rgba(0, 0, 0, 0.5)';
+      ctx2.shadowBlur = 8;
       ctx2.shadowOffsetX = 0;
-      ctx2.shadowOffsetY = 4;
+      ctx2.shadowOffsetY = 3;
       
-      ctx2.fillStyle = 'rgba(0,0,0,0.6)';
+      // Softer label background (reduced opacity and saturation)
+      ctx2.fillStyle = isMadinah ? 'rgba(29, 185, 84, 0.7)' : 'rgba(0,0,0,0.45)';
       ctx2.fillRect(0, 0, labelCanvas.width, labelCanvas.height);
       
       ctx2.shadowColor = 'transparent';
-      ctx2.fillStyle = '#ffffff';
+      ctx2.fillStyle = 'rgba(255, 255, 255, 0.95)';
       ctx2.textBaseline = 'middle';
       ctx2.textAlign = 'center';
       ctx2.fillText(city.name, labelCanvas.width / 2, labelCanvas.height / 2);
@@ -281,26 +349,22 @@ const SaudiMap = ({ selectedCity, onCitySelect }) => {
       texture.anisotropy = renderer.capabilities.getMaxAnisotropy();
       const labelMat = new THREE.SpriteMaterial({ map: texture, transparent: true });
       const label = new THREE.Sprite(labelMat);
-      const scale = 0.26;
+      const scale = isMadinah ? 0.30 : 0.26;
       label.scale.set(labelCanvas.width * scale, labelCanvas.height * scale, 1);
-      label.position.set(v.x, v.y, depth / 2 + 68);
+      label.position.set(v.x, v.y, depth / 2 + (isMadinah ? 100 : 88));
       markersGroup.add(label);
     });
 
     const updateMarkerSelection = () => {
       markersGroup.children.forEach((obj) => {
-        if (obj.isMesh && obj.geometry.type === 'SphereGeometry') {
-          const isSelected = obj.userData && obj.userData.id === selectedCity;
-          obj.material.color.set(isSelected ? '#1DB954' : '#D0E0D9');
-          obj.scale.setScalar(isSelected ? 1.4 : 1);
-          
-          if (isSelected) {
-            obj.material.emissive = new THREE.Color('#1DB954');
-            obj.material.emissiveIntensity = 0.5;
-          } else {
-            obj.material.emissive = new THREE.Color('#000000');
-            obj.material.emissiveIntensity = 0;
-          }
+        // 2D sprite pin
+        if (obj.userData && obj.userData.markerType === 'spritePin') {
+          const isSelected = obj.userData.id === selectedCity;
+          obj.material.map = isSelected ? obj.userData.selectedMap : obj.userData.normalMap;
+          obj.material.needsUpdate = true;
+          const w = isSelected ? (obj.userData.selW ?? 43) : (obj.userData.baseW ?? 36);
+          const h = isSelected ? (obj.userData.selH ?? 56) : (obj.userData.baseH ?? 48);
+          obj.scale.set(w, h, 1);
         }
       });
     };
@@ -368,18 +432,13 @@ const SaudiMap = ({ selectedCity, onCitySelect }) => {
     const markersGroup = markersGroupRef.current;
     if (!markersGroup) return;
     markersGroup.children.forEach((obj) => {
-      if (obj.isMesh && obj.geometry.type === 'SphereGeometry') {
-        const isSelected = obj.userData && obj.userData.id === selectedCity;
-        obj.material.color.set(isSelected ? '#1DB954' : '#D0E0D9');
-        obj.scale.setScalar(isSelected ? 1.4 : 1);
-        
-        if (isSelected) {
-          obj.material.emissive = new THREE.Color('#1DB954');
-          obj.material.emissiveIntensity = 0.5;
-        } else {
-          obj.material.emissive = new THREE.Color('#000000');
-          obj.material.emissiveIntensity = 0;
-        }
+      if (obj.userData && obj.userData.markerType === 'spritePin') {
+        const isSelected = obj.userData.id === selectedCity;
+        obj.material.map = isSelected ? obj.userData.selectedMap : obj.userData.normalMap;
+        obj.material.needsUpdate = true;
+        const w = isSelected ? (obj.userData.selW ?? 43) : (obj.userData.baseW ?? 36);
+        const h = isSelected ? (obj.userData.selH ?? 56) : (obj.userData.baseH ?? 48);
+        obj.scale.set(w, h, 1);
       }
     });
   }, [selectedCity]);

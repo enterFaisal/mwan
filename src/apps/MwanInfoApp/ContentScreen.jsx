@@ -15,16 +15,16 @@ const ContentScreen = ({ screenId, onBack }) => {
   }
 
   return (
-    <div className="max-w-6xl mx-auto animate-fade-in">
-      {/* Header */}
+    <div className="max-w-7xl mx-auto animate-fade-in">
+      {/* Header with Back Button */}
       <div className="mb-8">
         <BackButton onClick={onBack} />
       </div>
 
       {/* Content Card */}
-      <div className="bg-white/5 backdrop-blur-sm rounded-3xl shadow-2xl border-2 border-mwan-green/30 overflow-hidden">
+      <div className="bg-white/10 backdrop-blur-md rounded-3xl shadow-2xl border border-mwan-green/20 overflow-hidden">
         {/* Title Section */}
-        <div className="bg-gradient-to-l from-mwan-green to-green-700 px-10 py-8">
+        <div className="bg-gradient-to-r from-mwan-green to-emerald-600 px-10 py-8">
           <h2 className="text-4xl font-bold text-white">{content.title}</h2>
         </div>
 
@@ -36,7 +36,7 @@ const ContentScreen = ({ screenId, onBack }) => {
 
       {/* Bottom Navigation */}
       <div className="mt-8 flex justify-center">
-        <BackButton onClick={onBack} label="العودة للقائمة" />
+        <BackButton onClick={onBack} label="العودة للقائمة الرئيسية" />
       </div>
     </div>
   );

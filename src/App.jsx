@@ -21,7 +21,7 @@ function Landing() {
           <h1 className="text-5xl md:text-6xl font-bold mb-6 text-white">
             مرحباً بكم في جناح موان
           </h1>
-          <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl md:text-2xl text-mwan-light/80 max-w-3xl mx-auto leading-relaxed">
             المركز الوطني لإدارة النفايات - نحو مستقبل مستدام
           </p>
 

@@ -48,95 +48,43 @@ const HomeScreen = ({ onNavigate }) => {
   return (
     <div className="max-w-6xl mx-auto">
       {/* Title */}
-      <div className="text-center mb-16 animate-slide-up">
-        <h2 className="text-5xl font-extrabold mb-6 text-white">
+      <div className="text-center mb-12 animate-slide-up">
+        <h2 className="text-5xl font-extrabold mb-4 text-white">
           اكتشف موان
         </h2>
-        <p className="text-xl text-gray-300">
+        <p className="text-xl text-mwan-light/80">
           تعرّف على المركز الوطني لإدارة النفايات ودوره في تحقيق مستقبل مستدام
         </p>
       </div>
 
-      {/* Menu Layout - Inspired by Slide 4 design */}
-      <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
-        {/* Top Row - 2 items */}
-        <div className="md:col-span-2">
+      {/* Menu Grid - Clean 2-column layout */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+        {menuItems.map((item, index) => (
           <button
-            onClick={() => onNavigate(menuItems[0].id)}
-            className={`w-full group relative brand-block p-8 rounded-3xl transition-all duration-300 transform hover:scale-105 min-h-[200px] flex flex-col items-center justify-center gap-4`}
+            key={item.id}
+            onClick={() => onNavigate(item.id)}
+            className={`group relative brand-block p-8 rounded-3xl transition-all duration-300 transform hover:scale-105 hover:shadow-2xl min-h-[180px] flex flex-col items-center justify-center gap-4 ${
+              item.featured ? 'ring-2 ring-mwan-green/50' : ''
+            }`}
           >
             <div className="text-6xl mb-2 transition-transform group-hover:scale-110">
-              {menuItems[0].icon}
+              {item.icon}
             </div>
-            <h3 className="text-xl font-bold text-mwan-dark text-center">
-              {menuItems[0].title}
+            <h3 className="text-xl font-bold text-mwan-dark text-center leading-snug">
+              {item.title}
             </h3>
+            {item.featured && (
+              <div className="absolute top-4 left-4 bg-mwan-green text-white text-xs font-bold px-3 py-1 rounded-full">
+                مميز
+              </div>
+            )}
           </button>
-        </div>
-
-        {/* Center - Featured item */}
-        <div className="md:col-span-1">
-          <button
-            onClick={() => onNavigate(menuItems[1].id)}
-            className={`w-full group relative brand-block p-8 rounded-3xl transition-all duration-300 transform hover:scale-105 min-h-[200px] flex flex-col items-center justify-center gap-4 ring-4 ring-mwan-green/30`}
-          >
-            <div className="text-6xl mb-2 transition-transform group-hover:scale-110">
-              {menuItems[1].icon}
-            </div>
-            <h3 className="text-xl font-bold text-mwan-dark text-center">
-              {menuItems[1].title}
-            </h3>
-          </button>
-        </div>
-
-        {/* Top Row - 1 item */}
-        <div className="md:col-span-2">
-          <button
-            onClick={() => onNavigate(menuItems[2].id)}
-            className={`w-full group relative brand-block p-8 rounded-3xl transition-all duration-300 transform hover:scale-105 min-h-[200px] flex flex-col items-center justify-center gap-4`}
-          >
-            <div className="text-6xl mb-2 transition-transform group-hover:scale-110">
-              {menuItems[2].icon}
-            </div>
-            <h3 className="text-xl font-bold text-mwan-dark text-center">
-              {menuItems[2].title}
-            </h3>
-          </button>
-        </div>
-
-        {/* Bottom Row - 2 items */}
-        <div className="md:col-span-2 md:col-start-2">
-          <button
-            onClick={() => onNavigate(menuItems[3].id)}
-            className={`w-full group relative brand-block p-8 rounded-3xl transition-all duration-300 transform hover:scale-105 min-h-[200px] flex flex-col items-center justify-center gap-4`}
-          >
-            <div className="text-6xl mb-2 transition-transform group-hover:scale-110">
-              {menuItems[3].icon}
-            </div>
-            <h3 className="text-xl font-bold text-mwan-dark text-center">
-              {menuItems[3].title}
-            </h3>
-          </button>
-        </div>
-
-        <div className="md:col-span-2">
-          <button
-            onClick={() => onNavigate(menuItems[4].id)}
-            className={`w-full group relative brand-block p-8 rounded-3xl transition-all duration-300 transform hover:scale-105 min-h-[200px] flex flex-col items-center justify-center gap-4`}
-          >
-            <div className="text-6xl mb-2 transition-transform group-hover:scale-110">
-              {menuItems[4].icon}
-            </div>
-            <h3 className="text-xl font-bold text-mwan-dark text-center">
-              {menuItems[4].title}
-            </h3>
-          </button>
-        </div>
+        ))}
       </div>
 
       {/* Help Text */}
       <div className="mt-12 text-center">
-        <p className="text-gray-400 text-lg">
+        <p className="text-mwan-light/60 text-lg">
           اختر أحد المواضيع أعلاه لاستكشاف المزيد من المعلومات
         </p>
       </div>
