@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react';
+import React, { useState } from 'react';
 import { strategicPlanData } from '../../data/investmentData.js';
 import { getPartnerLogo } from '../../data/partnersLogos.js';
 import BackButton from '../../components/BackButton';
@@ -7,16 +7,13 @@ const PlanSection = ({ onBack }) => {
   const [activeTab, setActiveTab] = useState('introduction');
 
   const tabs = [
-    { id: 'introduction', label: 'نبذة تعريفية عن المخطط الاستراتيجي الشامل', icon: '📄' },
-    { id: 'approach', label: 'منهجية عمل المخطط', icon: '📋' },
-    { id: 'outputs', label: 'مخرجات المخطط', icon: '📊' }
+    { id: 'introduction', label: 'نبذة تعريفية عن المخطط الاستراتيجي الشامل', icon: '/icons/Document.png' },
+    { id: 'approach', label: 'منهجية عمل المخطط', icon: '/icons/Checklist.png' },
+    { id: 'outputs', label: 'مخرجات المخطط', icon: '/icons/Bar_Graph.png' }
   ];
 
-  const toArabicNumeral = (num) => num.toLocaleString('ar-EG');
-  const reversedApproachSteps = useMemo(() => {
-    if (!strategicPlanData?.approach?.steps) return [];
-    return [...strategicPlanData.approach.steps].reverse();
-  }, [strategicPlanData.approach.steps]);
+  // Display plain Western digits for step numbers (e.g., 6, 5, 4 ... 1)
+  const formatStepNumber = (num) => String(num);
 
   return (
     <div className="max-w-6xl mx-auto animate-fade-in">
@@ -42,7 +39,7 @@ const PlanSection = ({ onBack }) => {
                 : 'bg-white/10 text-gray-300 hover:bg-white/20'
             }`}
           >
-            <span className="text-2xl">{tab.icon}</span>
+            <img src={tab.icon} alt="" className="w-8 h-8" />
             {tab.label}
           </button>
         ))}
@@ -87,7 +84,7 @@ const PlanSection = ({ onBack }) => {
 
               <div className="overflow-x-auto">
                 <div className="min-w-max flex flex-row gap-4 px-8 pb-10">
-                  {reversedApproachSteps.map((step, index) => (
+                  {strategicPlanData.approach.steps.map((step, index) => (
                     <div
                       key={step.number}
                       className="relative w-72 text-white"
@@ -101,7 +98,7 @@ const PlanSection = ({ onBack }) => {
                       <div className="flex flex-col gap-4 h-full px-7 py-6">
                         <div className="flex items-center gap-3">
                           <span className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-white/20 text-2xl font-bold">
-                            {toArabicNumeral(step.number)}
+                            {formatStepNumber(strategicPlanData.approach.steps.length - index)}
                           </span>
                           <h4 className="font-bold text-lg leading-snug">
                             {step.title}
@@ -173,7 +170,9 @@ const PlanSection = ({ onBack }) => {
                   key={index}
                   className={`card bg-${stat.color}-600/20 border-${stat.color}-500 text-center hover:scale-105 transition-all`}
                 >
-                  <div className="text-5xl mb-4">{stat.icon}</div>
+                  <div className="mb-4 flex justify-center">
+                    <img src={stat.icon} alt="" className="w-16 h-16" />
+                  </div>
                   <p className="text-5xl font-bold text-white mb-2">
                     {stat.value}
                   </p>
@@ -196,7 +195,9 @@ const PlanSection = ({ onBack }) => {
                   key={index}
                   className="card bg-white/5 border-mwan-green/30 text-center hover:border-mwan-green transition-all"
                 >
-                  <div className="text-4xl mb-3">{stat.icon}</div>
+                  <div className="mb-3 flex justify-center">
+                    <img src={stat.icon} alt="" className="w-12 h-12" />
+                  </div>
                   <p className="text-lg font-bold text-white mb-2">
                     {stat.title}
                   </p>

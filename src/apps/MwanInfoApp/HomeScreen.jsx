@@ -5,31 +5,31 @@ const HomeScreen = ({ onNavigate }) => {
     {
       id: 'dorMwan',
       title: 'دور موان ومهامه',
-      icon: '🏢',
+      icon: '/icons/Briefcase.png',
       accentColor: 'mwan-blue',
     },
     {
       id: 'anzema',
       title: 'الأنظمة والتشريعات',
-      icon: '📜',
+      icon: '/icons/Document.png',
       accentColor: 'mwan-green',
     },
     {
       id: 'udeem',
       title: 'برنامج يديم',
-      icon: '♻️',
+      icon: '/icons/Recycling_Symbol.png',
       accentColor: 'mwan-light-green',
     },
     {
       id: 'moktasabat',
       title: 'مكتسبات الاستراتيجية الوطنية لإدارة النفايات بحلول 2040',
-      icon: '🎯',
+      icon: '/icons/TargetBullseye.png',
       accentColor: 'mwan-orange',
     },
     {
       id: 'contact',
       title: 'تواصل معنا',
-      icon: '📞',
+      icon: '/icons/Telephone.png',
       accentColor: 'mwan-yellow',
     }
   ];
@@ -56,8 +56,8 @@ const HomeScreen = ({ onNavigate }) => {
                 item.featured ? 'ring-2 ring-mwan-green/50' : ''
               }`}
             >
-              <div className="text-6xl mb-2 transition-transform group-hover:scale-110">
-                {item.icon}
+              <div className="mb-2 transition-transform group-hover:scale-110">
+                <img src={item.icon} alt="" className="w-16 h-16" />
               </div>
               <h3 className="text-xl font-bold text-mwan-dark text-center leading-snug">
                 {item.title}

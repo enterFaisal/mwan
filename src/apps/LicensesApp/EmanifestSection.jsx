@@ -13,7 +13,7 @@ const EmanifestSection = ({ onBack }) => {
     {
       id: 'producer',
       name: 'منتج النفايات',
-      icon: '🏭',
+      icon: '/icons/Briefcase.png',
       color: 'from-blue-600/30 to-blue-900/30',
       hoverColor: 'hover:from-blue-600/40 hover:to-blue-900/40',
       borderColor: 'border-blue-500/30 hover:border-blue-500',
@@ -22,7 +22,7 @@ const EmanifestSection = ({ onBack }) => {
     {
       id: 'transporter',
       name: 'ناقل النفايات',
-      icon: '🚛',
+      icon: '/icons/Garbage_Truck.png',
       color: 'from-green-600/30 to-green-900/30',
       hoverColor: 'hover:from-green-600/40 hover:to-green-900/40',
       borderColor: 'border-green-500/30 hover:border-green-500',
@@ -31,7 +31,7 @@ const EmanifestSection = ({ onBack }) => {
     {
       id: 'driver',
       name: 'السائق',
-      icon: '👨‍✈️',
+      icon: '/icons/Person_Walking.png',
       color: 'from-yellow-600/30 to-yellow-900/30',
       hoverColor: 'hover:from-yellow-600/40 hover:to-yellow-900/40',
       borderColor: 'border-yellow-500/30 hover:border-yellow-500',
@@ -40,7 +40,7 @@ const EmanifestSection = ({ onBack }) => {
     {
       id: 'facility',
       name: 'مرفق الاستقبال',
-      icon: '🏢',
+      icon: '/icons/Briefcase.png',
       color: 'from-purple-600/30 to-purple-900/30',
       hoverColor: 'hover:from-purple-600/40 hover:to-purple-900/40',
       borderColor: 'border-purple-500/30 hover:border-purple-500',
@@ -87,7 +87,9 @@ const EmanifestSection = ({ onBack }) => {
   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 landscape-cols-3">
           {emanifestIntro.objectives.map((obj, index) => (
             <div key={index} className="card transition-all hover:border-mwan-green">
-              <div className="text-4xl mb-3">{obj.icon}</div>
+              <div className="mb-3 flex justify-center">
+                <img src={obj.icon} alt="" className="w-12 h-12" />
+              </div>
               <h4 className="font-bold text-lg mb-2 text-white">{obj.title}</h4>
               <p className="text-sm text-gray-300">{obj.description}</p>
             </div>
@@ -121,8 +123,8 @@ const EmanifestSection = ({ onBack }) => {
               onClick={() => setSelectedRole(role.id)}
               className={`group relative brand-block p-10 rounded-3xl shadow-2xl transition-all duration-300 transform hover:scale-105 min-h-[220px] landscape-card flex flex-col items-center justify-center gap-4`}
             >
-              <div className="text-7xl mb-3 transition-transform group-hover:scale-110">
-                {role.icon}
+              <div className="mb-3 transition-transform group-hover:scale-110 flex justify-center">
+                <img src={role.icon} alt="" className="w-20 h-20" />
               </div>
               <h4 className="text-2xl font-bold text-mwan-dark text-center">
                 {role.name}

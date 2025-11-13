@@ -692,26 +692,26 @@ export const strategicPlanData = {
     subtitle: "تنمية اقتصادية وطنية تحافظ على الموارد وترتقي بالبيئة والمجتمع",
     mainStats: [
       {
-        icon: "💼",
+        icon: "/icons/Briefcase.png",
         title: "فرصة استثمارية",
         value: "+500",
         color: "orange"
       },
       {
-        icon: "🏗️",
+        icon: "/icons/GearsCogs.png",
         title: "بنية تحتية مخطط لها",
         value: "~900",
         color: "green"
       },
       {
-        icon: "💰",
+        icon: "/icons/Dollar_Sign.png",
         title: "مليار ريال",
         value: "~750",
         description: "حجم الاستثمارات",
         color: "blue"
       },
       {
-        icon: "💵",
+        icon: "/icons/Stack_of_Money.png",
         title: "مليار ريال خلال فترة الاستثمار",
         value: "650",
         description: "تتجاوز المساهمة في الناتج المحلي",
@@ -720,27 +720,27 @@ export const strategicPlanData = {
     ],
     bottomStats: [
       {
-        icon: "👥",
+        icon: "/icons/PersontoPerson_Communication.png",
         title: "تتجاوز 76 ألف وظيفة",
         description: "مباشرة"
       },
       {
-        icon: "🎯",
+        icon: "/icons/TargetBullseye.png",
         title: "90% نسبة الاستبعاد عن",
         description: "المرادم التي سيتم تحقيقها"
       },
       {
-        icon: "♻️",
+        icon: "/icons/Recycling_Symbol.png",
         title: "79% نسبة إعادة التدوير",
         description: "التي سيتم تحقيقها"
       },
       {
-        icon: "🌱",
+        icon: "/icons/Leaf.png",
         title: "حياد صفري في أنشطة",
         description: "إدارة النفايات"
       },
       {
-        icon: "📅",
+        icon: "/icons/Calendar.png",
         title: "مدة الاستثمار 20 - 25 سنة",
         description: ""
       }
@@ -754,31 +754,31 @@ export const strategicPlanData = {
       {
         name: "مراكز بيئية متكاملة لمعالجة النفايات",
         description: "تشمل مصانع الفرز والتسميد واستعادة الطاقة",
-        icon: "🏭",
+        icon: "/icons/Briefcase.png",
         color: "red"
       },
       {
         name: "مرافق معالجة مخلفات المسالخ",
         description: "معالجة النفايات العضوية من المسالخ",
-        icon: "🥩",
+        icon: "/icons/Garbage_Bag.png",
         color: "green"
       },
       {
         name: "مرافق معالجة النفايات الصناعية الخطرة",
         description: "معالجة متخصصة للنفايات الخطرة",
-        icon: "⚠️",
+        icon: "/icons/Biohazard_Symbol.png",
         color: "cyan"
       },
       {
         name: "مرافق معالجة نفايات الرعاية الصحية الخطرة",
         description: "معالجة آمنة للنفايات الطبية الخطرة",
-        icon: "🏥",
+        icon: "/icons/Caduceus_Medical_Symbol.png",
         color: "purple"
       },
       {
         name: "مرافق معالجة النفايات الخاصة",
         description: "معالجة النفايات الإلكترونية والخاصة الأخرى",
-        icon: "📱",
+        icon: "/icons/Computer_Monitor.png",
         color: "yellow"
       }
     ]
