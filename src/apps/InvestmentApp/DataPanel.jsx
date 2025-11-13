@@ -6,7 +6,9 @@ const DataPanel = ({ selectedCity }) => {
     return (
       <div className="card bg-white/5 border-mwan-green/30 h-full flex items-center justify-center">
         <div className="text-center py-12">
-          <div className="text-7xl mb-6">🗺️</div>
+          <div className="mb-6 flex justify-center">
+            <img src="/icons/Compass.png" alt="" className="h-20 w-auto object-contain" />
+          </div>
           <h3 className="text-2xl font-bold text-white mb-4">
             اختر مدينة على الخريطة
           </h3>

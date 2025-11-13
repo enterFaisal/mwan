@@ -42,20 +42,20 @@ const PdfListScreen = ({ title, description, pdfs, onBack }) => {
                 className="brand-block p-6 rounded-2xl transition-all duration-300 transform hover:scale-105 hover:shadow-xl text-right group"
               >
                 <div className="flex items-start gap-4">
-                  <div className="text-4xl flex-shrink-0 group-hover:scale-110 transition-transform">
-                    📄
+                  <div className="flex-shrink-0 group-hover:scale-110 transition-transform flex justify-center">
+                    <img src="/icons/Document.png" alt="" className="h-12 w-auto object-contain" />
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-xl font-bold text-mwan-dark mb-2 group-hover:text-mwan-green transition-colors">
+                    <h3 className="text-xl font-bold text-white mb-2 group-hover:text-mwan-light-green transition-colors">
                       {pdf.title}
                     </h3>
                     {pdf.description && (
-                      <p className="text-sm text-gray-600">
+                      <p className="text-sm text-gray-300">
                         {pdf.description}
                       </p>
                     )}
                   </div>
-                  <div className="text-mwan-green text-2xl flex-shrink-0 group-hover:translate-x-[-4px] transition-transform">
+                  <div className="text-mwan-light-green text-2xl flex-shrink-0 group-hover:translate-x-[-4px] transition-transform">
                     ←
                   </div>
                 </div>

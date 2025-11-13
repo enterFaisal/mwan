@@ -23,7 +23,7 @@ const HomeScreen = ({ onNavigate }) => {
     {
       id: 'moktasabat',
       title: 'مكتسبات الاستراتيجية الوطنية لإدارة النفايات بحلول 2040',
-      icon: '/icons/TargetBullseye.png',
+      icon: '/icons/Target-Bullseye.png',
       accentColor: 'mwan-orange',
     },
     {
@@ -57,9 +57,9 @@ const HomeScreen = ({ onNavigate }) => {
               }`}
             >
               <div className="mb-2 transition-transform group-hover:scale-110">
-                <img src={item.icon} alt="" className="w-16 h-16" />
+                <img src={item.icon} alt="" className="h-16 w-auto object-contain" />
               </div>
-              <h3 className="text-xl font-bold text-mwan-dark text-center leading-snug">
+              <h3 className="text-xl font-bold text-white text-center leading-snug">
                 {item.title}
               </h3>
               {item.featured && (

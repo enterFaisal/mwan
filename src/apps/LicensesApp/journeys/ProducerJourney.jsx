@@ -47,7 +47,9 @@ const ProducerJourney = ({ onBack }) => {
       {/* Role Header */}
       <div className="card bg-gradient-to-l from-blue-600/30 to-blue-900/30 border-blue-500 mb-8">
         <div className="flex items-center gap-6">
-          <div className="text-6xl">🏭</div>
+          <div className="flex justify-center">
+            <img src="/icons/Briefcase.png" alt="" className="h-16 w-auto object-contain" />
+          </div>
           <div>
             <h2 className="text-3xl font-bold text-white">{journey.role}</h2>
             <p className="text-lg text-gray-300">{journey.description}</p>
@@ -175,7 +177,9 @@ const ProducerJourney = ({ onBack }) => {
             <div className="card bg-green-600/10 border-green-500">
               <div className="flex items-center justify-center py-12">
                 <div className="text-center">
-                  <div className="text-6xl mb-4">🗺️</div>
+                  <div className="mb-4 flex justify-center">
+                    <img src="/icons/Compass.png" alt="" className="h-16 w-auto object-contain" />
+                  </div>
                   <p className="text-xl text-white font-semibold">تتبع موقع الشاحنة على الخريطة</p>
                   <p className="text-gray-300 mt-2">نظام GPS النشط</p>
                 </div>

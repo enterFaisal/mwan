@@ -42,8 +42,8 @@ function Landing() {
               onClick={() => navigate('/mwan-info')}
               className="group relative brand-block p-6 rounded-3xl shadow-2xl transition-all duration-300 transform hover:scale-105 hover:-translate-y-2 min-h-[200px] landscape-card flex flex-col items-center justify-center gap-4 accent-blue"
             >
-              <div className="text-5xl mb-2 transition-transform group-hover:scale-110">
-                🏢
+              <div className="mb-2 transition-transform group-hover:scale-110 flex justify-center">
+                <img src="/icons/Briefcase.png" alt="" className="h-16 w-auto object-contain" />
               </div>
               <h3 className="text-xl font-bold text-mwan-dark text-center font-arabic">
                 اكتشف موان
@@ -63,8 +63,8 @@ function Landing() {
               onClick={() => navigate('/licenses')}
               className="group relative brand-block p-6 rounded-3xl shadow-2xl transition-all duration-300 transform hover:scale-105 hover:-translate-y-2 min-h-[200px] landscape-card flex flex-col items-center justify-center gap-4 accent-green"
             >
-              <div className="text-5xl mb-2 transition-transform group-hover:scale-110">
-                📋
+              <div className="mb-2 transition-transform group-hover:scale-110 flex justify-center">
+                <img src="/icons/Checklist.png" alt="" className="h-16 w-auto object-contain" />
               </div>
               <h3 className="text-xl font-bold text-mwan-dark text-center font-arabic">
                 التراخيص ووثيقة النقل
@@ -84,8 +84,8 @@ function Landing() {
               onClick={() => navigate('/investment')}
               className="group relative brand-block p-6 rounded-3xl shadow-2xl transition-all duration-300 transform hover:scale-105 hover:-translate-y-2 min-h-[200px] landscape-card flex flex-col items-center justify-center gap-4 accent-orange"
             >
-              <div className="text-5xl mb-2 transition-transform group-hover:scale-110">
-                💼
+              <div className="mb-2 transition-transform group-hover:scale-110 flex justify-center">
+                <img src="/icons/Briefcase.png" alt="" className="h-16 w-auto object-contain" />
               </div>
               <h3 className="text-xl font-bold text-mwan-dark text-center font-arabic">
                 الفرص الاستثمارية

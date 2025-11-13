@@ -88,7 +88,7 @@ const EmanifestSection = ({ onBack }) => {
           {emanifestIntro.objectives.map((obj, index) => (
             <div key={index} className="card transition-all hover:border-mwan-green">
               <div className="mb-3 flex justify-center">
-                <img src={obj.icon} alt="" className="w-12 h-12" />
+                <img src={obj.icon} alt="" className="h-12 w-auto object-contain" />
               </div>
               <h4 className="font-bold text-lg mb-2 text-white">{obj.title}</h4>
               <p className="text-sm text-gray-300">{obj.description}</p>
@@ -124,7 +124,7 @@ const EmanifestSection = ({ onBack }) => {
               className={`group relative brand-block p-10 rounded-3xl shadow-2xl transition-all duration-300 transform hover:scale-105 min-h-[220px] landscape-card flex flex-col items-center justify-center gap-4`}
             >
               <div className="mb-3 transition-transform group-hover:scale-110 flex justify-center">
-                <img src={role.icon} alt="" className="w-20 h-20" />
+                <img src={role.icon} alt="" className="h-20 w-auto object-contain" />
               </div>
               <h4 className="text-2xl font-bold text-mwan-dark text-center">
                 {role.name}

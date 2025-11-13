@@ -12,7 +12,7 @@ const PlanSection = ({ onBack }) => {
     { id: 'outputs', label: 'مخرجات المخطط', icon: '/icons/Bar_Graph.png' }
   ];
 
-  // Display plain Western digits for step numbers (e.g., 6, 5, 4 ... 1)
+  // Display plain Western digits for step numbers (e.g., 1, 2, 3 ... 6)
   const formatStepNumber = (num) => String(num);
 
   return (
@@ -39,7 +39,7 @@ const PlanSection = ({ onBack }) => {
                 : 'bg-white/10 text-gray-300 hover:bg-white/20'
             }`}
           >
-            <img src={tab.icon} alt="" className="w-8 h-8" />
+            <img src={tab.icon} alt="" className="h-8 w-auto object-contain" />
             {tab.label}
           </button>
         ))}
@@ -98,7 +98,7 @@ const PlanSection = ({ onBack }) => {
                       <div className="flex flex-col gap-4 h-full px-7 py-6">
                         <div className="flex items-center gap-3">
                           <span className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-white/20 text-2xl font-bold">
-                            {formatStepNumber(strategicPlanData.approach.steps.length - index)}
+                            {formatStepNumber(index + 1)}
                           </span>
                           <h4 className="font-bold text-lg leading-snug">
                             {step.title}
@@ -171,7 +171,7 @@ const PlanSection = ({ onBack }) => {
                   className={`card bg-${stat.color}-600/20 border-${stat.color}-500 text-center hover:scale-105 transition-all`}
                 >
                   <div className="mb-4 flex justify-center">
-                    <img src={stat.icon} alt="" className="w-16 h-16" />
+                    <img src={stat.icon} alt="" className="h-16 w-auto object-contain" />
                   </div>
                   <p className="text-5xl font-bold text-white mb-2">
                     {stat.value}
@@ -196,7 +196,7 @@ const PlanSection = ({ onBack }) => {
                   className="card bg-white/5 border-mwan-green/30 text-center hover:border-mwan-green transition-all"
                 >
                   <div className="mb-3 flex justify-center">
-                    <img src={stat.icon} alt="" className="w-12 h-12" />
+                    <img src={stat.icon} alt="" className="h-12 w-auto object-contain" />
                   </div>
                   <p className="text-lg font-bold text-white mb-2">
                     {stat.title}

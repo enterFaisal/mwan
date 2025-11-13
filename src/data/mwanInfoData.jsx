@@ -38,37 +38,37 @@ export const mwanInfoData = {
           <h3 className="text-2xl font-bold mb-6 text-mwan-green">مهام المركز</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <div className="card hover:bg-white/20 transition-all">
-              <img src="/icons/Recycling_Symbol.png" alt="" className="w-16 h-16 mb-4" />
+              <img src="/icons/Recycling_Symbol.png" alt="" className="h-16 w-auto object-contain mb-4" />
               <h4 className="font-bold text-xl mb-2">التخطيط والتطوير</h4>
               <p className="text-sm">تطوير وتنفيذ الخطط والاستراتيجيات الوطنية لإدارة النفايات</p>
             </div>
 
             <div className="card hover:bg-white/20 transition-all">
-              <img src="/icons/Bar_Graph.png" alt="" className="w-16 h-16 mb-4" />
+              <img src="/icons/Bar_Graph.png" alt="" className="h-16 w-auto object-contain mb-4" />
               <h4 className="font-bold text-xl mb-2">التنظيم والحوكمة</h4>
               <p className="text-sm">وضع الأنظمة واللوائح والمعايير لإدارة النفايات</p>
             </div>
 
             <div className="card hover:bg-white/20 transition-all">
-              <img src="/icons/Presentation_Board_Line_Graph.png" alt="" className="w-16 h-16 mb-4" />
+              <img src="/icons/Presentation_Board_Line_Graph.png" alt="" className="h-16 w-auto object-contain mb-4" />
               <h4 className="font-bold text-xl mb-2">الاستدامة المالية وتحفيز الاستثمار</h4>
               <p className="text-sm">تطوير نماذج التمويل المستدامة وجذب الاستثمارات</p>
             </div>
 
             <div className="card hover:bg-white/20 transition-all">
-              <img src="/icons/PersontoPerson_Communication.png" alt="" className="w-16 h-16 mb-4" />
+              <img src="/icons/PersontoPerson_Communication.png" alt="" className="h-16 w-auto object-contain mb-4" />
               <h4 className="font-bold text-xl mb-2">التوعية وبناء القدرات</h4>
               <p className="text-sm">رفع مستوى الوعي وبناء القدرات الوطنية</p>
             </div>
 
             <div className="card hover:bg-white/20 transition-all">
-              <img src="/icons/Dollar_Sign.png" alt="" className="w-16 h-16 mb-4" />
+              <img src="/icons/Dollar_Sign.png" alt="" className="h-16 w-auto object-contain mb-4" />
               <h4 className="font-bold text-xl mb-2">الترخيص والرقابة للعمر الأفضل</h4>
               <p className="text-sm">إصدار التراخيص ومراقبة الامتثال للمعايير</p>
             </div>
 
             <div className="card hover:bg-white/20 transition-all">
-              <img src="/icons/Lightbulb_Idea.png" alt="" className="w-16 h-16 mb-4" />
+              <img src="/icons/Lightbulb_Idea.png" alt="" className="h-16 w-auto object-contain mb-4" />
               <h4 className="font-bold text-xl mb-2">التحول الرقمي والدعم الصناعي</h4>
               <p className="text-sm">تطوير الحلول الرقمية ودعم الابتكار</p>
             </div>
@@ -104,7 +104,7 @@ export const mwanInfoData = {
               <h4 className="font-bold text-xl mb-3 flex items-center justify-between">
                 نظام إدارة النفايات
                 <span className="text-sm text-mwan-green flex items-center gap-2">
-                  <img src="/icons/Document.png" alt="" className="w-5 h-5" />
+                  <img src="/icons/Document.png" alt="" className="h-5 w-auto object-contain" />
                   عرض PDF
                 </span>
               </h4>
@@ -125,7 +125,7 @@ export const mwanInfoData = {
               <h4 className="font-bold text-xl mb-3 flex items-center justify-between">
                 اللائحة التنفيذية لنظام إدارة النفايات
                 <span className="text-sm text-mwan-green flex items-center gap-2">
-                  <img src="/icons/Document.png" alt="" className="w-5 h-5" />
+                  <img src="/icons/Document.png" alt="" className="h-5 w-auto object-contain" />
                   عرض PDF
                 </span>
               </h4>
@@ -193,7 +193,7 @@ export const mwanInfoData = {
               <h4 className="font-bold text-xl mb-3 flex items-center justify-between">
                 جدول تصنيف المخالفات لنظام إدارة النفايات
                 <span className="text-sm text-mwan-green flex items-center gap-2">
-                  <img src="/icons/Folder.png" alt="" className="w-5 h-5" />
+                  <img src="/icons/Folder.png" alt="" className="h-5 w-auto object-contain" />
                   عرض المستندات
                 </span>
               </h4>
@@ -305,7 +305,7 @@ export const mwanInfoData = {
               <h4 className="font-bold text-xl mb-3 flex items-center justify-between">
                 الأدلة الفنية
                 <span className="text-sm text-mwan-green flex items-center gap-2">
-                  <img src="/icons/Folder.png" alt="" className="w-5 h-5" />
+                  <img src="/icons/Folder.png" alt="" className="h-5 w-auto object-contain" />
                   عرض المستندات
                 </span>
               </h4>
@@ -342,7 +342,7 @@ export const mwanInfoData = {
             {/* Public Sector */}
             <div className="bg-gradient-to-br from-gray-700 to-gray-800 p-6 rounded-2xl border border-gray-600 hover:border-mwan-green transition-all">
               <div className="flex items-center gap-3 mb-4">
-                <img src="/icons/PodiumLectern.png" alt="" className="w-12 h-12" />
+                <img src="/icons/PodiumLectern.png" alt="" className="h-12 w-auto object-contain" />
                 <h4 className="text-xl font-bold">القطاع العــــــام</h4>
               </div>
             </div>
@@ -350,7 +350,7 @@ export const mwanInfoData = {
             {/* Private Sector */}
             <div className="bg-gradient-to-br from-gray-700 to-gray-800 p-6 rounded-2xl border border-gray-600 hover:border-mwan-green transition-all">
               <div className="flex items-center gap-3 mb-4">
-                <img src="/icons/Briefcase.png" alt="" className="w-12 h-12" />
+                <img src="/icons/Briefcase.png" alt="" className="h-12 w-auto object-contain" />
                 <h4 className="text-xl font-bold">القطاع الخـــاص</h4>
               </div>
             </div>
@@ -358,7 +358,7 @@ export const mwanInfoData = {
             {/* Non-profit Sector */}
             <div className="bg-gradient-to-br from-gray-700 to-gray-800 p-6 rounded-2xl border border-gray-600 hover:border-mwan-green transition-all">
               <div className="flex items-center gap-3 mb-4">
-                <img src="/icons/Hand_with_Coin_Donation.png" alt="" className="w-12 h-12" />
+                <img src="/icons/Hand_with_Coin_Donation.png" alt="" className="h-12 w-auto object-contain" />
                 <h4 className="text-xl font-bold">القطاع غير الربحــــي</h4>
               </div>
             </div>
@@ -375,7 +375,7 @@ export const mwanInfoData = {
             {/* Track 1 - التوعية والمعرفة */}
             <div className="bg-gradient-to-br from-mwan-green to-green-700 p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all transform hover:scale-105">
               <div className="mb-4 text-center flex justify-center">
-                <img src="/icons/Lightbulb_Idea.png" alt="" className="w-16 h-16" />
+                <img src="/icons/Lightbulb_Idea.png" alt="" className="h-16 w-auto object-contain" />
               </div>
               <h4 className="text-lg font-bold mb-3 text-center">التوعيــــة والمعرفــــة</h4>
               <p className="text-sm text-center leading-relaxed">
@@ -386,7 +386,7 @@ export const mwanInfoData = {
             {/* Track 2 - الابتكار الدائري */}
             <div className="bg-gradient-to-br from-mwan-green to-green-700 p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all transform hover:scale-105">
               <div className="mb-4 text-center flex justify-center">
-                <img src="/icons/Globe.png" alt="" className="w-16 h-16" />
+                <img src="/icons/Globe.png" alt="" className="h-16 w-auto object-contain" />
               </div>
               <h4 className="text-lg font-bold mb-3 text-center">الابتكار الدائــــري</h4>
               <p className="text-sm text-center leading-relaxed">
@@ -397,7 +397,7 @@ export const mwanInfoData = {
             {/* Track 3 - التدوير والاسترداد */}
             <div className="bg-gradient-to-br from-mwan-green to-green-700 p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all transform hover:scale-105">
               <div className="mb-4 text-center flex justify-center">
-                <img src="/icons/Recycling_Symbol.png" alt="" className="w-16 h-16" />
+                <img src="/icons/Recycling_Symbol.png" alt="" className="h-16 w-auto object-contain" />
               </div>
               <h4 className="text-lg font-bold mb-3 text-center">التدويــــر والاسترداد</h4>
               <p className="text-sm text-center leading-relaxed">
@@ -408,7 +408,7 @@ export const mwanInfoData = {
             {/* Track 4 - تقليل إنتاج النفايات */}
             <div className="bg-gradient-to-br from-mwan-green to-green-700 p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all transform hover:scale-105">
               <div className="mb-4 text-center flex justify-center">
-                <img src="/icons/Leaf.png" alt="" className="w-16 h-16" />
+                <img src="/icons/Leaf.png" alt="" className="h-16 w-auto object-contain" />
               </div>
               <h4 className="text-lg font-bold mb-3 text-center">تقليل إنتاج النفايات</h4>
               <p className="text-sm text-center leading-relaxed">
@@ -543,7 +543,7 @@ export const mwanInfoData = {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="card">
               <h4 className="font-bold text-xl mb-4 flex items-center gap-3">
-                <img src="/icons/Envelope.png" alt="" className="w-8 h-8" />
+                <img src="/icons/Envelope.png" alt="" className="h-8 w-auto object-contain" />
                 البريد الإلكتروني
               </h4>
               <p className="text-lg" dir="ltr">info@mwan.gov.sa</p>
@@ -551,7 +551,7 @@ export const mwanInfoData = {
 
             <div className="card">
               <h4 className="font-bold text-xl mb-4 flex items-center gap-3">
-                <img src="/icons/Globe.png" alt="" className="w-8 h-8" />
+                <img src="/icons/Globe.png" alt="" className="h-8 w-auto object-contain" />
                 الموقع الإلكتروني
               </h4>
               <p className="text-lg" dir="ltr">www.mwan.gov.sa</p>
@@ -559,7 +559,7 @@ export const mwanInfoData = {
 
             <div className="card">
               <h4 className="font-bold text-xl mb-4 flex items-center gap-3">
-                <img src="/icons/Telephone.png" alt="" className="w-8 h-8" />
+                <img src="/icons/Telephone.png" alt="" className="h-8 w-auto object-contain" />
                 الهاتف
               </h4>
               <p className="text-lg" dir="ltr">920009110</p>
@@ -567,7 +567,7 @@ export const mwanInfoData = {
 
             <div className="card">
               <h4 className="font-bold text-xl mb-4 flex items-center gap-3">
-                <img src="/icons/Compass.png" alt="" className="w-8 h-8" />
+                <img src="/icons/Compass.png" alt="" className="h-8 w-auto object-contain" />
                 العنوان
               </h4>
               <p className="text-lg"> 3186 طريق الأمير محمد بن سلمان بن عبدالعزيز، حي, قرطبة، الرياض 13248-6329</p>

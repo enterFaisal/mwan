@@ -13,7 +13,8 @@ export const partnersLogos = {
   "المركز الوطني لإدارة النفايات": {
     name: "المركز الوطني لإدارة النفايات",
     nameEn: "National Waste Management Center (MWAN)",
-    logo: "/mwan-logo.png",
+    logo:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Emblem_of_Saudi_Arabia_%28variant%29.svg/200px-Emblem_of_Saudi_Arabia_%28variant%29.svg.png",
     fallbackLogo:
       "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Emblem_of_Saudi_Arabia_%28variant%29.svg/200px-Emblem_of_Saudi_Arabia_%28variant%29.svg.png",
     website: "https://www.mwan.gov.sa",

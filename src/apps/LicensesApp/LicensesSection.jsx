@@ -35,8 +35,8 @@ const LicensesSection = ({ onBack, setShowParentBackButton }) => {
                 onClick={() => setActiveSection(index)}
                 className="group relative brand-block accent-green p-8 rounded-3xl shadow-2xl transition-all duration-300 transform hover:scale-105 min-h-[180px] flex flex-col items-center justify-center gap-4"
               >
-                <div className="text-5xl mb-2 transition-transform group-hover:scale-110">
-                  {['📋', '📖', '✅', '🏷️', '📝'][index]}
+                <div className="mb-2 transition-transform group-hover:scale-110 flex justify-center">
+                  <img src={['/icons/Checklist.png', '/icons/Open_Book.png', '/icons/Checkmark.png', '/icons/ID_Card.png', '/icons/Document_with_Pen.png'][index]} alt="" className="h-16 w-auto object-contain" />
                 </div>
                 <h3 className="text-2xl font-bold text-mwan-dark text-center">
                   {section.title}
