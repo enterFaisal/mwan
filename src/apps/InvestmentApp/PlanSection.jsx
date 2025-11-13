@@ -1,16 +1,22 @@
-import React, { useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import { strategicPlanData } from '../../data/investmentData.js';
+import { getPartnerLogo } from '../../data/partnersLogos.js';
 import BackButton from '../../components/BackButton';
 
 const PlanSection = ({ onBack }) => {
-  const [activeTab, setActiveTab] = useState('approach');
+  const [activeTab, setActiveTab] = useState('introduction');
 
   const tabs = [
-    { id: 'approach', label: 'منهجية التخطيط', icon: '📋' },
-    { id: 'objectives', label: 'الأهداف الاستراتيجية', icon: '🎯' },
-    { id: 'infrastructure', label: 'البنية التحتية', icon: '🏗️' },
-    { id: 'benefits', label: 'الفوائد المتوقعة', icon: '✨' }
+    { id: 'introduction', label: 'نبذة تعريفية عن المخطط الاستراتيجي الشامل', icon: '📄' },
+    { id: 'approach', label: 'منهجية عمل المخطط', icon: '📋' },
+    { id: 'outputs', label: 'مخرجات المخطط', icon: '📊' }
   ];
+
+  const toArabicNumeral = (num) => num.toLocaleString('ar-EG');
+  const reversedApproachSteps = useMemo(() => {
+    if (!strategicPlanData?.approach?.steps) return [];
+    return [...strategicPlanData.approach.steps].reverse();
+  }, [strategicPlanData.approach.steps]);
 
   return (
     <div className="max-w-6xl mx-auto animate-fade-in">
@@ -19,8 +25,8 @@ const PlanSection = ({ onBack }) => {
         <h2 className="text-5xl font-bold text-white mb-4">
           {strategicPlanData.title}
         </h2>
-        <p className="text-xl text-gray-300 leading-relaxed max-w-4xl mx-auto">
-          {strategicPlanData.description}
+        <p className="text-2xl text-mwan-green leading-relaxed max-w-4xl mx-auto mb-4">
+          {strategicPlanData.subtitle}
         </p>
       </div>
 
@@ -44,175 +50,168 @@ const PlanSection = ({ onBack }) => {
 
       {/* Content Area */}
   <div className="card border-mwan-green/30 min-h-[600px]">
+        {/* Introduction Tab */}
+        {activeTab === 'introduction' && (
+          <div className="animate-fade-in">
+            <h3 className="text-3xl font-bold text-mwan-green mb-6 text-center">
+              {strategicPlanData.introduction.title}
+            </h3>
+            <div className="max-w-5xl mx-auto">
+              <p className="text-xl text-gray-300 leading-relaxed text-center mb-8">
+                {strategicPlanData.introduction.content}
+              </p>
+              
+              {/* Geographic Groups Display with Image */}
+              <div className="mt-8 flex justify-center">
+                <img 
+                  src="/uimage.png" 
+                  alt="25 مجموعة جغرافية - خريطة توضح التوزيع الجغرافي للمجموعات في المملكة" 
+                  className="w-full max-w-4xl rounded-3xl"
+                />
+              </div>
+            </div>
+          </div>
+        )}
+
         {/* Approach Tab */}
         {activeTab === 'approach' && (
-          <div className="animate-fade-in">
-            <h3 className="text-3xl font-bold text-mwan-green mb-8 text-center">
-              {strategicPlanData.approach.title}
-            </h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {strategicPlanData.approach.steps.map((step) => (
-                <div
-                  key={step.number}
-                  className="card transition-all border border-mwan-green/20 hover:border-mwan-green"
-                >
-                  <div className="flex items-center gap-4 mb-4">
-                    <div className="bg-mwan-green text-white rounded-full w-12 h-12 flex items-center justify-center font-bold text-xl flex-shrink-0">
-                      {step.number}
+          <div className="animate-fade-in" dir="rtl">
+            <div className="bg-white/5 border border-mwan-green/30 rounded-3xl overflow-hidden shadow-lg shadow-black/10">
+              <div className="bg-[#0b6b4f] text-white text-xl font-bold text-center py-4">
+                {strategicPlanData.approach.title}
+              </div>
+
+              <p className="text-lg text-gray-200 text-center px-8 py-6 leading-relaxed max-w-5xl mx-auto">
+                {strategicPlanData.approach.description}
+              </p>
+
+              <div className="overflow-x-auto">
+                <div className="min-w-max flex flex-row gap-4 px-8 pb-10">
+                  {reversedApproachSteps.map((step, index) => (
+                    <div
+                      key={step.number}
+                      className="relative w-72 text-white"
+                      style={{
+                        clipPath: 'polygon(0% 50%, 12% 0%, 100% 0%, 88% 50%, 100% 100%, 12% 100%)',
+                        background: index % 2 === 0
+                          ? 'linear-gradient(225deg, #1f8a5b 0%, #0e4933 100%)'
+                          : 'linear-gradient(225deg, #1f6d92 0%, #103452 100%)'
+                      }}
+                    >
+                      <div className="flex flex-col gap-4 h-full px-7 py-6">
+                        <div className="flex items-center gap-3">
+                          <span className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-white/20 text-2xl font-bold">
+                            {toArabicNumeral(step.number)}
+                          </span>
+                          <h4 className="font-bold text-lg leading-snug">
+                            {step.title}
+                          </h4>
+                        </div>
+                        <p className="text-sm leading-relaxed text-white/90">
+                          {step.description}
+                        </p>
+                      </div>
                     </div>
-                    <h4 className="font-bold text-lg text-white">{step.title}</h4>
+                  ))}
+                </div>
+              </div>
+
+              {strategicPlanData.approach.partners && (
+                <div className="border-t border-white/10 bg-white/5 px-6 py-8">
+                  <p className="text-center text-mwan-green font-semibold text-2xl mb-8">
+                    شركاء التخطيط والتنفيذ
+                  </p>
+                  <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-6">
+                    {strategicPlanData.approach.partners.map((partner, index) => {
+                      const partnerData = getPartnerLogo(partner);
+                      return (
+                        <div
+                          key={partner + index}
+                          className="flex flex-col items-center justify-center p-4 bg-white rounded-2xl hover:shadow-xl transition-all duration-300 hover:scale-105 group"
+                          title={partnerData.nameEn}
+                        >
+                          <div className="w-full h-24 flex items-center justify-center mb-3 relative overflow-hidden">
+                            <img
+                              src={partnerData.logo}
+                              alt={partnerData.name}
+                              className="max-w-full max-h-full object-contain transition-transform duration-300 group-hover:scale-110"
+                              onError={(e) => {
+                                e.target.onerror = null;
+                                e.target.src = partnerData.fallbackLogo;
+                              }}
+                            />
+                          </div>
+                          <p className="text-xs text-center text-gray-800 font-medium leading-tight line-clamp-2">
+                            {partnerData.name}
+                          </p>
+                        </div>
+                      );
+                    })}
                   </div>
-                  <p className="text-gray-300 leading-relaxed">
-                    {step.description}
-                  </p>
                 </div>
-              ))}
+              )}
             </div>
           </div>
         )}
 
-        {/* Objectives Tab */}
-        {activeTab === 'objectives' && (
-          <div className="animate-fade-in">
-            <h3 className="text-3xl font-bold text-mwan-green mb-8 text-center">
-              {strategicPlanData.objectives.title}
-            </h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {strategicPlanData.objectives.items.map((item, index) => (
-                <div
-                  key={index}
-                  className="card bg-gradient-to-br from-mwan-green/20 to-green-900/20 border-mwan-green hover:scale-105 transition-all"
-                >
-                  <div className="text-5xl mb-4 text-center">{item.icon}</div>
-                  <h4 className="font-bold text-xl text-white text-center mb-3">
-                    {item.title}
-                  </h4>
-                  {item.value && (
-                    <p className="text-4xl font-bold text-mwan-green text-center mb-2">
-                      {item.value}
-                    </p>
-                  )}
-                  <p className="text-gray-300 text-center">
-                    {item.description}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
-
-        {/* Infrastructure Tab */}
-        {activeTab === 'infrastructure' && (
+        {/* Outputs Tab */}
+        {activeTab === 'outputs' && (
           <div className="animate-fade-in">
             <h3 className="text-3xl font-bold text-mwan-green mb-4 text-center">
-              {strategicPlanData.infrastructure.title}
+              {strategicPlanData.outputs.title}
             </h3>
-            {strategicPlanData.infrastructure.description && (
-              <p className="text-xl text-gray-300 text-center mb-8 leading-relaxed">
-                {strategicPlanData.infrastructure.description}
+            <div className="card bg-gradient-to-r from-green-600/20 to-mwan-green/20 border-mwan-green mb-8">
+              <p className="text-2xl text-white text-center font-semibold">
+                {strategicPlanData.outputs.subtitle}
               </p>
-            )}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {strategicPlanData.infrastructure.facilities.map((facility, index) => (
+            </div>
+            
+            {/* Main Stats */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+              {strategicPlanData.outputs.mainStats.map((stat, index) => (
                 <div
                   key={index}
-                  className="card transition-all border border-blue-500/20 hover:border-blue-500"
+                  className={`card bg-${stat.color}-600/20 border-${stat.color}-500 text-center hover:scale-105 transition-all`}
                 >
-                  <div className="flex items-start gap-4">
-                    <div className="text-5xl flex-shrink-0">{facility.icon}</div>
-                    <div className="flex-1">
-                      <h4 className="font-bold text-xl text-white mb-3">
-                        {facility.name}
-                      </h4>
-                      <p className="text-gray-300 leading-relaxed">
-                        {facility.description}
-                      </p>
-                    </div>
-                  </div>
+                  <div className="text-5xl mb-4">{stat.icon}</div>
+                  <p className="text-5xl font-bold text-white mb-2">
+                    {stat.value}
+                  </p>
+                  <p className="text-lg font-semibold text-white mb-1">
+                    {stat.title}
+                  </p>
+                  {stat.description && (
+                    <p className="text-sm text-gray-300 mt-2">
+                      {stat.description}
+                    </p>
+                  )}
+                </div>
+              ))}
+            </div>
+
+            {/* Bottom Stats */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+              {strategicPlanData.outputs.bottomStats.map((stat, index) => (
+                <div
+                  key={index}
+                  className="card bg-white/5 border-mwan-green/30 text-center hover:border-mwan-green transition-all"
+                >
+                  <div className="text-4xl mb-3">{stat.icon}</div>
+                  <p className="text-lg font-bold text-white mb-2">
+                    {stat.title}
+                  </p>
+                  {stat.description && (
+                    <p className="text-sm text-gray-300">
+                      {stat.description}
+                    </p>
+                  )}
                 </div>
               ))}
             </div>
           </div>
         )}
-
-        {/* Benefits Tab */}
-        {activeTab === 'benefits' && (
-          <div className="animate-fade-in">
-            <h3 className="text-3xl font-bold text-mwan-green mb-8 text-center">
-              {strategicPlanData.benefits.title}
-            </h3>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {/* Economic Benefits */}
-              <div className="card bg-gradient-to-br from-orange-600/20 to-orange-900/20 border-orange-500">
-                <div className="text-5xl mb-4 text-center">💰</div>
-                <h4 className="font-bold text-2xl text-orange-400 mb-4 text-center">
-                  {strategicPlanData.benefits.economic.title}
-                </h4>
-                <ul className="space-y-3">
-                  {strategicPlanData.benefits.economic.items.map((item, index) => (
-                    <li key={index} className="flex items-start gap-3">
-                      <span className="text-orange-400 text-xl flex-shrink-0">✓</span>
-                      <span className="text-gray-300">{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              {/* Environmental Benefits */}
-              <div className="card bg-gradient-to-br from-green-600/20 to-green-900/20 border-green-500">
-                <div className="text-5xl mb-4 text-center">🌱</div>
-                <h4 className="font-bold text-2xl text-green-400 mb-4 text-center">
-                  {strategicPlanData.benefits.environmental.title}
-                </h4>
-                <ul className="space-y-3">
-                  {strategicPlanData.benefits.environmental.items.map((item, index) => (
-                    <li key={index} className="flex items-start gap-3">
-                      <span className="text-green-400 text-xl flex-shrink-0">✓</span>
-                      <span className="text-gray-300">{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              {/* Social Benefits */}
-              <div className="card bg-gradient-to-br from-blue-600/20 to-blue-900/20 border-blue-500">
-                <div className="text-5xl mb-4 text-center">👥</div>
-                <h4 className="font-bold text-2xl text-blue-400 mb-4 text-center">
-                  {strategicPlanData.benefits.social.title}
-                </h4>
-                <ul className="space-y-3">
-                  {strategicPlanData.benefits.social.items.map((item, index) => (
-                    <li key={index} className="flex items-start gap-3">
-                      <span className="text-blue-400 text-xl flex-shrink-0">✓</span>
-                      <span className="text-gray-300">{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          </div>
-        )}
       </div>
 
-      {/* Key Highlights */}
-      <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-6">
-        <div className="card bg-mwan-green/20 border-mwan-green text-center">
-          <p className="text-4xl font-bold text-mwan-green mb-2">97%</p>
-          <p className="text-white font-semibold">نسبة الاستفادة من النفايات</p>
-        </div>
-        <div className="card bg-orange-600/20 border-orange-500 text-center">
-          <p className="text-4xl font-bold text-orange-400 mb-2">45</p>
-          <p className="text-white font-semibold">مليار ريال سعودي</p>
-        </div>
-        <div className="card bg-blue-600/20 border-blue-500 text-center">
-          <p className="text-4xl font-bold text-blue-400 mb-2">90%</p>
-          <p className="text-white font-semibold">نسبة التحويل من المرادم</p>
-        </div>
-        <div className="card bg-purple-600/20 border-purple-500 text-center">
-          <p className="text-4xl font-bold text-purple-400 mb-2">2.8</p>
-          <p className="text-white font-semibold">مليون طن/سنة</p>
-        </div>
-      </div>
     </div>
   );
 };
