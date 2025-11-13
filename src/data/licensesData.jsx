@@ -151,8 +151,10 @@ export const licensesData = {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
               {/* التراخيص */}
               <div className="space-y-6">
-                <div className="bg-gradient-to-br from-mwan-green/20 to-emerald-600/20 p-8 rounded-3xl border-2 border-mwan-green shadow-2xl hover:shadow-mwan-green/50 transition-all">
-                  <h4 className="text-3xl font-bold mb-6 text-center text-white bg-mwan-green/30 py-3 rounded-xl">التراخيص</h4>
+                <div className="brand-panel p-8 rounded-3xl border-2 border-mwan-green transition-all">
+                  <h4 className="text-3xl font-bold mb-6 text-center text-white">
+                    <span className="inline-block bg-mwan-green px-6 py-3 rounded-xl">التراخيص</span>
+                  </h4>
                   <div className="flex flex-wrap gap-3 justify-center">
                     {licenseItems.map((item) => (
                       <div
@@ -168,11 +170,13 @@ export const licensesData = {
 
               {/* التصاريح */}
               <div className="space-y-6">
-                <div className="bg-gradient-to-br from-mwan-green/20 to-emerald-600/20 p-8 rounded-3xl border-2 border-mwan-green shadow-2xl hover:shadow-mwan-green/50 transition-all">
-                  <h4 className="text-3xl font-bold mb-6 text-center text-white bg-mwan-green/30 py-3 rounded-xl">التصاريح</h4>
+                <div className="brand-panel p-8 rounded-3xl border-2 border-mwan-green transition-all">
+                  <h4 className="text-3xl font-bold mb-6 text-center text-white">
+                    <span className="inline-block bg-mwan-green px-6 py-3 rounded-xl">التصاريح</span>
+                  </h4>
                   <div className="flex items-center justify-center h-full min-h-[300px]">
-                    <div className="brand-panel--soft p-8 text-center border-2 border-mwan-green/40 hover:border-mwan-green transition-all">
-                      <p className="text-2xl font-bold text-white">إنشاء منشآت إعادة التدوير</p>
+                    <div className="px-8 py-4 rounded-full text-lg font-bold text-white border-2 border-mwan-green/40 hover:border-mwan-green transition-all">
+                      إنشاء منشآت إعادة التدوير
                     </div>
                   </div>
                 </div>
