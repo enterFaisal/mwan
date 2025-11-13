@@ -2,7 +2,7 @@ import React from 'react';
 import { mwanInfoData } from '../../data/mwanInfoData.jsx';
 import BackButton from '../../components/BackButton';
 
-const ContentScreen = ({ screenId, onBack }) => {
+const ContentScreen = ({ screenId, onBack, onPdfView }) => {
   const content = mwanInfoData[screenId];
 
   if (!content) {
@@ -13,6 +13,11 @@ const ContentScreen = ({ screenId, onBack }) => {
       </div>
     );
   }
+
+  // Render content with PDF view handler if provided
+  const renderedContent = typeof content.content === 'function' 
+    ? content.content(onPdfView) 
+    : content.content;
 
   return (
     <div className="max-w-7xl mx-auto animate-fade-in">
@@ -30,7 +35,7 @@ const ContentScreen = ({ screenId, onBack }) => {
 
         {/* Content Section */}
         <div className="p-10 text-white">
-          {content.content}
+          {renderedContent}
         </div>
       </div>
 

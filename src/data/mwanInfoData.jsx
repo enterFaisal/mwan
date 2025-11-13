@@ -80,7 +80,7 @@ export const mwanInfoData = {
 
   anzema: {
     title: "الأنظمة والتشريعات",
-    content: (
+    content: (onPdfView) => (
       <div className="space-y-8">
         <section>
           <h3 className="text-2xl font-bold mb-4 text-mwan-green">الإطار التنظيمي</h3>
@@ -93,11 +93,13 @@ export const mwanInfoData = {
         <section>
           <h3 className="text-2xl font-bold mb-6 text-mwan-green">الأنظمة الرئيسية</h3>
           <div className="space-y-4">
-            <a 
-              href="https://drive.google.com/file/d/1CnBBEkFJdK_BrFQefKrgJYVcctHmQgJd/view" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="card hover:bg-white/20 transition-all cursor-pointer block"
+            <button 
+              onClick={() => onPdfView({
+                type: 'single',
+                title: 'نظام إدارة النفايات',
+                url: 'https://drive.google.com/file/d/1CnBBEkFJdK_BrFQefKrgJYVcctHmQgJd/preview'
+              })}
+              className="card hover:bg-white/20 transition-all cursor-pointer block w-full text-right"
             >
               <h4 className="font-bold text-xl mb-3 flex items-center justify-between">
                 نظام إدارة النفايات
@@ -107,13 +109,15 @@ export const mwanInfoData = {
                 النظام الأساسي الذي يحدد الإطار العام لإدارة النفايات في المملكة، بما في ذلك
                 الأدوار والمسؤوليات والآليات التنظيمية.
               </p>
-            </a>
+            </button>
 
-            <a 
-              href="https://drive.google.com/file/d/1KaIw7ieouDRkUsqBteO1RU-jSet-xJ5k/view" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="card hover:bg-white/20 transition-all cursor-pointer block"
+            <button 
+              onClick={() => onPdfView({
+                type: 'single',
+                title: 'اللائحة التنفيذية لنظام إدارة النفايات',
+                url: 'https://drive.google.com/file/d/1KaIw7ieouDRkUsqBteO1RU-jSet-xJ5k/preview'
+              })}
+              className="card hover:bg-white/20 transition-all cursor-pointer block w-full text-right"
             >
               <h4 className="font-bold text-xl mb-3 flex items-center justify-between">
                 اللائحة التنفيذية لنظام إدارة النفايات
@@ -123,38 +127,181 @@ export const mwanInfoData = {
                 تفصيل الإجراءات والمتطلبات التنفيذية لنظام إدارة النفايات، بما في ذلك
                 معايير الترخيص والتشغيل والرقابة.
               </p>
-            </a>
+            </button>
 
-            <a 
-              href="https://drive.google.com/drive/folders/1WmkWAltGeK89VALemajr4mYDweaWRu4H" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="card hover:bg-white/20 transition-all cursor-pointer block"
+            <button 
+              onClick={() => onPdfView({
+                type: 'list',
+                title: 'جدول تصنيف المخالفات لنظام إدارة النفايات',
+                description: 'جدول شامل يحدد تصنيف المخالفات المتعلقة بنظام إدارة النفايات والعقوبات المقررة لها',
+                pdfs: [
+                  {
+                    title: 'مخالفات أحكام التراخيص والتصاريح',
+                    url: 'https://drive.google.com/file/d/1v61_I_HQi-o1sPV__L19ue5Zkw3Y3DyL/preview',
+                    description: 'المخالفات المتعلقة بالتراخيص والتصاريح'
+                  },
+                  {
+                    title: 'مخالفات أحكام مسؤولية المنتج الممتد',
+                    url: 'https://drive.google.com/file/d/1UKWQujryEfZ0A1nTTMtWJ5W-zb3k_OTK/preview',
+                    description: 'المخالفات المتعلقة بمسؤولية المنتج الممتد'
+                  },
+                  {
+                    title: 'مخالفات أحكام سلسلة القيمة للنفايات',
+                    url: 'https://drive.google.com/file/d/13y11I4zX6NGgP03KZgHTxKI6kq8Ae2BC/preview',
+                    description: 'المخالفات المتعلقة بسلسلة القيمة للنفايات'
+                  },
+                  {
+                    title: 'مخالفات أحكام التعاقد على خدمات إدارة النفايات',
+                    url: 'https://drive.google.com/file/d/1RVWDpHK5x9K6yfd_PRMkTR6U1rkxuPi8/preview',
+                    description: 'المخالفات المتعلقة بالتعاقد على الخدمات'
+                  },
+                  {
+                    title: 'مخالفات أحكام استيراد وتصدير النفايات',
+                    url: 'https://drive.google.com/file/d/1cTN95gPDJcKSNKbN3CS375dso3pVnXQ0/preview',
+                    description: 'المخالفات المتعلقة باستيراد وتصدير النفايات'
+                  },
+                  {
+                    title: 'مخالفات أحكام خطط إدارة النفايات',
+                    url: 'https://drive.google.com/file/d/1rg7_JGM4_BGC3rgZERRaLYyvigT_bf5r/preview',
+                    description: 'المخالفات المتعلقة بخطط إدارة النفايات'
+                  },
+                  {
+                    title: 'مخالفات أحكام التفتيش والتحقيق',
+                    url: 'https://drive.google.com/file/d/1dtESDiZCHlkTNmrpD58Z65vIgHVpm4CZ/preview',
+                    description: 'المخالفات المتعلقة بالتفتيش والتحقيق'
+                  },
+                  {
+                    title: 'مخالفات عامة',
+                    url: 'https://drive.google.com/file/d/1W9arvueSGnBnVk0ZZXjUTk2cmipbNia-/preview',
+                    description: 'المخالفات العامة'
+                  },
+                  {
+                    title: 'كامل ملف المخالفات',
+                    url: 'https://drive.google.com/file/d/1t3gMv_hT-FuQ9v6myrs4ySp31iWGvqUw/preview',
+                    description: 'الملف الشامل لجميع المخالفات'
+                  }
+                ]
+              })}
+              className="card hover:bg-white/20 transition-all cursor-pointer block w-full text-right"
             >
               <h4 className="font-bold text-xl mb-3 flex items-center justify-between">
                 جدول تصنيف المخالفات لنظام إدارة النفايات
-                <span className="text-sm text-mwan-green">📁 فتح المجلد</span>
+                <span className="text-sm text-mwan-green">📁 عرض المستندات</span>
               </h4>
               <p className="text-base leading-relaxed">
                 جدول شامل يحدد تصنيف المخالفات المتعلقة بنظام إدارة النفايات والعقوبات المقررة لها.
               </p>
-            </a>
+            </button>
 
-            <a 
-              href="https://drive.google.com/drive/folders/1jN30NmvlX71rPfnR-dODIDuDzEpCYa3G" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="card hover:bg-white/20 transition-all cursor-pointer block"
+            <button 
+              onClick={() => onPdfView({
+                type: 'list',
+                title: 'الأدلة الفنية',
+                description: 'مجموعة من الأدلة والمواصفات الفنية لمختلف أنشطة إدارة النفايات',
+                pdfs: [
+                  {
+                    title: 'الضوابط والأدلة الفنية لإدارة نفايات الرعاية الصحية',
+                    url: 'https://drive.google.com/file/d/1kzjROGnONF35Caa0rX6wrXq5Ia_QPmV_/preview',
+                    description: 'الضوابط والإرشادات لإدارة نفايات الرعاية الصحية'
+                  },
+                  {
+                    title: 'الضوابط والأدلة الفنية لتصميم مرافق استرداد المواد وإنشائها وتشغيلها',
+                    url: 'https://drive.google.com/file/d/1LLnt3ODLDRKyJMlkmT-nzKLXSwWuH8H6/preview',
+                    description: 'معايير تصميم وتشغيل مرافق استرداد المواد'
+                  },
+                  {
+                    title: 'الضوابط والأدلة الفنية لتصميم وإنشاء وتشغيل منشآت المعالجة الفيزيائية الكيميائية',
+                    url: 'https://drive.google.com/file/d/127ZMVWnlFk2gKlyKGorE7XUATaZ6TmMi/preview',
+                    description: 'معايير منشآت المعالجة الفيزيائية والكيميائية'
+                  },
+                  {
+                    title: 'الضوابط والأدلة الفنية لتصنيف النفايات',
+                    url: 'https://drive.google.com/file/d/1hD_sCSUxcm8S-5ow7Uc-HZ9qMPeMLnJR/preview',
+                    description: 'معايير تصنيف أنواع النفايات المختلفة'
+                  },
+                  {
+                    title: 'الضوابط والأدلة الفنية لخطط إدارة النفايات',
+                    url: 'https://drive.google.com/file/d/1RkUIRk12RstsTUo1ixWKQGjmC_yXmNBg/preview',
+                    description: 'إرشادات إعداد خطط إدارة النفايات'
+                  },
+                  {
+                    title: 'الضوابط والأدلة الفنية للتخزين المؤقت للنفايات',
+                    url: 'https://drive.google.com/file/d/1Ka12am8vjO3ROAUI6VATYxgdCMNUdtkJ-kpdK5g/preview',
+                    description: 'معايير التخزين المؤقت الآمن للنفايات'
+                  },
+                  {
+                    title: 'الضوابط والأدلة الفنية للتراخيص',
+                    url: 'https://drive.google.com/file/d/1stKIAW18FtvmyQ0IS3zQFtN9f2X9Ecro/preview',
+                    description: 'متطلبات وإجراءات الحصول على التراخيص'
+                  },
+                  {
+                    title: 'الضوابط والأدلة الفنية للتفتيش والتدقيق',
+                    url: 'https://drive.google.com/file/d/1T4itGzsjB-Vpl8LqgjhR7x3R5zrVIk-P/preview',
+                    description: 'معايير وإجراءات التفتيش والتدقيق'
+                  },
+                  {
+                    title: 'الضوابط والأدلة الفنية للمعالجة البيولوجية للنفايات',
+                    url: 'https://drive.google.com/file/d/1EqlVQNKFcOP8hc3Nh5y9vwb6Mwx5wiOM/preview',
+                    description: 'معايير المعالجة البيولوجية للنفايات'
+                  },
+                  {
+                    title: 'الضوابط والأدلة الفنية للمعالجة الميكانيكية البيولوجية للنفايات',
+                    url: 'https://drive.google.com/file/d/1cPPC4sBPleuGq-WdlnTdVv2KpX9bqTU8/preview',
+                    description: 'معايير المعالجة الميكانيكية البيولوجية'
+                  },
+                  {
+                    title: 'الضوابط والأدلة الفنية لمعايير قبول النفايات في المرادم',
+                    url: 'https://drive.google.com/file/d/11CIXsbN47TFlHovwLwXlEmD5aM_Nr6zg/preview',
+                    description: 'معايير قبول النفايات في المرادم الصحية'
+                  },
+                  {
+                    title: 'الضوابط والأدلة الفنية لنقل النفايات',
+                    url: 'https://drive.google.com/file/d/1n0rZyxSfmjxZd4ACaEBNrWsQ29bR6Ut1/preview',
+                    description: 'المواصفات الفنية لعمليات نقل النفايات'
+                  },
+                  {
+                    title: 'الضوابط والأدلة الفنية لتصميم مرافق حرق النفايات وإنشائها وتشغيلها',
+                    url: 'https://drive.google.com/file/d/1Da7lvlVxfPMuI6KW26Yl1S4MV-kpdK5g/preview',
+                    description: 'معايير تصميم وتشغيل مرافق الحرق'
+                  },
+                  {
+                    title: 'الضوابط والأدلة الفنية لتصميم وإنشاء وتشغيل المرادم',
+                    url: 'https://drive.google.com/file/d/1c4QAhRN6d6bKY4RMnmbNxPFB2o8iQNu7/preview',
+                    description: 'المواصفات الفنية لتصميم وتشغيل المرادم'
+                  },
+                  {
+                    title: 'الضوابط والاشتراطات للمبادرات التطوعية في قطاع إدارة النفايات',
+                    url: 'https://drive.google.com/file/d/1NJd9oFi93QfWCGyrEntnqNX1Fw3UkMjK/preview',
+                    description: 'اشتراطات المبادرات التطوعية'
+                  },
+                  {
+                    title: 'الضوابط والأدلة الفنية لإدارة نفايات مسالخ الدواجن',
+                    url: 'https://drive.google.com/file/d/1CaWlA-h619CORJXiMYdYD10UuQaI3P4T/preview',
+                    description: 'إرشادات إدارة نفايات مسالخ الدواجن'
+                  },
+                  {
+                    title: 'الضوابط والأدلة الفنية لإدارة نفايات مسالخ المواشي',
+                    url: 'https://drive.google.com/file/d/1383gtWurSe1LI6WvMHGvFFMc6c4RhqHr/preview',
+                    description: 'إرشادات إدارة نفايات مسالخ المواشي'
+                  },
+                  {
+                    title: 'نظام إدارة ميزان الشاحنات الإلكتروني عند مدخل منشأة استلام النفايات',
+                    url: 'https://drive.google.com/file/d/1UMpSeGpsh_AZHiP5kzoailj42Z8kuoCj/preview',
+                    description: 'متطلبات نظام الميزان الإلكتروني'
+                  }
+                ]
+              })}
+              className="card hover:bg-white/20 transition-all cursor-pointer block w-full text-right"
             >
               <h4 className="font-bold text-xl mb-3 flex items-center justify-between">
                 الأدلة الفنية
-                <span className="text-sm text-mwan-green">📁 فتح المجلد</span>
+                <span className="text-sm text-mwan-green">📁 عرض المستندات</span>
               </h4>
               <p className="text-base leading-relaxed">
                 مجموعة من الأدلة والمواصفات الفنية لمختلف أنشطة إدارة النفايات،
                 بما في ذلك الجمع والنقل والمعالجة والتخلص.
               </p>
-            </a>
+            </button>
           </div>
         </section>
       </div>
