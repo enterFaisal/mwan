@@ -30,6 +30,15 @@ const SaudiMap = ({ selectedCity, onCitySelect }) => {
       { id: 'dammam', name: 'الدمام', lat: 26.4333, lng: 50.1 },
       { id: 'tabuk', name: 'تبوك', lat: 28.3833, lng: 36.5715 },
       { id: 'qassim', name: 'القصيم', lat: 26.3333, lng: 43.7667 },
+      { id: 'abha', name: 'أبها', lat: 18.2164, lng: 42.5053 },
+      { id: 'jazan', name: 'جازان', lat: 16.8892, lng: 42.5511 },
+      { id: 'najran', name: 'نجران', lat: 17.4924, lng: 44.1277 },
+      { id: 'hail', name: 'حائل', lat: 27.5236, lng: 41.6949 },
+      { id: 'baha', name: 'الباحة', lat: 20.0129, lng: 41.4677 },
+      { id: 'taif', name: 'الطائف', lat: 21.2703, lng: 40.4158 },
+      { id: 'jouf', name: 'الجوف', lat: 29.8125, lng: 40.2039 },
+      { id: 'arar', name: 'عرعر', lat: 30.9753, lng: 41.0381 },
+      { id: 'bisha', name: 'بيشة', lat: 19.9844, lng: 42.5949 },
     ],
     []
   );

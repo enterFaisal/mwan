@@ -104,9 +104,14 @@ const PlanSection = ({ onBack }) => {
         {/* Infrastructure Tab */}
         {activeTab === 'infrastructure' && (
           <div className="animate-fade-in">
-            <h3 className="text-3xl font-bold text-mwan-green mb-8 text-center">
+            <h3 className="text-3xl font-bold text-mwan-green mb-4 text-center">
               {strategicPlanData.infrastructure.title}
             </h3>
+            {strategicPlanData.infrastructure.description && (
+              <p className="text-xl text-gray-300 text-center mb-8 leading-relaxed">
+                {strategicPlanData.infrastructure.description}
+              </p>
+            )}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {strategicPlanData.infrastructure.facilities.map((facility, index) => (
                 <div
@@ -192,20 +197,20 @@ const PlanSection = ({ onBack }) => {
       {/* Key Highlights */}
       <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-6">
         <div className="card bg-mwan-green/20 border-mwan-green text-center">
-          <p className="text-4xl font-bold text-mwan-green mb-2">79%</p>
-          <p className="text-white font-semibold">نسبة إعادة التدوير</p>
+          <p className="text-4xl font-bold text-mwan-green mb-2">97%</p>
+          <p className="text-white font-semibold">نسبة الاستفادة من النفايات</p>
+        </div>
+        <div className="card bg-orange-600/20 border-orange-500 text-center">
+          <p className="text-4xl font-bold text-orange-400 mb-2">45</p>
+          <p className="text-white font-semibold">مليار ريال سعودي</p>
         </div>
         <div className="card bg-blue-600/20 border-blue-500 text-center">
           <p className="text-4xl font-bold text-blue-400 mb-2">90%</p>
-          <p className="text-white font-semibold">نسبة الاستبعاد</p>
+          <p className="text-white font-semibold">نسبة التحويل من المرادم</p>
         </div>
         <div className="card bg-purple-600/20 border-purple-500 text-center">
-          <p className="text-4xl font-bold text-purple-400 mb-2">76K+</p>
-          <p className="text-white font-semibold">وظيفة مباشرة</p>
-        </div>
-        <div className="card bg-orange-600/20 border-orange-500 text-center">
-          <p className="text-4xl font-bold text-orange-400 mb-2">20-25</p>
-          <p className="text-white font-semibold">سنة استثمار</p>
+          <p className="text-4xl font-bold text-purple-400 mb-2">2.8</p>
+          <p className="text-white font-semibold">مليون طن/سنة</p>
         </div>
       </div>
     </div>

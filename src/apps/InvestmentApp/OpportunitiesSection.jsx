@@ -69,24 +69,24 @@ const OpportunitiesSection = ({ onBack }) => {
       {/* Summary Stats */}
       <div className="mt-12 grid grid-cols-1 md:grid-cols-4 gap-6">
         <div className="card bg-orange-600/20 border-orange-500 text-center">
-          <p className="text-4xl font-bold text-orange-400 mb-2">420</p>
-          <p className="text-white font-semibold">مليار ريال</p>
-          <p className="text-sm text-gray-300 mt-1">قيمة الفرص الإجمالية</p>
+          <p className="text-4xl font-bold text-orange-400 mb-2">45</p>
+          <p className="text-white font-semibold">مليار ريال سعودي</p>
+          <p className="text-sm text-gray-300 mt-1">إجمالي القيمة الكلية والاستثمارية</p>
         </div>
         <div className="card bg-green-600/20 border-green-500 text-center">
-          <p className="text-4xl font-bold text-green-400 mb-2">85%</p>
-          <p className="text-white font-semibold">معدل التحويل</p>
-          <p className="text-sm text-gray-300 mt-1">من المرادم</p>
+          <p className="text-4xl font-bold text-green-400 mb-2">97%</p>
+          <p className="text-white font-semibold">نسبة الاستفادة</p>
+          <p className="text-sm text-gray-300 mt-1">من النفايات</p>
         </div>
         <div className="card bg-blue-600/20 border-blue-500 text-center">
-          <p className="text-4xl font-bold text-blue-400 mb-2">76,000+</p>
-          <p className="text-white font-semibold">وظيفة مباشرة</p>
-          <p className="text-sm text-gray-300 mt-1">فرص عمل</p>
+          <p className="text-4xl font-bold text-blue-400 mb-2">2.8</p>
+          <p className="text-white font-semibold">مليون طن/سنة</p>
+          <p className="text-sm text-gray-300 mt-1">قدر النفايات المنتجة في عام 2023</p>
         </div>
         <div className="card bg-purple-600/20 border-purple-500 text-center">
-          <p className="text-4xl font-bold text-purple-400 mb-2">20-25</p>
-          <p className="text-white font-semibold">سنة</p>
-          <p className="text-sm text-gray-300 mt-1">مدة الاستثمار</p>
+          <p className="text-4xl font-bold text-purple-400 mb-2">1.5</p>
+          <p className="text-white font-semibold">مليون نسمة</p>
+          <p className="text-sm text-gray-300 mt-1">مجموعة المدينة المنورة</p>
         </div>
       </div>
     </div>
