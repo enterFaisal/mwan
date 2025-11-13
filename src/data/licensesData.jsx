@@ -1,6 +1,22 @@
 // Data for Application 2: Licenses Section
 // Extracted from slides 19-25
 
+const licenseItems = [
+  "إستيراد نفايات غير خطرة",
+  "إستيراد نفايات خطرة",
+  "التخلص النهائي من النفايات البلدية الصلبة",
+  "التخلص النهائي من النفايات الخطرة",
+  "تصدير نفايات غير خطرة",
+  "تصدير نفايات خطرة",
+  "تخزين نفايات خطرة",
+  "الفرز والتجهيز للنفايات القابلة للتدوير",
+  "جمع ونقل النفايات غير الخطرة",
+  "جمع ونقل النفايات الخطرة",
+  "تقنيات إدارة النفايات",
+  "معالجة النفايات الخطرة",
+  "عبور نفايات",
+];
+
 export const licensesData = {
   main: {
     title: "التراخيص والتصاريح",
@@ -137,17 +153,15 @@ export const licensesData = {
               <div className="space-y-6">
                 <div className="bg-gradient-to-br from-mwan-green/20 to-emerald-600/20 p-8 rounded-3xl border-2 border-mwan-green shadow-2xl hover:shadow-mwan-green/50 transition-all">
                   <h4 className="text-3xl font-bold mb-6 text-center text-white bg-mwan-green/30 py-3 rounded-xl">التراخيص</h4>
-                  <div className="grid grid-cols-2 gap-3">
-                    <div className="bg-white/15 backdrop-blur-sm p-4 rounded-xl text-center text-sm font-medium hover:bg-white/25 transition-all border border-mwan-green/20">جمع وفصل النفايات من عدم الحاوية</div>
-                    <div className="bg-white/15 backdrop-blur-sm p-4 rounded-xl text-center text-sm font-medium hover:bg-white/25 transition-all border border-mwan-green/20">استيراد نفايات من خارجه</div>
-                    <div className="bg-white/15 backdrop-blur-sm p-4 rounded-xl text-center text-sm font-medium hover:bg-white/25 transition-all border border-mwan-green/20">تصدير نفايات من خارجه</div>
-                    <div className="bg-white/15 backdrop-blur-sm p-4 rounded-xl text-center text-sm font-medium hover:bg-white/25 transition-all border border-mwan-green/20">تدوين النفايات الخطرة</div>
-                    <div className="bg-white/15 backdrop-blur-sm p-4 rounded-xl text-center text-sm font-medium hover:bg-white/25 transition-all border border-mwan-green/20">الفرز والمعالجة للنفايات الفائضة للتدوير</div>
-                    <div className="bg-white/15 backdrop-blur-sm p-4 rounded-xl text-center text-sm font-medium hover:bg-white/25 transition-all border border-mwan-green/20">تقييم أدوار النفايات</div>
-                    <div className="bg-white/15 backdrop-blur-sm p-4 rounded-xl text-center text-sm font-medium hover:bg-white/25 transition-all border border-mwan-green/20">جمع وفصل النفايات من الحاوية</div>
-                    <div className="bg-white/15 backdrop-blur-sm p-4 rounded-xl text-center text-sm font-medium hover:bg-white/25 transition-all border border-mwan-green/20">التخلص النهائي من النفايات المركزة</div>
-                    <div className="bg-white/15 backdrop-blur-sm p-4 rounded-xl text-center text-sm font-medium hover:bg-white/25 transition-all border border-mwan-green/20">النقل المستدام ونقلها</div>
-                    <div className="bg-white/15 backdrop-blur-sm p-4 rounded-xl text-center text-sm font-medium hover:bg-white/25 transition-all border border-mwan-green/20">معالجة النفايات الخطرة</div>
+                  <div className="flex flex-wrap gap-3 justify-center">
+                    {licenseItems.map((item) => (
+                      <div
+                        key={item}
+                        className="bg-white/15 backdrop-blur-sm px-6 py-3 rounded-full text-sm font-medium text-white hover:bg-white/25 transition-all border border-mwan-green/20"
+                      >
+                        {item}
+                      </div>
+                    ))}
                   </div>
                 </div>
               </div>
