@@ -60,7 +60,7 @@ const HomeScreen = ({ onNavigate }) => {
 
       {/* Help Text */}
       <div className="mt-16 text-center">
-        <div className="card inline-block bg-white/5 max-w-2xl">
+  <div className="card inline-block max-w-2xl">
           <p className="text-gray-300 text-lg">
             💡 اختر أحد الخيارين أعلاه للبدء في استكشاف المحتوى التفاعلي
           </p>

@@ -22,7 +22,7 @@ const ContentScreen = ({ screenId, onBack }) => {
       </div>
 
       {/* Content Card */}
-      <div className="bg-white/10 backdrop-blur-md rounded-3xl shadow-2xl border border-mwan-green/20 overflow-hidden">
+  <div className="brand-panel rounded-3xl border overflow-hidden">
         {/* Title Section */}
         <div className="bg-gradient-to-r from-mwan-green to-emerald-600 px-10 py-8">
           <h2 className="text-4xl font-bold text-white">{content.title}</h2>

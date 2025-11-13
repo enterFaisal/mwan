@@ -6,41 +6,31 @@ const HomeScreen = ({ onNavigate }) => {
       id: 'dorMwan',
       title: 'دور موان ومهامه',
       icon: '🏢',
-      color: 'from-blue-600/30 to-blue-900/30',
-      hoverColor: 'hover:from-blue-600/40 hover:to-blue-900/40',
-      borderColor: 'border-blue-500/30 hover:border-blue-500'
+      accentColor: 'mwan-blue',
     },
     {
       id: 'anzema',
       title: 'الأنظمة والتشريعات',
       icon: '📜',
-      color: 'from-mwan-green/30 to-green-900/30',
-      hoverColor: 'hover:from-mwan-green/40 hover:to-green-900/40',
-      borderColor: 'border-mwan-green/30 hover:border-mwan-green',
+      accentColor: 'mwan-green',
     },
     {
       id: 'udeem',
       title: 'برنامج يديم',
       icon: '♻️',
-      color: 'from-purple-600/30 to-purple-900/30',
-      hoverColor: 'hover:from-purple-600/40 hover:to-purple-900/40',
-      borderColor: 'border-purple-500/30 hover:border-purple-500'
+      accentColor: 'mwan-light-green',
     },
     {
       id: 'moktasabat',
       title: 'مكتسبات الاستراتيجية الوطنية لإدارة النفايات بحلول 2040',
       icon: '🎯',
-      color: 'from-orange-600/30 to-orange-900/30',
-      hoverColor: 'hover:from-orange-600/40 hover:to-orange-900/40',
-      borderColor: 'border-orange-500/30 hover:border-orange-500'
+      accentColor: 'mwan-orange',
     },
     {
       id: 'contact',
       title: 'تواصل معنا',
       icon: '📞',
-      color: 'from-teal-600/30 to-teal-900/30',
-      hoverColor: 'hover:from-teal-600/40 hover:to-teal-900/40',
-      borderColor: 'border-teal-500/30 hover:border-teal-500'
+      accentColor: 'mwan-yellow',
     }
   ];
 

@@ -4,16 +4,24 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Primary Dark Blue
-        "mwan-dark": "#0D2C3B",
-        // Primary Green
-        "mwan-green": "#1DB954",
-        // Supporting light tone used for surfaces
-        "mwan-light": "#D0E0D9",
+        // MWAN Brand Primary Colors (from brand guide)
+        "mwan-dark": "#002b3c", // Primary Dark Blue (Pantone 303 C)
+        "mwan-green": "#009d4f", // Primary Green (Pantone 3482 C)
+
+        // MWAN Brand Secondary Colors
+        "mwan-blue": "#1e8eb4", // Secondary Blue (Pantone 7689 C)
+        "mwan-yellow": "#fec824", // Secondary Yellow (Pantone 123 C)
+        "mwan-orange": "#f07e2e", // Secondary Orange (Pantone 1575 C)
+        "mwan-light-green": "#7cba58", // Secondary Green (Pantone 360 C)
+
+        // Supporting tones
+        "mwan-light": "#E8F3EE", // Light mint surface
         "mwan-white": "#FFFFFF",
       },
       fontFamily: {
-        sans: ["Poppins", "Inter", "sans-serif"],
+        sans: ["IBM Plex Sans Arabic", "Arial", "sans-serif"],
+        arabic: ["IBM Plex Sans Arabic", "sans-serif"],
+        secondary: ["Arial", "sans-serif"],
       },
       animation: {
         "fade-in": "fadeIn 0.3s ease-in",

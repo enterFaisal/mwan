@@ -33,12 +33,12 @@ const LicensesSection = ({ onBack, setShowParentBackButton }) => {
               <button
                 key={section.id}
                 onClick={() => setActiveSection(index)}
-                className="group relative bg-gradient-to-br from-mwan-light/20 to-white/10 hover:from-mwan-light/30 hover:to-white/20 p-8 rounded-3xl shadow-xl border-2 border-mwan-light/30 hover:border-mwan-green transition-all duration-300 transform hover:scale-105 min-h-[180px] flex flex-col items-center justify-center gap-4"
+                className="group relative brand-block accent-green p-8 rounded-3xl shadow-2xl transition-all duration-300 transform hover:scale-105 min-h-[180px] flex flex-col items-center justify-center gap-4"
               >
                 <div className="text-5xl mb-2 transition-transform group-hover:scale-110">
                   {['📋', '📖', '✅', '🏷️', '📝'][index]}
                 </div>
-                <h3 className="text-2xl font-bold text-white text-center">
+                <h3 className="text-2xl font-bold text-mwan-dark text-center">
                   {section.title}
                 </h3>
                 <div className="absolute bottom-4 right-4 text-mwan-green opacity-0 group-hover:opacity-100 transition-opacity">
@@ -57,8 +57,8 @@ const LicensesSection = ({ onBack, setShowParentBackButton }) => {
             <BackButton onClick={() => setActiveSection(null)} label="العودة للقائمة" />
           </div>
 
-          <div className="bg-white/5 backdrop-blur-sm rounded-3xl shadow-2xl border-2 border-mwan-green/30 overflow-hidden">
-            <div className="bg-gradient-to-l from-mwan-green to-green-700 px-10 py-8">
+          <div className="brand-panel rounded-3xl border-2 overflow-hidden">
+            <div className="bg-mwan-green px-10 py-8">
               <h2 className="text-4xl font-bold text-white">
                 {sections[activeSection].title}
               </h2>

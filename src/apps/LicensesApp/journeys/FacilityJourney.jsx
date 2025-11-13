@@ -74,7 +74,7 @@ const FacilityJourney = ({ onBack }) => {
       </div>
 
       {/* Step Content */}
-      <div className="card bg-white/5 border-purple-500/50 min-h-[500px]">
+  <div className="card border-purple-500/50 min-h-[500px]">
         <div className="border-b border-white/10 pb-6 mb-6">
           <div className="flex items-center gap-4 mb-4">
             <div className="bg-purple-600 text-white rounded-full w-14 h-14 flex items-center justify-center font-bold text-2xl">
@@ -152,7 +152,7 @@ const FacilityJourney = ({ onBack }) => {
                   { id: '#1235', status: 'بانتظار القبول', color: 'blue' },
                   { id: '#1236', status: 'في الطريق', color: 'green' }
                 ].map((doc, index) => (
-                  <div key={index} className="px-4 py-3 bg-white/5 rounded-lg hover:bg-white/10 transition-colors flex justify-between items-center">
+                  <div key={index} className="px-4 py-3 rounded-lg border border-white/10 hover:border-mwan-green transition-colors flex justify-between items-center">
                     <div>
                       <span className="text-white font-semibold">وثيقة نقل {doc.id}</span>
                       <p className="text-sm text-gray-400">منتج: شركة البناء الحديث</p>

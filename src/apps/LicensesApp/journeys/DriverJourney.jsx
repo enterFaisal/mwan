@@ -74,7 +74,7 @@ const DriverJourney = ({ onBack }) => {
       </div>
 
       {/* Step Content */}
-      <div className="card bg-white/5 border-yellow-500/50 min-h-[500px]">
+  <div className="card border-yellow-500/50 min-h-[500px]">
         <div className="border-b border-white/10 pb-6 mb-6">
           <div className="flex items-center gap-4 mb-4">
             <div className="bg-yellow-500 text-mwan-dark rounded-full w-14 h-14 flex items-center justify-center font-bold text-2xl">

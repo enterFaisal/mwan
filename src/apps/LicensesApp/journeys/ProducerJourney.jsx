@@ -74,7 +74,7 @@ const ProducerJourney = ({ onBack }) => {
       </div>
 
       {/* Step Content */}
-      <div className="card bg-white/5 border-mwan-green/50 min-h-[500px]">
+  <div className="card border-mwan-green/50 min-h-[500px]">
         {/* Step Header */}
         <div className="border-b border-white/10 pb-6 mb-6">
           <div className="flex items-center gap-4 mb-4">
@@ -160,7 +160,7 @@ const ProducerJourney = ({ onBack }) => {
                   <div
                     key={index}
                     className={`px-4 py-3 rounded-lg ${
-                      index === 2 ? 'bg-yellow-600/30 border border-yellow-500' : 'bg-white/5'
+                      index === 2 ? 'bg-yellow-600/30 border border-yellow-500' : 'border border-white/10'
                     }`}
                   >
                     <span className="text-white font-semibold">{status}</span>

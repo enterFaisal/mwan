@@ -547,7 +547,7 @@ const SaudiMap = ({ selectedCity, onCitySelect }) => {
   }, [selectedCity]);
 
   return (
-    <div ref={containerRef} className="w-full h-[560px] rounded-2xl bg-white/5 border border-mwan-green/20 relative overflow-hidden" />
+  <div ref={containerRef} className="w-full h-[560px] rounded-2xl border border-mwan-green/20 relative overflow-hidden card" />
   );
 };
 

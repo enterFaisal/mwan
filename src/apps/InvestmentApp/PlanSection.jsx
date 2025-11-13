@@ -43,7 +43,7 @@ const PlanSection = ({ onBack }) => {
       </div>
 
       {/* Content Area */}
-      <div className="card bg-white/5 border-mwan-green/30 min-h-[600px]">
+  <div className="card border-mwan-green/30 min-h-[600px]">
         {/* Approach Tab */}
         {activeTab === 'approach' && (
           <div className="animate-fade-in">
@@ -54,7 +54,7 @@ const PlanSection = ({ onBack }) => {
               {strategicPlanData.approach.steps.map((step) => (
                 <div
                   key={step.number}
-                  className="card bg-white/5 hover:bg-white/10 transition-all border border-mwan-green/20 hover:border-mwan-green"
+                  className="card transition-all border border-mwan-green/20 hover:border-mwan-green"
                 >
                   <div className="flex items-center gap-4 mb-4">
                     <div className="bg-mwan-green text-white rounded-full w-12 h-12 flex items-center justify-center font-bold text-xl flex-shrink-0">
@@ -111,7 +111,7 @@ const PlanSection = ({ onBack }) => {
               {strategicPlanData.infrastructure.facilities.map((facility, index) => (
                 <div
                   key={index}
-                  className="card bg-white/5 hover:bg-white/10 transition-all border border-blue-500/20 hover:border-blue-500"
+                  className="card transition-all border border-blue-500/20 hover:border-blue-500"
                 >
                   <div className="flex items-start gap-4">
                     <div className="text-5xl flex-shrink-0">{facility.icon}</div>

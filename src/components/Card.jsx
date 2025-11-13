@@ -6,7 +6,8 @@ const Card = ({
   hover = false,
   onClick = null 
 }) => {
-  const hoverClass = hover ? "hover:bg-white/20 hover:scale-105 cursor-pointer" : "";
+  // Brand-friendly hover: emphasize border and shadow, avoid glassy overlay
+  const hoverClass = hover ? "hover:scale-105 hover:shadow-xl hover:border-mwan-green cursor-pointer" : "";
   const clickableClass = onClick ? "cursor-pointer" : "";
   
   return (

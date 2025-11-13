@@ -74,7 +74,7 @@ const TransporterJourney = ({ onBack }) => {
       </div>
 
       {/* Step Content */}
-      <div className="card bg-white/5 border-green-500/50 min-h-[500px]">
+  <div className="card border-green-500/50 min-h-[500px]">
         <div className="border-b border-white/10 pb-6 mb-6">
           <div className="flex items-center gap-4 mb-4">
             <div className="bg-green-600 text-white rounded-full w-14 h-14 flex items-center justify-center font-bold text-2xl">
@@ -138,7 +138,7 @@ const TransporterJourney = ({ onBack }) => {
               <h4 className="text-xl font-bold text-white mb-4">الطلبات الواردة</h4>
               <div className="space-y-3">
                 {['وثيقة نقل #1234', 'وثيقة نقل #1235', 'وثيقة نقل #1236'].map((doc, index) => (
-                  <div key={index} className="px-4 py-3 bg-white/5 rounded-lg hover:bg-white/10 transition-colors">
+                  <div key={index} className="px-4 py-3 rounded-lg border border-white/10 hover:border-mwan-green transition-colors">
                     <span className="text-white font-semibold">{doc}</span>
                     <span className="text-green-400 text-sm mr-4">• بانتظار القبول</span>
                   </div>

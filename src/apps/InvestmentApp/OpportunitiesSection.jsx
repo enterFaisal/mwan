@@ -39,7 +39,7 @@ const OpportunitiesSection = ({ onBack }) => {
       {/* Main Content - Two Column Layout */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         {/* Left Column - Interactive Map */}
-        <div className="card bg-white/5 border-mwan-green/30 min-h-[600px] flex flex-col">
+  <div className="card border-mwan-green/30 min-h-[600px] flex flex-col">
           <div className="border-b border-white/10 pb-4 mb-4">
             <h3 className="text-2xl font-bold text-mwan-green text-center">
               خريطة المملكة التفاعلية

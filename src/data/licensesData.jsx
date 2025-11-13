@@ -40,7 +40,7 @@ export const licensesData = {
               <h3 className="text-4xl font-bold mb-6 bg-gradient-to-r from-mwan-green to-emerald-500 bg-clip-text text-transparent">
                 ما هو الهدف الأساسي للنظام؟
               </h3>
-              <div className="card bg-white/5 p-8">
+              <div className="card p-8">
                 <p className="text-xl leading-relaxed text-white">
                   يهدف النظام الإلكتروني الخاص بمنظومة التراخيص والتصاريح إلى استلام طلبات
                   التراخيص بصورة إلكترونية وإتاحة إمكانية متابعة حالة الطلب من قبل مقدّم الطلب
@@ -61,7 +61,7 @@ export const licensesData = {
               <div className="space-y-4">
                 <div className="bg-gradient-to-br from-mwan-green/30 to-emerald-600/30 p-8 rounded-2xl border-2 border-mwan-green shadow-xl">
                   <h3 className="text-3xl font-bold mb-6 text-white text-center">الرخصة:</h3>
-                  <div className="bg-white/10 backdrop-blur-sm p-6 rounded-xl">
+                  <div className="brand-panel--soft p-6">
                     <p className="text-lg leading-relaxed text-white text-center">
                       إذن مكتوب يصدره المركز للقيام بأي نشاط
                       يتعلق بإدارة النفايات، لما يحدده النظام
@@ -75,7 +75,7 @@ export const licensesData = {
               <div className="space-y-4">
                 <div className="bg-gradient-to-br from-mwan-green/30 to-emerald-600/30 p-8 rounded-2xl border-2 border-mwan-green shadow-xl">
                   <h3 className="text-3xl font-bold mb-6 text-white text-center">التصريح:</h3>
-                  <div className="bg-white/10 backdrop-blur-sm p-6 rounded-xl">
+                  <div className="brand-panel--soft p-6">
                     <p className="text-lg leading-relaxed text-white text-center">
                       وثيقة يمنحها المركز لمنشآت تدوير النفايات تفيد بتحديدها
                       ضوابط المركز واشتراطاته، قبل حصولها على التراخيص التي تصدرها
@@ -157,7 +157,7 @@ export const licensesData = {
                     {licenseItems.map((item) => (
                       <div
                         key={item}
-                        className="bg-white/15 backdrop-blur-sm px-6 py-3 rounded-full text-sm font-medium text-white hover:bg-white/25 transition-all border border-mwan-green/20"
+                        className="px-6 py-3 rounded-full text-sm font-medium text-white transition-all border border-mwan-green/20 hover:border-mwan-green"
                       >
                         {item}
                       </div>
@@ -171,7 +171,7 @@ export const licensesData = {
                 <div className="bg-gradient-to-br from-mwan-green/20 to-emerald-600/20 p-8 rounded-3xl border-2 border-mwan-green shadow-2xl hover:shadow-mwan-green/50 transition-all">
                   <h4 className="text-3xl font-bold mb-6 text-center text-white bg-mwan-green/30 py-3 rounded-xl">التصاريح</h4>
                   <div className="flex items-center justify-center h-full min-h-[300px]">
-                    <div className="bg-white/15 backdrop-blur-sm p-8 rounded-2xl text-center border-2 border-mwan-green/40 hover:border-mwan-green transition-all">
+                    <div className="brand-panel--soft p-8 text-center border-2 border-mwan-green/40 hover:border-mwan-green transition-all">
                       <p className="text-2xl font-bold text-white">إنشاء منشآت إعادة التدوير</p>
                     </div>
                   </div>

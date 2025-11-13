@@ -86,7 +86,7 @@ const EmanifestSection = ({ onBack }) => {
         </h3>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {emanifestIntro.objectives.map((obj, index) => (
-            <div key={index} className="card bg-white/5 hover:bg-white/10 transition-all">
+            <div key={index} className="card transition-all hover:border-mwan-green">
               <div className="text-4xl mb-3">{obj.icon}</div>
               <h4 className="font-bold text-lg mb-2 text-white">{obj.title}</h4>
               <p className="text-sm text-gray-300">{obj.description}</p>
@@ -119,15 +119,15 @@ const EmanifestSection = ({ onBack }) => {
             <button
               key={role.id}
               onClick={() => setSelectedRole(role.id)}
-              className={`group relative bg-gradient-to-br ${role.color} ${role.hoverColor} p-10 rounded-3xl shadow-2xl border-2 ${role.borderColor} transition-all duration-300 transform hover:scale-105 min-h-[220px] flex flex-col items-center justify-center gap-4`}
+              className={`group relative brand-block p-10 rounded-3xl shadow-2xl transition-all duration-300 transform hover:scale-105 min-h-[220px] flex flex-col items-center justify-center gap-4`}
             >
               <div className="text-7xl mb-3 transition-transform group-hover:scale-110">
                 {role.icon}
               </div>
-              <h4 className="text-2xl font-bold text-white text-center">
+              <h4 className="text-2xl font-bold text-mwan-dark text-center">
                 {role.name}
               </h4>
-              <p className="text-base text-gray-300 text-center px-4">
+              <p className="text-base text-mwan-dark/80 text-center px-4">
                 {role.description}
               </p>
               <div className="absolute bottom-4 right-4 text-white opacity-0 group-hover:opacity-100 transition-opacity">
@@ -141,7 +141,7 @@ const EmanifestSection = ({ onBack }) => {
       </div>
 
       {/* Info Card */}
-      <div className="card bg-mwan-green/10 border-mwan-green text-center">
+      <div className="card border-mwan-green text-center">
         <p className="text-lg text-white">
           💡 اختر أحد الأدوار أعلاه لتجربة محاكاة تفاعلية خطوة بخطوة لرحلة وثيقة النقل الإلكترونية
         </p>
