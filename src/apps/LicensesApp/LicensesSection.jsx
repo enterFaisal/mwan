@@ -2,10 +2,17 @@ import React, { useState } from 'react';
 import { licensesData } from '../../data/licensesData.jsx';
 import BackButton from '../../components/BackButton';
 
-const LicensesSection = ({ onBack }) => {
+const LicensesSection = ({ onBack, setShowParentBackButton }) => {
   const [activeSection, setActiveSection] = useState(null);
 
   const sections = licensesData.main.sections;
+
+  // Hide parent back button when viewing a section
+  React.useEffect(() => {
+    if (setShowParentBackButton) {
+      setShowParentBackButton(activeSection === null);
+    }
+  }, [activeSection, setShowParentBackButton]);
 
   return (
     <div className="max-w-6xl mx-auto">
@@ -60,10 +67,6 @@ const LicensesSection = ({ onBack }) => {
             <div className="p-10 text-white">
               {sections[activeSection].content}
             </div>
-          </div>
-
-          <div className="mt-8 flex justify-center">
-            <BackButton onClick={() => setActiveSection(null)} label="العودة للقائمة" />
           </div>
         </div>
       )}

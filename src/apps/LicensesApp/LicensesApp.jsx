@@ -8,13 +8,16 @@ import BrandBackdrop from '../../components/BrandBackdrop';
 
 const LicensesApp = ({ onBack }) => {
   const [view, setView] = useState('home'); // 'home', 'licenses', 'emanifest'
+  const [showBackButton, setShowBackButton] = useState(true);
 
   const handleViewChange = (newView) => {
     setView(newView);
+    setShowBackButton(true);
   };
 
   const handleBackToHome = () => {
     setView('home');
+    setShowBackButton(true);
   };
 
   return (
@@ -24,8 +27,8 @@ const LicensesApp = ({ onBack }) => {
         <Header />
         
         <div className="container mx-auto px-6 pt-32 pb-8">
-        {/* Back Button - only show on sub-pages */}
-        {view !== 'home' && (
+        {/* Back Button - only show on sub-pages and when LicensesSection is not showing its own */}
+        {view !== 'home' && showBackButton && (
           <div className="mb-6">
             <BackButton onClick={handleBackToHome} label="العودة" />
           </div>
@@ -38,7 +41,7 @@ const LicensesApp = ({ onBack }) => {
           )}
           
           {view === 'licenses' && (
-            <LicensesSection onBack={handleBackToHome} />
+            <LicensesSection onBack={handleBackToHome} setShowParentBackButton={setShowBackButton} />
           )}
           
           {view === 'emanifest' && (
