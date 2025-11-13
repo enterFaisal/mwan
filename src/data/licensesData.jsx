@@ -159,7 +159,7 @@ export const licensesData = {
                     {licenseItems.map((item) => (
                       <div
                         key={item}
-                        className="px-6 py-3 rounded-full text-sm font-medium text-white transition-all border border-mwan-green/20 hover:border-mwan-green"
+                        className="brand-chip--outline text-sm"
                       >
                         {item}
                       </div>
@@ -175,7 +175,7 @@ export const licensesData = {
                     <span className="inline-block bg-mwan-green px-6 py-3 rounded-xl">التصاريح</span>
                   </h4>
                   <div className="flex items-center justify-center h-full min-h-[300px]">
-                    <div className="px-8 py-4 rounded-full text-lg font-bold text-white border-2 border-mwan-green/40 hover:border-mwan-green transition-all">
+                    <div className="brand-chip--outline text-lg px-8 py-4">
                       إنشاء منشآت إعادة التدوير
                     </div>
                   </div>

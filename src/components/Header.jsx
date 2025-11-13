@@ -3,15 +3,13 @@ import logo from '../../logo.png';
 
 const Header = () => {
   return (
-    <header className="w-full relative z-20">
-      {/* Logo in top right (top left in RTL) */}
-      <div className="absolute top-6 right-6">
-        <img
-          src={logo}
-          alt="MWAN"
-          className="h-20 w-auto object-contain"
-        />
-      </div>
+    <header className="w-full px-6 py-6">
+      {/* Logo positioned in top right */}
+      <img
+        src={logo}
+        alt="MWAN"
+        className="h-24 w-auto object-contain"
+      />
     </header>
   );
 };

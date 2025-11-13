@@ -15,7 +15,7 @@ const LicensesSection = ({ onBack, setShowParentBackButton }) => {
   }, [activeSection, setShowParentBackButton]);
 
   return (
-    <div className="max-w-6xl mx-auto">
+    <div className="max-w-6xl mx-auto horizontal-layout">
       {activeSection === null ? (
         // Menu View
         <div className="animate-fade-in">
@@ -28,7 +28,7 @@ const LicensesSection = ({ onBack, setShowParentBackButton }) => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 landscape-cols-2">
             {sections.map((section, index) => (
               <button
                 key={section.id}

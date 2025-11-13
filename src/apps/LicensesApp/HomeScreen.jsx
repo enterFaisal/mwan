@@ -2,7 +2,7 @@ import React from 'react';
 
 const HomeScreen = ({ onNavigate }) => {
   return (
-    <div className="max-w-5xl mx-auto">
+    <div className="max-w-5xl mx-auto horizontal-layout">
       {/* Title */}
       <div className="text-center mb-16 animate-slide-up">
         <h2 className="text-5xl font-bold mb-6 text-white">
@@ -14,11 +14,11 @@ const HomeScreen = ({ onNavigate }) => {
       </div>
 
       {/* Two Main Options */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-8 landscape-cols-2">
         {/* Licenses Section */}
         <button
           onClick={() => onNavigate('licenses')}
-          className="group relative brand-block p-12 rounded-3xl shadow-2xl transition-all duration-300 transform hover:scale-105 min-h-[350px] flex flex-col items-center justify-center gap-6"
+          className="group relative brand-block p-12 rounded-3xl shadow-2xl transition-all duration-300 transform hover:scale-105 min-h-[350px] landscape-card flex flex-col items-center justify-center gap-6"
         >
           <div className="text-8xl mb-4 transition-transform group-hover:scale-110">
             📋
@@ -39,7 +39,7 @@ const HomeScreen = ({ onNavigate }) => {
         {/* E-Manifest Section */}
         <button
           onClick={() => onNavigate('emanifest')}
-          className="group relative brand-block p-12 rounded-3xl shadow-2xl transition-all duration-300 transform hover:scale-105 min-h-[350px] flex flex-col items-center justify-center gap-6"
+          className="group relative brand-block p-12 rounded-3xl shadow-2xl transition-all duration-300 transform hover:scale-105 min-h-[350px] landscape-card flex flex-col items-center justify-center gap-6"
         >
           <div className="text-8xl mb-4 transition-transform group-hover:scale-110">
             📱

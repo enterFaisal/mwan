@@ -68,7 +68,7 @@ const EmanifestSection = ({ onBack }) => {
   }
 
   return (
-    <div className="max-w-6xl mx-auto animate-fade-in">
+    <div className="max-w-6xl mx-auto animate-fade-in horizontal-layout">
       {/* Introduction */}
       <div className="text-center mb-12">
         <h2 className="text-5xl font-bold text-white mb-6">
@@ -84,7 +84,7 @@ const EmanifestSection = ({ onBack }) => {
         <h3 className="text-3xl font-bold text-mwan-green text-center mb-8">
           أهداف المنظومة
         </h3>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 landscape-cols-3">
           {emanifestIntro.objectives.map((obj, index) => (
             <div key={index} className="card transition-all hover:border-mwan-green">
               <div className="text-4xl mb-3">{obj.icon}</div>
@@ -114,12 +114,12 @@ const EmanifestSection = ({ onBack }) => {
         <h3 className="text-3xl font-bold text-white text-center mb-8">
           اختر دورك لبدء المحاكاة التفاعلية
         </h3>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 landscape-cols-2">
           {roles.map((role) => (
             <button
               key={role.id}
               onClick={() => setSelectedRole(role.id)}
-              className={`group relative brand-block p-10 rounded-3xl shadow-2xl transition-all duration-300 transform hover:scale-105 min-h-[220px] flex flex-col items-center justify-center gap-4`}
+              className={`group relative brand-block p-10 rounded-3xl shadow-2xl transition-all duration-300 transform hover:scale-105 min-h-[220px] landscape-card flex flex-col items-center justify-center gap-4`}
             >
               <div className="text-7xl mb-3 transition-transform group-hover:scale-110">
                 {role.icon}

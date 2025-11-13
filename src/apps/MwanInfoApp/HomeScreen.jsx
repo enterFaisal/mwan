@@ -35,7 +35,7 @@ const HomeScreen = ({ onNavigate }) => {
   ];
 
   return (
-    <div className="max-w-6xl mx-auto">
+    <div className="max-w-6xl mx-auto horizontal-layout">
       {/* Title */}
       <div className="text-center mb-12 animate-slide-up">
         <h2 className="text-5xl font-extrabold mb-4 text-white font-ar">
@@ -47,12 +47,12 @@ const HomeScreen = ({ onNavigate }) => {
       </div>
 
       {/* Flexbox container for menu items */}
-      <div className="flex flex-wrap justify-center gap-6 max-w-5xl mx-auto">
+      <div className="flex flex-wrap justify-center gap-6 max-w-5xl mx-auto landscape-cols-3">
         {menuItems.map((item) => (
           <div key={item.id} className="w-full md:w-2/5 lg:w-1/3">
             <button
               onClick={() => onNavigate(item.id)}
-              className={`w-full h-full group relative brand-block p-8 rounded-3xl transition-all duration-300 transform hover:scale-105 hover:shadow-2xl min-h-[180px] flex flex-col items-center justify-center gap-4 ${
+              className={`w-full h-full group relative brand-block p-8 rounded-3xl transition-all duration-300 transform hover:scale-105 hover:shadow-2xl min-h-[180px] landscape-card flex flex-col items-center justify-center gap-4 ${
                 item.featured ? 'ring-2 ring-mwan-green/50' : ''
               }`}
             >

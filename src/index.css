@@ -98,6 +98,44 @@ body {
     border-color: rgba(0, 157, 79, 0.25);
     box-shadow: 0 10px 28px rgba(0, 43, 60, 0.45);
   }
+
+  /* Brand chip pills */
+  .brand-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem; /* px-4 py-2 */
+    border-radius: 9999px; /* rounded-full */
+    background: #E8F3EE; /* light mint */
+    color: #002b3c; /* dark text */
+    border: 1.5px solid rgba(0, 157, 79, 0.30);
+    box-shadow: 0 4px 12px rgba(0, 43, 60, 0.15);
+    font-weight: 600;
+    transition: all 0.2s ease;
+  }
+  .brand-chip:hover {
+    border-color: #009d4f;
+    box-shadow: 0 6px 16px rgba(0, 43, 60, 0.25);
+    transform: translateY(-1px);
+  }
+
+  /* Outline chip for dark panels */
+  .brand-chip--outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    background: transparent;
+    color: #FFFFFF;
+    border: 1.5px solid rgba(0, 157, 79, 0.35);
+    font-weight: 600;
+    transition: all 0.2s ease;
+  }
+  .brand-chip--outline:hover {
+    border-color: #009d4f;
+    box-shadow: 0 0 0 4px rgba(0, 157, 79, 0.12);
+  }
 }
 
 /* Brand Swoosh Background - MWAN Style */
@@ -162,6 +200,22 @@ body {
 .accent-light-green:hover { 
   border-color: #8fd167; 
   box-shadow: 0 0 20px rgba(124, 186, 88, 0.3);
+}
+
+/* Landscape (horizontal) screen optimizations */
+@media (orientation: landscape) {
+  /* Reduce top padding on landing and screens to use horizontal space effectively */
+  .horizontal-layout .landscape-pt-20 { padding-top: 5rem; }
+
+  /* Cards: slightly shorter min height in landscape */
+  .horizontal-layout .landscape-card { min-height: 240px; }
+
+  /* Grids: 3 across for selections; 2 across for sections when applicable */
+  .landscape-cols-3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2rem; }
+  .landscape-cols-2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2rem; }
+
+  /* Container widths for wide screens */
+  .horizontal-layout { max-width: 1280px; margin-left: auto; margin-right: auto; }
 }
 
 /* Smooth transitions */

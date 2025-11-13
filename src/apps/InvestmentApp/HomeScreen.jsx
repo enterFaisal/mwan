@@ -2,7 +2,7 @@ import React from 'react';
 
 const HomeScreen = ({ onNavigate }) => {
   return (
-    <div className="max-w-5xl mx-auto">
+    <div className="max-w-5xl mx-auto horizontal-layout">
       {/* Title */}
       <div className="text-center mb-16 animate-slide-up">
         <h2 className="text-5xl font-bold mb-6 text-white">
@@ -14,11 +14,11 @@ const HomeScreen = ({ onNavigate }) => {
       </div>
 
       {/* Two Main Options */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-8 landscape-cols-2">
         {/* Opportunities Section */}
         <button
           onClick={() => onNavigate('opportunities')}
-          className="group relative brand-block p-12 rounded-3xl shadow-2xl transition-all duration-300 transform hover:scale-105 min-h-[380px] flex flex-col items-center justify-center gap-6"
+          className="group relative brand-block p-12 rounded-3xl shadow-2xl transition-all duration-300 transform hover:scale-105 min-h-[380px] landscape-card flex flex-col items-center justify-center gap-6"
         >
           <div className="text-8xl mb-4 transition-transform group-hover:scale-110">
             🗺️
@@ -29,10 +29,7 @@ const HomeScreen = ({ onNavigate }) => {
           <p className="text-lg text-mwan-dark/80 text-center leading-relaxed px-4">
             خريطة تفاعلية تعرض الفرص الاستثمارية في مختلف مناطق المملكة مع البيانات والإحصائيات
           </p>
-          <div className="card bg-mwan-green/20 border-mwan-green text-center mt-4">
-            <p className="text-3xl font-bold text-mwan-green">420</p>
-            <p className="text-sm text-mwan-dark">مليار ريال قيمة الفرص</p>
-          </div>
+
           <div className="absolute bottom-6 right-6 text-mwan-green opacity-0 group-hover:opacity-100 transition-opacity">
             <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -43,7 +40,7 @@ const HomeScreen = ({ onNavigate }) => {
         {/* Strategic Plan Section */}
         <button
           onClick={() => onNavigate('plan')}
-          className="group relative brand-block p-12 rounded-3xl shadow-2xl transition-all duration-300 transform hover:scale-105 min-h-[380px] flex flex-col items-center justify-center gap-6"
+          className="group relative brand-block p-12 rounded-3xl shadow-2xl transition-all duration-300 transform hover:scale-105 min-h-[380px] landscape-card flex flex-col items-center justify-center gap-6"
         >
           <div className="text-8xl mb-4 transition-transform group-hover:scale-110">
             📊
@@ -54,20 +51,7 @@ const HomeScreen = ({ onNavigate }) => {
           <p className="text-lg text-mwan-dark/80 text-center leading-relaxed px-4">
             تعرف على المنهجية والأهداف والبنية التحتية المقترحة للتخطيط الاستراتيجي
           </p>
-          <div className="grid grid-cols-3 gap-3 mt-4">
-            <div className="card bg-mwan-green/20 border-mwan-green text-center py-2">
-              <p className="text-xl font-bold text-mwan-green">79%</p>
-              <p className="text-xs text-mwan-dark">تدوير</p>
-            </div>
-            <div className="card bg-mwan-green/20 border-mwan-green text-center py-2">
-              <p className="text-xl font-bold text-mwan-green">90%</p>
-              <p className="text-xs text-mwan-dark">استبعاد</p>
-            </div>
-            <div className="card bg-mwan-green/20 border-mwan-green text-center py-2">
-              <p className="text-xl font-bold text-mwan-green">76K+</p>
-              <p className="text-xs text-mwan-dark">وظيفة</p>
-            </div>
-          </div>
+
           <div className="absolute bottom-6 right-6 text-mwan-green opacity-0 group-hover:opacity-100 transition-opacity">
             <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
