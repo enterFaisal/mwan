@@ -270,12 +270,56 @@ const SaudiMap = ({ selectedCity, onCitySelect }) => {
       return tex;
     };
 
+    // Special Madinah pin with a gentle muted-gold radial gradient
+    const createMadinahPinTexture = () => {
+      const w = 96;
+      const h = 128;
+      const canvas = document.createElement('canvas');
+      canvas.width = w;
+      canvas.height = h;
+      const ctx = canvas.getContext('2d');
+      ctx.clearRect(0, 0, w, h);
+      ctx.save();
+      ctx.translate(w / 2, h / 2 - 6);
+      // Drop/body
+      ctx.beginPath();
+      const r = 26;
+      ctx.arc(0, -10, r, Math.PI, 0, false);
+      ctx.lineTo(10, 26);
+      ctx.quadraticCurveTo(0, 44, -10, 26);
+      ctx.closePath();
+      // Muted gold radial gradient fill (soft)
+      const gradient = ctx.createRadialGradient(-8, -18, 0, 0, -10, 35);
+      gradient.addColorStop(0, '#E8C96A');
+      gradient.addColorStop(0.6, '#D4B85C');
+      gradient.addColorStop(1, '#B49445');
+      ctx.fillStyle = gradient;
+      ctx.fill();
+      // Stroke with reduced opacity
+      ctx.lineWidth = 4;
+      ctx.strokeStyle = '#0b1e27';
+      ctx.globalAlpha = 0.5;
+      ctx.stroke();
+      ctx.globalAlpha = 1.0;
+      // Subtle shine
+      ctx.beginPath();
+      ctx.fillStyle = 'rgba(255,255,255,0.55)';
+      ctx.arc(-10, -24, 5.5, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.restore();
+      const tex = new THREE.CanvasTexture(canvas);
+      tex.colorSpace = THREE.SRGBColorSpace;
+      tex.anisotropy = renderer.capabilities.getMaxAnisotropy?.() || 1;
+      tex.needsUpdate = true;
+      return tex;
+    };
+
     // Precompute textures for default and selected states with softer colors
     const pinTexDefault = createPinTexture('#B8C9C3', '#0b1e27', 0.4);
     const pinTexSelected = createPinTexture('#1DB954', '#0b1e27', 0.5);
-    // Special textures for Al-Madinah (muted gold)
-    const pinTexMadinahDefault = createPinTexture('#D4B85C', '#0b1e27', 0.4);
-    const pinTexMadinahSelected = createPinTexture('#E8C96A', '#0b1e27', 0.5);
+    // Special textures for Al-Madinah (muted gold gradient)
+    const pinTexMadinahDefault = createMadinahPinTexture();
+    const pinTexMadinahSelected = createMadinahPinTexture();
 
     cities.forEach((city) => {
       const v = project([city.lng, city.lat]);
@@ -292,8 +336,8 @@ const SaudiMap = ({ selectedCity, onCitySelect }) => {
       // Scale sprite in world units (larger for Madinah)
       const baseW = isMadinah ? 48 : 36;
       const baseH = isMadinah ? 64 : 48;
-      const selW = isMadinah ? 60 : 43;
-      const selH = isMadinah ? 80 : 56;
+      const selW = isMadinah ? 64 : 43;
+      const selH = isMadinah ? 86 : 56;
       sprite.scale.set(baseW, baseH, 1);
       sprite.userData = { 
         id: city.id, 
@@ -318,6 +362,29 @@ const SaudiMap = ({ selectedCity, onCitySelect }) => {
       ring.rotation.x = -Math.PI / 2;
       markersGroup.add(ring);
 
+      // Soft golden halo sprite for Madinah (radial gradient plane)
+      if (isMadinah) {
+        const haloSize = 140;
+        const haloCanvas = document.createElement('canvas');
+        haloCanvas.width = 256;
+        haloCanvas.height = 256;
+        const hctx = haloCanvas.getContext('2d');
+        const g = hctx.createRadialGradient(128, 128, 0, 128, 128, 120);
+        g.addColorStop(0, 'rgba(212,184,92,0.20)');
+        g.addColorStop(0.6, 'rgba(212,184,92,0.10)');
+        g.addColorStop(1, 'rgba(212,184,92,0.00)');
+        hctx.fillStyle = g;
+        hctx.fillRect(0, 0, 256, 256);
+        const haloTex = new THREE.CanvasTexture(haloCanvas);
+        haloTex.colorSpace = THREE.SRGBColorSpace;
+        const haloMat = new THREE.MeshBasicMaterial({ map: haloTex, transparent: true, depthWrite: false });
+        const haloPlane = new THREE.Mesh(new THREE.PlaneGeometry(1, 1), haloMat);
+        haloPlane.position.set(v.x, v.y, depth / 2 + 1.01);
+        haloPlane.rotation.x = -Math.PI / 2;
+        haloPlane.scale.set(haloSize, haloSize, 1);
+        markersGroup.add(haloPlane);
+      }
+
       const labelCanvas = document.createElement('canvas');
       const ctx = labelCanvas.getContext('2d');
       const fontSize = 90;
@@ -328,17 +395,53 @@ const SaudiMap = ({ selectedCity, onCitySelect }) => {
 
       const ctx2 = labelCanvas.getContext('2d');
       ctx2.font = `600 ${fontSize}px Poppins, sans-serif`;
-      
       // Softer shadow with reduced intensity
       ctx2.shadowColor = 'rgba(0, 0, 0, 0.5)';
       ctx2.shadowBlur = 8;
       ctx2.shadowOffsetX = 0;
       ctx2.shadowOffsetY = 3;
-      
-      // Softer label background (reduced opacity and saturation)
-      ctx2.fillStyle = isMadinah ? 'rgba(29, 185, 84, 0.7)' : 'rgba(0,0,0,0.45)';
-      ctx2.fillRect(0, 0, labelCanvas.width, labelCanvas.height);
-      
+
+      // Draw rounded background (special gradient + gold border for Madinah)
+      const drawRoundedRect = (x, y, w, h, r) => {
+        ctx2.beginPath();
+        ctx2.moveTo(x + r, y);
+        ctx2.lineTo(x + w - r, y);
+        ctx2.quadraticCurveTo(x + w, y, x + w, y + r);
+        ctx2.lineTo(x + w, y + h - r);
+        ctx2.quadraticCurveTo(x + w, y + h, x + w - r, y + h);
+        ctx2.lineTo(x + r, y + h);
+        ctx2.quadraticCurveTo(x, y + h, x, y + h - r);
+        ctx2.lineTo(x, y + r);
+        ctx2.quadraticCurveTo(x, y, x + r, y);
+        ctx2.closePath();
+      };
+
+      if (isMadinah) {
+        // Use same black background as other cities
+        ctx2.fillStyle = 'rgba(0,0,0,0.45)';
+        drawRoundedRect(0, 0, labelCanvas.width, labelCanvas.height, 18);
+        ctx2.fill();
+        // Keep subtle crescent icon on the left
+        ctx2.save();
+        ctx2.shadowColor = 'transparent';
+        ctx2.translate(28, labelCanvas.height / 2);
+        ctx2.fillStyle = 'rgba(255,255,255,0.95)';
+        ctx2.beginPath();
+        ctx2.arc(0, 0, 10, -0.6 * Math.PI, 0.6 * Math.PI);
+        ctx2.fill();
+        ctx2.globalCompositeOperation = 'destination-out';
+        ctx2.beginPath();
+        ctx2.arc(4, 0, 8, -0.6 * Math.PI, 0.6 * Math.PI);
+        ctx2.fill();
+        ctx2.globalCompositeOperation = 'source-over';
+        ctx2.restore();
+      } else {
+        // Regular cities: soft dark rounded rect
+        ctx2.fillStyle = 'rgba(0,0,0,0.45)';
+        drawRoundedRect(0, 0, labelCanvas.width, labelCanvas.height, 18);
+        ctx2.fill();
+      }
+
       ctx2.shadowColor = 'transparent';
       ctx2.fillStyle = 'rgba(255, 255, 255, 0.95)';
       ctx2.textBaseline = 'middle';

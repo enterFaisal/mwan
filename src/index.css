@@ -18,6 +18,11 @@ body {
   color: #FFFFFF;
 }
 
+/* Arabic font helper */
+.font-ar {
+  font-family: 'IBM Plex Sans Arabic', 'Poppins', 'Inter', sans-serif;
+}
+
 /* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 10px;
