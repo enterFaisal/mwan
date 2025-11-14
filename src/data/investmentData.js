@@ -12,7 +12,7 @@ import leafIcon from "../assets/icons/Leaf.png";
 import calendarIcon from "../assets/icons/Calendar.png";
 import garbageBagIcon from "../assets/icons/Garbage_Bag.png";
 import biohazardSymbolIcon from "../assets/icons/Biohazard_Symbol.png";
-import caduceusMedicalSymbolIcon from '../assets/icons/Caduceus_(Medical_Symbol).png';
+import caduceusMedicalSymbolIcon from "../assets/icons/Caduceus_(Medical_Symbol).png";
 import computerMonitorIcon from "../assets/icons/Computer_Monitor.png";
 
 export const investmentData = {
