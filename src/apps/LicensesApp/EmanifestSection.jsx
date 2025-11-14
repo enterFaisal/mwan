@@ -116,27 +116,22 @@ const EmanifestSection = ({ onBack }) => {
         <h3 className="text-3xl font-bold text-white text-center mb-8">
           اختر دورك لبدء المحاكاة التفاعلية
         </h3>
-  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 landscape-cols-2">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {roles.map((role) => (
             <button
               key={role.id}
               onClick={() => setSelectedRole(role.id)}
-              className={`group relative brand-block p-10 rounded-3xl shadow-2xl transition-all duration-300 transform hover:scale-105 min-h-[220px] landscape-card flex flex-col items-center justify-center gap-4`}
+              className={`group btn-secondary flex flex-col items-center justify-center text-center p-6 rounded-2xl transition-all duration-300 transform hover:scale-105 hover:bg-mwan-light-blue/20`}
             >
-              <div className="mb-3 transition-transform group-hover:scale-110 flex justify-center">
-                <img src={role.icon} alt="" className="h-20 w-auto object-contain" />
+              <div className="mb-4">
+                <img src={role.icon} alt="" className="h-16 w-auto object-contain" />
               </div>
-              <h4 className="text-2xl font-bold text-mwan-dark text-center">
+              <h4 className="text-xl font-bold text-gray-800 mb-2">
                 {role.name}
               </h4>
-              <p className="text-base text-mwan-dark/80 text-center px-4">
+              <p className="text-sm text-gray-600">
                 {role.description}
               </p>
-              <div className="absolute bottom-4 right-4 text-white opacity-0 group-hover:opacity-100 transition-opacity">
-                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                </svg>
-              </div>
             </button>
           ))}
         </div>

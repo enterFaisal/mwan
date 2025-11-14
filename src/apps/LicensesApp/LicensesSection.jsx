@@ -28,15 +28,15 @@ const LicensesSection = ({ onBack, setShowParentBackButton }) => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 landscape-cols-2">
             {sections.map((section, index) => (
               <button
                 key={section.id}
                 onClick={() => setActiveSection(index)}
-                className={`group relative bg-gradient-to-bl from-[#06a35b] to-[#035a38] hover:brightness-110 p-8 rounded-3xl shadow-2xl transition-all duration-300 transform hover:scale-105 min-h-[180px] flex flex-col items-center justify-center gap-4 ${sections.length === 5 && index === 4 ? 'lg:col-span-3' : ''}`}
+                className="group relative bg-gradient-to-bl from-[#06a35b] to-[#035a38] hover:brightness-110 p-8 rounded-3xl shadow-2xl transition-all duration-300 transform hover:scale-105 min-h-[180px] flex flex-col items-center justify-center gap-4"
               >
                 <div className="mb-2 transition-transform group-hover:scale-110 flex justify-center">
-                  <img src={['/icons/Document.png', '/icons/Balance_Scale.png', '/icons/Trophy.png', '/icons/Folder.png', '/icons/Road_Sign.png'][index]} alt="" className="h-16 w-auto object-contain" />
+                  <img src={['/icons/Certificate-Diploma.png', '/icons/Books.png', '/icons/Award_Medal.png', '/icons/ID_Card.png', '/icons/Checklist.png'][index]} alt="" className="h-16 w-auto object-contain" />
                 </div>
                 <h3 className="text-2xl font-bold text-white text-center">
                   {section.title}

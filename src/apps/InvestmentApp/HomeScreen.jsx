@@ -1,5 +1,6 @@
 import React from 'react';
-import mkttIcon from '../../../mktt.png';
+import mkttIcon from '/mktt.png';
+import dataIcon from '/icons/Certificate-Diploma.png';
 
 const HomeScreen = ({ onNavigate }) => {
   return (
@@ -15,20 +16,18 @@ const HomeScreen = ({ onNavigate }) => {
       </div>
 
       {/* Two Main Options */}
-  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto landscape-cols-2">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto landscape-cols-3">
         {/* Opportunities Section */}
         <button
           onClick={() => onNavigate('opportunities')}
           className="group relative bg-gradient-to-bl from-[#06a35b] to-[#035a38] hover:brightness-110 p-12 rounded-3xl shadow-2xl transition-all duration-300 transform hover:scale-105 min-h-[380px] landscape-card flex flex-col items-center justify-center gap-6"
         >
-
           <h3 className="text-4xl font-bold text-white text-center">
             الفرص الاستثمارية
           </h3>
           <p className="text-xl text-white/90 text-center leading-relaxed px-4">
             خريطة تفاعلية تعرض الفرص الاستثمارية في مختلف مناطق المملكة مع البيانات والإحصائيات
           </p>
-
           <div className="absolute bottom-6 right-6 text-white/70 opacity-0 group-hover:opacity-100 transition-opacity">
             <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -44,22 +43,15 @@ const HomeScreen = ({ onNavigate }) => {
           <div className="transition-transform group-hover:scale-110">
             <img src={mkttIcon} alt="Strategic Plan Icon" className="w-64 h-64 object-contain" />
           </div>
-          {/* <h3 className="text-3xl font-bold text-white text-center">
-            المخطط الاستراتيجي الشامل
-          </h3> */}
-          {/* <p className="text-lg text-white/90 text-center leading-relaxed px-4">
-            تعرف على المنهجية والأهداف والبنية التحتية المقترحة للتخطيط الاستراتيجي
-          </p> */}
-
           <div className="absolute bottom-6 right-6 text-white/70 opacity-0 group-hover:opacity-100 transition-opacity">
             <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
             </svg>
           </div>
         </button>
+
+
       </div>
-
-
     </div>
   );
 };
