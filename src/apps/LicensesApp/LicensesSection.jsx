@@ -36,7 +36,7 @@ const LicensesSection = ({ onBack, setShowParentBackButton }) => {
                 className="group btn-card p-8 min-h-[180px] flex flex-col items-center justify-center gap-4"
               >
                 <div className="mb-2 transition-transform group-hover:scale-110 flex justify-center">
-                  <img src={['/icons/Certificate-Diploma.png', '/icons/Books.png', '/icons/Award_Medal.png', '/icons/ID_Card.png', '/icons/Checklist.png'][index]} alt="" className="h-16 w-auto object-contain" />
+                  <img src={['/icons_white/Certificate-Diploma.png', '/icons_white/Books.png', '/icons_white/Award_Medal.png', '/icons_white/ID_Card.png', '/icons_white/Checklist.png'][index]} alt="" className="h-16 w-auto object-contain" />
                 </div>
                 <h3 className="text-2xl font-bold text-white text-center">
                   {section.title}

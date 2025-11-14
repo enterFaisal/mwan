@@ -13,7 +13,7 @@ const EmanifestSection = ({ onBack }) => {
     {
       id: 'producer',
       name: 'منتج النفايات',
-      icon: '/icons_white/Briefcase.png',
+      icon: '/icons_white/Recycle_Bin.png',
       color: 'from-blue-600/30 to-blue-900/30',
       hoverColor: 'hover:from-blue-600/40 hover:to-blue-900/40',
       borderColor: 'border-blue-500/30 hover:border-blue-500',

@@ -26,9 +26,11 @@ async function recolorImage(filePath, outputFilePath) {
 
       // Check if the pixel is a shade of green and not too dark
       if (g > r && g > b && g > 60 && a > 0) {
-        data[i] = 255;
-        data[i + 1] = 255;
-        data[i + 2] = 255;
+        // Map the green channel to a white-ish gradient
+        const brightness = Math.floor(155 + (g / 255) * 100);
+        data[i] = brightness;
+        data[i + 1] = brightness;
+        data[i + 2] = brightness;
 
         if (channels === 4) {
           data[i + 3] = a; // Preserve original alpha

@@ -7,27 +7,27 @@ export const emanifestIntro = {
     "أداة رقابية تعمل على رصد وتتبع وجمع وتحليل البيانات الخاصة بحركة النفايات من نقطة إنتاجها وحتى مرحلة المعالجة والتخلص النهائي باستخدام التقنيات الناشئة وتقنيات الذكاء الاصطناعي",
   objectives: [
     {
-      icon: "/icons/Bar_Graph.png",
+      icon: "/icons_white/Bar_Graph.png",
       title: "رفع الكفاءة التشغيلية لأعمال الرقابة",
       description: "من خلال توظيف التقنيات الحديثة",
     },
     {
-      icon: "/icons/Presentation_Board_(Line_Graph).png",
+      icon: "/icons_white/Presentation_Board_(Line_Graph).png",
       title: "تعظيم الاستفادة من البيانات",
       description: "لدعم المستهدفات الوطنية",
     },
     {
-      icon: "/icons/Shield_with_Checkmark.png",
+      icon: "/icons_white/Shield_with_Checkmark.png",
       title: "زيادة معدل الامتثال والحد من الرمي العشوائي",
       description: "من خلال توظيف التقنيات الحديثة",
     },
     {
-      icon: "/icons/Globe.png",
+      icon: "/icons_white/Globe.png",
       title: "تحقيق تغطية شاملة لحركة النفايات",
       description: "على المستوى دون الحاجة للاستثمار في العامل البشري",
     },
     {
-      icon: "/icons/Dollar_Sign.png",
+      icon: "/icons_white/Dollar_Sign.png",
       title: "تعزيز إطار الاستثمار",
       description: "من خلال ضمان وصول النفايات للمرافق الاستثمارية",
     },
