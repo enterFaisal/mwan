@@ -9,6 +9,10 @@ import BrandBackdrop from './components/BrandBackdrop';
 function Landing() {
   const navigate = useNavigate();
 
+  React.useEffect(() => {
+    document.title = 'موان - المركز الوطني لإدارة النفايات';
+  }, []);
+
   return (
     <div className="min-h-screen relative bg-mwan-dark flex flex-col">
       <BrandBackdrop />

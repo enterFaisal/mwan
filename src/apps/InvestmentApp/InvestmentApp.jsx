@@ -9,6 +9,10 @@ import BrandBackdrop from '../../components/BrandBackdrop';
 const InvestmentApp = ({ onBack }) => {
   const [view, setView] = useState('home'); // 'home', 'opportunities', 'plan'
 
+  React.useEffect(() => {
+    document.title = 'الفرص الاستثمارية والمخطط الاستراتيجي - موان';
+  }, []);
+
   const handleViewChange = (newView) => {
     setView(newView);
   };

@@ -10,6 +10,10 @@ const LicensesApp = ({ onBack }) => {
   const [view, setView] = useState('home'); // 'home', 'licenses', 'emanifest'
   const [showBackButton, setShowBackButton] = useState(true);
 
+  React.useEffect(() => {
+    document.title = 'التراخيص ووثيقة النقل الإلكترونية - موان';
+  }, []);
+
   const handleViewChange = (newView) => {
     setView(newView);
     setShowBackButton(true);

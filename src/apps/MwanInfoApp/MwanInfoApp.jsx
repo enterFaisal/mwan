@@ -11,6 +11,10 @@ const MwanInfoApp = ({ onBack }) => {
   const [activeScreen, setActiveScreen] = useState('home');
   const [pdfViewData, setPdfViewData] = useState(null);
 
+  React.useEffect(() => {
+    document.title = 'اكتشف موان - المركز الوطني لإدارة النفايات';
+  }, []);
+
   const handleScreenChange = (screenId) => {
     setActiveScreen(screenId);
     setPdfViewData(null);

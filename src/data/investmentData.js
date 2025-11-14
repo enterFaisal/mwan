@@ -716,7 +716,7 @@ export const strategicPlanData = {
         color: "orange",
       },
       {
-        icon: "/icons/GearsCogs.png",
+        icon: "/icons/Gears-Cogs.png",
         title: "بنية تحتية مخطط لها",
         value: "~900",
         color: "green",

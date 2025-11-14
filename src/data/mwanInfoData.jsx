@@ -342,7 +342,7 @@ export const mwanInfoData = {
             {/* Public Sector */}
             <div className="bg-gradient-to-br from-gray-800 to-gray-700 p-6 rounded-2xl border border-gray-600 hover:border-mwan-green transition-all">
               <div className="flex items-center gap-3 mb-4">
-                <img src="/icons/Podium-Lectern.png" alt="" className="h-12 w-auto object-contain" />
+                {/* <img src="/icons/Podium-Lectern.png" alt="" className="h-12 w-auto object-contain" /> */}
                 <h4 className="text-xl font-bold">القطاع العــــــام</h4>
               </div>
             </div>
@@ -350,7 +350,7 @@ export const mwanInfoData = {
             {/* Private Sector */}
             <div className="bg-gradient-to-br from-gray-800 to-gray-700 p-6 rounded-2xl border border-gray-600 hover:border-mwan-green transition-all">
               <div className="flex items-center gap-3 mb-4">
-                <img src="/icons/Briefcase.png" alt="" className="h-12 w-auto object-contain" />
+                {/* <img src="/icons/Briefcase.png" alt="" className="h-12 w-auto object-contain" /> */}
                 <h4 className="text-xl font-bold">القطاع الخـــاص</h4>
               </div>
             </div>
@@ -358,7 +358,7 @@ export const mwanInfoData = {
             {/* Non-profit Sector */}
             <div className="bg-gradient-to-br from-gray-800 to-gray-700 p-6 rounded-2xl border border-gray-600 hover:border-mwan-green transition-all">
               <div className="flex items-center gap-3 mb-4">
-                <img src="/icons/Hand_with_Coin_(Donation).png" alt="" className="h-12 w-auto object-contain" />
+                {/* <img src="/icons/Hand_with_Coin_(Donation).png" alt="" className="h-12 w-auto object-contain" /> */}
                 <h4 className="text-xl font-bold">القطاع غير الربحــــي</h4>
               </div>
             </div>
