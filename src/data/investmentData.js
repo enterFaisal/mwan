@@ -1,6 +1,20 @@
 // Data for Application 3: Investment Opportunities
 // Extracted from slides 40-49
 
+import briefcaseIcon from "../assets/icons/Briefcase.png";
+import gearsCogsIcon from "../assets/icons/Gears-Cogs.png";
+import dollarSignIcon from "../assets/icons/Dollar_Sign.png";
+import stackOfMoneyIcon from "../assets/icons/Stack_of_Money.png";
+import personToPersonIcon from "../assets/icons/PersontoPerson_Communication.png";
+import targetBullseyeIcon from "../assets/icons/Target-Bullseye.png";
+import recyclingSymbolIcon from "../assets/icons/Recycling_Symbol.png";
+import leafIcon from "../assets/icons/Leaf.png";
+import calendarIcon from "../assets/icons/Calendar.png";
+import garbageBagIcon from "../assets/icons/Garbage_Bag.png";
+import biohazardSymbolIcon from "../assets/icons/Biohazard_Symbol.png";
+import caduceusMedicalSymbolIcon from '../assets/icons/Caduceus_(Medical_Symbol).png';
+import computerMonitorIcon from "../assets/icons/Computer_Monitor.png";
+
 export const investmentData = {
   madinah: {
     id: "madinah",
@@ -710,26 +724,26 @@ export const strategicPlanData = {
     subtitle: "تنمية اقتصادية وطنية تحافظ على الموارد وترتقي بالبيئة والمجتمع",
     mainStats: [
       {
-        icon: "/icons/Briefcase.png",
+        icon: briefcaseIcon,
         title: "فرصة استثمارية",
         value: "+500",
         color: "orange",
       },
       {
-        icon: "/icons/Gears-Cogs.png",
+        icon: gearsCogsIcon,
         title: "بنية تحتية مخطط لها",
         value: "~900",
         color: "green",
       },
       {
-        icon: "/icons/Dollar_Sign.png",
+        icon: dollarSignIcon,
         title: "مليار ريال",
         value: "~750",
         description: "حجم الاستثمارات",
         color: "blue",
       },
       {
-        icon: "/icons/Stack_of_Money.png",
+        icon: stackOfMoneyIcon,
         title: "مليار ريال خلال فترة الاستثمار",
         value: "650",
         description: "تتجاوز المساهمة في الناتج المحلي",
@@ -738,27 +752,27 @@ export const strategicPlanData = {
     ],
     bottomStats: [
       {
-        icon: "/icons/PersontoPerson_Communication.png",
+        icon: personToPersonIcon,
         title: "تتجاوز 76 ألف وظيفة",
         description: "مباشرة",
       },
       {
-        icon: "/icons/Target-Bullseye.png",
+        icon: targetBullseyeIcon,
         title: "90% نسبة الاستبعاد عن",
         description: "المرادم التي سيتم تحقيقها",
       },
       {
-        icon: "/icons/Recycling_Symbol.png",
+        icon: recyclingSymbolIcon,
         title: "79% نسبة إعادة التدوير",
         description: "التي سيتم تحقيقها",
       },
       {
-        icon: "/icons/Leaf.png",
+        icon: leafIcon,
         title: "حياد صفري في أنشطة",
         description: "إدارة النفايات",
       },
       {
-        icon: "/icons/Calendar.png",
+        icon: calendarIcon,
         title: "مدة الاستثمار 20 - 25 سنة",
         description: "",
       },
@@ -773,31 +787,31 @@ export const strategicPlanData = {
       {
         name: "مراكز بيئية متكاملة لمعالجة النفايات",
         description: "تشمل مصانع الفرز والتسميد واستعادة الطاقة",
-        icon: "/icons/Briefcase.png",
+        icon: briefcaseIcon,
         color: "red",
       },
       {
         name: "مرافق معالجة مخلفات المسالخ",
         description: "معالجة النفايات العضوية من المسالخ",
-        icon: "/icons/Garbage_Bag.png",
+        icon: garbageBagIcon,
         color: "green",
       },
       {
         name: "مرافق معالجة النفايات الصناعية الخطرة",
         description: "معالجة متخصصة للنفايات الخطرة",
-        icon: "/icons/Biohazard_Symbol.png",
+        icon: biohazardSymbolIcon,
         color: "cyan",
       },
       {
         name: "مرافق معالجة نفايات الرعاية الصحية الخطرة",
         description: "معالجة آمنة للنفايات الطبية الخطرة",
-        icon: "/icons/Caduceus_Medical_Symbol.png",
+        icon: caduceusMedicalSymbolIcon,
         color: "purple",
       },
       {
         name: "مرافق معالجة النفايات الخاصة",
         description: "معالجة النفايات الإلكترونية والخاصة الأخرى",
-        icon: "/icons/Computer_Monitor.png",
+        icon: computerMonitorIcon,
         color: "yellow",
       },
     ],

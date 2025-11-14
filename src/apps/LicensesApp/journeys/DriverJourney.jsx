@@ -48,7 +48,7 @@ const DriverJourney = ({ onBack }) => {
       <div className="card bg-gradient-to-l from-yellow-600/30 to-yellow-900/30 border-yellow-500 mb-8">
         <div className="flex items-center gap-6">
           <div className="flex justify-center">
-            <img src="/icons/Person_Walking.png" alt="" className="h-16 w-auto object-contain" />
+            <img src="../assets/icons/Person_Walking.png" alt="" className="h-16 w-auto object-contain" />
           </div>
           <div>
             <h2 className="text-3xl font-bold text-white">{journey.role}</h2>
@@ -103,7 +103,7 @@ const DriverJourney = ({ onBack }) => {
                   {field.type === 'file' ? (
                     <div className="border-2 border-dashed border-white/20 rounded-xl p-6 text-center hover:border-yellow-500 transition-colors">
                       <div className="mb-2 flex justify-center">
-                        <img src="/icons/Upload_Arrow.png" alt="" className="h-12 w-auto object-contain" />
+                        <img src="../assets/icons/Upload_Arrow.png" alt="" className="h-12 w-auto object-contain" />
                       </div>
                       <p className="text-white">اضغط لرفع الصورة</p>
                       <input
@@ -138,7 +138,7 @@ const DriverJourney = ({ onBack }) => {
             <div className="card bg-yellow-600/20 border-yellow-500">
               <div className="flex items-center gap-4">
                 <div className="flex justify-center">
-                  <img src="/icons/Speech_Bubble.png" alt="" className="h-12 w-auto object-contain" />
+                  <img src="../assets/icons/Speech_Bubble.png" alt="" className="h-12 w-auto object-contain" />
                 </div>
                 <div>
                   <p className="text-white font-bold text-lg">إشعار جديد!</p>
@@ -176,7 +176,7 @@ const DriverJourney = ({ onBack }) => {
             <div className="card bg-green-600/10 border-green-500">
               <div className="text-center py-12">
                 <div className="mb-4 flex justify-center">
-                  <img src="/icons/Compass.png" alt="" className="h-16 w-auto object-contain" />
+                  <img src="../assets/icons/Compass.png" alt="" className="h-16 w-auto object-contain" />
                 </div>
                 <p className="text-xl text-white font-semibold">التتبع النشط بنظام GPS</p>
                 <p className="text-green-400 mt-2">جارٍ تسجيل المسار الفعلي للرحلة</p>

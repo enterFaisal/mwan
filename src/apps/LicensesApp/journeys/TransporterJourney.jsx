@@ -48,7 +48,7 @@ const TransporterJourney = ({ onBack }) => {
       <div className="card bg-gradient-to-l from-green-600/30 to-green-900/30 border-green-500 mb-8">
         <div className="flex items-center gap-6">
           <div className="flex justify-center">
-            <img src="/icons/Garbage_Truck.png" alt="" className="h-16 w-auto object-contain" />
+            <img src="../assets/icons/Garbage_Truck.png" alt="" className="h-16 w-auto object-contain" />
           </div>
           <div>
             <h2 className="text-3xl font-bold text-white">{journey.role}</h2>
@@ -153,7 +153,7 @@ const TransporterJourney = ({ onBack }) => {
             <div className="card bg-green-600/10 border-green-500">
               <div className="text-center py-12">
                 <div className="mb-4 flex justify-center">
-                  <img src="/icons/Bar_Graph.png" alt="" className="h-16 w-auto object-contain" />
+                  <img src="../assets/icons/Bar_Graph.png" alt="" className="h-16 w-auto object-contain" />
                 </div>
                 <p className="text-xl text-white font-semibold">لوحة تحكم متابعة الشحنات</p>
                 <p className="text-gray-300 mt-2">تحديثات فورية لحالة جميع الوثائق</p>
@@ -165,7 +165,7 @@ const TransporterJourney = ({ onBack }) => {
             <div className="card bg-green-600/20 border-green-500">
               <div className="text-center py-8">
                 <div className="mb-4 flex justify-center">
-                  <img src="/icons/Checkmark.png" alt="" className="h-20 w-auto object-contain" />
+                  <img src="../assets/icons/Checkmark.png" alt="" className="h-20 w-auto object-contain" />
                 </div>
                 <p className="text-2xl text-green-400 font-bold">تمت العملية بنجاح!</p>
                 <p className="text-gray-300 mt-2">تم إغلاق الوثيقة وتوثيق العملية</p>

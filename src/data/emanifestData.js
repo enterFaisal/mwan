@@ -1,33 +1,39 @@
 // Data for E-Manifest Simulation
 // Extracted from slides 27-34 (content.md lines 263-431)
 
+import barGraphIcon from "../assets/icons_white/Bar_Graph.png";
+import presentationBoardIcon from "../assets/icons_white/Presentation_Board_(Line_Graph).png";
+import shieldCheckmarkIcon from "../assets/icons_white/Shield_with_Checkmark.png";
+import globeIcon from "../assets/icons_white/Globe.png";
+import dollarSignIcon from "../assets/icons_white/Dollar_Sign.png";
+
 export const emanifestIntro = {
   title: "وثيقة النقل الإلكترونية",
   description:
     "أداة رقابية تعمل على رصد وتتبع وجمع وتحليل البيانات الخاصة بحركة النفايات من نقطة إنتاجها وحتى مرحلة المعالجة والتخلص النهائي باستخدام التقنيات الناشئة وتقنيات الذكاء الاصطناعي",
   objectives: [
     {
-      icon: "/icons_white/Bar_Graph.png",
+      icon: barGraphIcon,
       title: "رفع الكفاءة التشغيلية لأعمال الرقابة",
       description: "من خلال توظيف التقنيات الحديثة",
     },
     {
-      icon: "/icons_white/Presentation_Board_(Line_Graph).png",
+      icon: presentationBoardIcon,
       title: "تعظيم الاستفادة من البيانات",
       description: "لدعم المستهدفات الوطنية",
     },
     {
-      icon: "/icons_white/Shield_with_Checkmark.png",
+      icon: shieldCheckmarkIcon,
       title: "زيادة معدل الامتثال والحد من الرمي العشوائي",
       description: "من خلال توظيف التقنيات الحديثة",
     },
     {
-      icon: "/icons_white/Globe.png",
+      icon: globeIcon,
       title: "تحقيق تغطية شاملة لحركة النفايات",
       description: "على المستوى دون الحاجة للاستثمار في العامل البشري",
     },
     {
-      icon: "/icons_white/Dollar_Sign.png",
+      icon: dollarSignIcon,
       title: "تعزيز إطار الاستثمار",
       description: "من خلال ضمان وصول النفايات للمرافق الاستثمارية",
     },

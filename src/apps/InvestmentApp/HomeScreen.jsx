@@ -1,6 +1,6 @@
 import React from 'react';
 import mkttIcon from '/mktt.png';
-import dataIcon from '/icons/Certificate-Diploma.png';
+import dataIcon from "../../assets/icons/Certificate-Diploma.png";
 
 const HomeScreen = ({ onNavigate }) => {
   return (

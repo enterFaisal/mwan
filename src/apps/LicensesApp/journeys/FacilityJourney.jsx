@@ -48,7 +48,7 @@ const FacilityJourney = ({ onBack }) => {
       <div className="card bg-gradient-to-l from-purple-600/30 to-purple-900/30 border-purple-500 mb-8">
         <div className="flex items-center gap-6">
           <div className="flex justify-center">
-            <img src="/icons/Briefcase.png" alt="" className="h-16 w-auto object-contain" />
+            <img src="../assets/icons/Briefcase.png" alt="" className="h-16 w-auto object-contain" />
           </div>
           <div>
             <h2 className="text-3xl font-bold text-white">{journey.role}</h2>
@@ -116,7 +116,7 @@ const FacilityJourney = ({ onBack }) => {
                   ) : field.type === 'file' ? (
                     <div className="border-2 border-dashed border-white/20 rounded-xl p-6 text-center hover:border-purple-500 transition-colors">
                       <div className="mb-2 flex justify-center">
-                        <img src="/icons/Upload_Arrow.png" alt="" className="h-12 w-auto object-contain" />
+                        <img src="../assets/icons/Upload_Arrow.png" alt="" className="h-12 w-auto object-contain" />
                       </div>
                       <p className="text-white">اضغط لرفع الملف</p>
                       <input
@@ -174,7 +174,7 @@ const FacilityJourney = ({ onBack }) => {
             <div className="card bg-green-600/20 border-green-500">
               <div className="text-center py-8">
                 <div className="mb-4 flex justify-center">
-                  <img src="/icons/CertificateDiploma.png" alt="" className="h-20 w-auto object-contain" />
+                  <img src="../assets/icons/CertificateDiploma.png" alt="" className="h-20 w-auto object-contain" />
                 </div>
                 <p className="text-2xl text-green-400 font-bold mb-4">شهادة المعالجة النهائية</p>
                 <div className="bg-white/10 rounded-xl p-6 max-w-md mx-auto text-right">
@@ -195,7 +195,7 @@ const FacilityJourney = ({ onBack }) => {
             <div className="card bg-purple-600/10 border-purple-500">
               <div className="text-center py-12">
                 <div className="mb-4 flex justify-center">
-                  <img src="/icons/Bar_Graph.png" alt="" className="h-16 w-auto object-contain" />
+                  <img src="../assets/icons/Bar_Graph.png" alt="" className="h-16 w-auto object-contain" />
                 </div>
                 <p className="text-xl text-white font-semibold mb-4">الأرشيف والتقارير الدورية</p>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">

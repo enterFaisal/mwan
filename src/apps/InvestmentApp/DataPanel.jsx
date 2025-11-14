@@ -1,5 +1,6 @@
 import React from 'react';
 import { investmentData } from '../../data/investmentData.js';
+import compassIcon from '../../assets/icons/Compass.png';
 
 const DataPanel = ({ selectedCity }) => {
   if (!selectedCity) {
@@ -7,7 +8,7 @@ const DataPanel = ({ selectedCity }) => {
       <div className="card bg-white/5 border-mwan-green/30 h-full flex items-center justify-center">
         <div className="text-center py-12">
           <div className="mb-6 flex justify-center">
-            <img src="/icons/Compass.png" alt="" className="h-20 w-auto object-contain" />
+            <img src={compassIcon} alt="" className="h-20 w-auto object-contain" />
           </div>
           <h3 className="text-2xl font-bold text-white mb-4">
             اختر مدينة على الخريطة

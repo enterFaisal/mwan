@@ -3,13 +3,20 @@ import { strategicPlanData } from '../../data/investmentData.js';
 import { getPartnerLogo } from '../../data/partnersLogos.js';
 import BackButton from '../../components/BackButton';
 
+import documentIcon from '../../assets/icons/Document.png';
+import documentWhiteIcon from '../../assets/icons_white/Document.png';
+import checklistIcon from '../../assets/icons/Checklist.png';
+import checklistWhiteIcon from '../../assets/icons_white/Checklist.png';
+import barGraphIcon from '../../assets/icons/Bar_Graph.png';
+import barGraphWhiteIcon from '../../assets/icons_white/Bar_Graph.png';
+
 const PlanSection = ({ onBack }) => {
   const [activeTab, setActiveTab] = useState('introduction');
 
   const tabs = [
-    { id: 'introduction', label: 'نبذة تعريفية عن المخطط الاستراتيجي الشامل', icon: '/icons/Document.png' },
-    { id: 'approach', label: 'منهجية عمل المخطط', icon: '/icons/Checklist.png' },
-    { id: 'outputs', label: 'مخرجات المخطط', icon: '/icons/Bar_Graph.png' }
+    { id: 'introduction', label: 'نبذة تعريفية عن المخطط الاستراتيجي الشامل', icon: documentIcon, activeIcon: documentWhiteIcon },
+    { id: 'approach', label: 'منهجية عمل المخطط', icon: checklistIcon, activeIcon: checklistWhiteIcon },
+    { id: 'outputs', label: 'مخرجات المخطط', icon: barGraphIcon, activeIcon: barGraphWhiteIcon }
   ];
 
   // Display plain Western digits for step numbers (e.g., 1, 2, 3 ... 6)
@@ -39,7 +46,7 @@ const PlanSection = ({ onBack }) => {
                 : 'bg-white/10 text-gray-300 hover:bg-white/20'
             }`}
           >
-            <img src={tab.icon} alt="" className="h-8 w-auto object-contain" />
+            <img src={activeTab === tab.id ? tab.activeIcon : tab.icon} alt="" className="h-8 w-auto object-contain" />
             {tab.label}
           </button>
         ))}

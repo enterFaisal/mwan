@@ -2,10 +2,17 @@ import React, { useState } from 'react';
 import { licensesData } from '../../data/licensesData.jsx';
 import BackButton from '../../components/BackButton';
 
+import iconCert from '../../assets/icons_white/Certificate-Diploma.png';
+import iconBooks from '../../assets/icons_white/Books.png';
+import iconMedal from '../../assets/icons_white/Award_Medal.png';
+import iconID from '../../assets/icons_white/ID_Card.png';
+import iconChecklist from '../../assets/icons_white/Checklist.png';
+
 const LicensesSection = ({ onBack, setShowParentBackButton }) => {
   const [activeSection, setActiveSection] = useState(null);
 
   const sections = licensesData.main.sections;
+  const sectionIcons = [iconCert, iconBooks, iconMedal, iconID, iconChecklist];
 
   // Hide parent back button when viewing a section
   React.useEffect(() => {
@@ -36,7 +43,7 @@ const LicensesSection = ({ onBack, setShowParentBackButton }) => {
                 className="group btn-card p-8 min-h-[180px] flex flex-col items-center justify-center gap-4"
               >
                 <div className="mb-2 transition-transform group-hover:scale-110 flex justify-center">
-                  <img src={['/icons_white/Certificate-Diploma.png', '/icons_white/Books.png', '/icons_white/Award_Medal.png', '/icons_white/ID_Card.png', '/icons_white/Checklist.png'][index]} alt="" className="h-16 w-auto object-contain" />
+                  <img src={sectionIcons[index]} alt="" className="h-16 w-auto object-contain" />
                 </div>
                 <h3 className="text-2xl font-bold text-white text-center">
                   {section.title}

@@ -6,6 +6,11 @@ import TransporterJourney from './journeys/TransporterJourney';
 import DriverJourney from './journeys/DriverJourney';
 import FacilityJourney from './journeys/FacilityJourney';
 
+import recycleBinIcon from '../../assets/icons_white/Recycle_Bin.png';
+import garbageTruckIcon from '../../assets/icons_white/Garbage_Truck.png';
+import personWalkingIcon from '../../assets/icons_white/Person_Walking.png';
+import briefcaseIcon from '../../assets/icons_white/Briefcase.png';
+
 const EmanifestSection = ({ onBack }) => {
   const [selectedRole, setSelectedRole] = useState(null);
 
@@ -13,7 +18,7 @@ const EmanifestSection = ({ onBack }) => {
     {
       id: 'producer',
       name: 'منتج النفايات',
-      icon: '/icons_white/Recycle_Bin.png',
+      icon: recycleBinIcon,
       color: 'from-blue-600/30 to-blue-900/30',
       hoverColor: 'hover:from-blue-600/40 hover:to-blue-900/40',
       borderColor: 'border-blue-500/30 hover:border-blue-500',
@@ -22,7 +27,7 @@ const EmanifestSection = ({ onBack }) => {
     {
       id: 'transporter',
       name: 'ناقل النفايات',
-      icon: '/icons_white/Garbage_Truck.png',
+      icon: garbageTruckIcon,
       color: 'from-green-600/30 to-green-900/30',
       hoverColor: 'hover:from-green-600/40 hover:to-green-900/40',
       borderColor: 'border-green-500/30 hover:border-green-500',
@@ -31,7 +36,7 @@ const EmanifestSection = ({ onBack }) => {
     {
       id: 'driver',
       name: 'السائق',
-      icon: '/icons_white/Person_Walking.png',
+      icon: personWalkingIcon,
       color: 'from-yellow-600/30 to-yellow-900/30',
       hoverColor: 'hover:from-yellow-600/40 hover:to-yellow-900/40',
       borderColor: 'border-yellow-500/30 hover:border-yellow-500',
@@ -40,7 +45,7 @@ const EmanifestSection = ({ onBack }) => {
     {
       id: 'facility',
       name: 'مرفق الاستقبال',
-      icon: '/icons_white/Briefcase.png',
+      icon: briefcaseIcon,
       color: 'from-purple-600/30 to-purple-900/30',
       hoverColor: 'hover:from-purple-600/40 hover:to-purple-900/40',
       borderColor: 'border-purple-500/30 hover:border-purple-500',

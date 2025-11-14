@@ -43,7 +43,7 @@ const PdfListScreen = ({ title, description, pdfs, onBack }) => {
               >
                 <div className="flex items-start gap-4">
                   <div className="flex-shrink-0 group-hover:scale-110 transition-transform flex justify-center">
-                    <img src="/icons/Document.png" alt="" className="h-12 w-auto object-contain" />
+                    <img src="../assets/icons/Document.png" alt="" className="h-12 w-auto object-contain" />
                   </div>
                   <div className="flex-1">
                     <h3 className="text-xl font-bold text-white mb-2 group-hover:text-mwan-light-green transition-colors">
