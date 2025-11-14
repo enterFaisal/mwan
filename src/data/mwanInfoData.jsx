@@ -50,7 +50,7 @@ export const mwanInfoData = {
             </div>
 
             <div className="card hover:bg-white/20 transition-all">
-              <img src="/icons/Presentation_Board_Line_Graph.png" alt="" className="h-16 w-auto object-contain mb-4" />
+              <img src="/icons/Dollar_Sign.png" alt="" className="h-16 w-auto object-contain mb-4" />
               <h4 className="font-bold text-xl mb-2">الاستدامة المالية وتحفيز الاستثمار</h4>
               <p className="text-sm">تطوير نماذج التمويل المستدامة وجذب الاستثمارات</p>
             </div>
@@ -62,13 +62,13 @@ export const mwanInfoData = {
             </div>
 
             <div className="card hover:bg-white/20 transition-all">
-              <img src="/icons/Dollar_Sign.png" alt="" className="h-16 w-auto object-contain mb-4" />
+              <img src="/icons/Document.png" alt="" className="h-16 w-auto object-contain mb-4" />
               <h4 className="font-bold text-xl mb-2">الترخيص والرقابة للعمر الأفضل</h4>
               <p className="text-sm">إصدار التراخيص ومراقبة الامتثال للمعايير</p>
             </div>
 
             <div className="card hover:bg-white/20 transition-all">
-              <img src="/icons/Lightbulb_Idea.png" alt="" className="h-16 w-auto object-contain mb-4" />
+              <img src="/icons/Globe.png" alt="" className="h-16 w-auto object-contain mb-4" />
               <h4 className="font-bold text-xl mb-2">التحول الرقمي والدعم الصناعي</h4>
               <p className="text-sm">تطوير الحلول الرقمية ودعم الابتكار</p>
             </div>
@@ -340,15 +340,15 @@ export const mwanInfoData = {
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
             {/* Public Sector */}
-            <div className="bg-gradient-to-br from-gray-700 to-gray-800 p-6 rounded-2xl border border-gray-600 hover:border-mwan-green transition-all">
+            <div className="bg-gradient-to-br from-gray-800 to-gray-700 p-6 rounded-2xl border border-gray-600 hover:border-mwan-green transition-all">
               <div className="flex items-center gap-3 mb-4">
-                <img src="/icons/PodiumLectern.png" alt="" className="h-12 w-auto object-contain" />
+                <img src="/icons/Podium-Lectern.png" alt="" className="h-12 w-auto object-contain" />
                 <h4 className="text-xl font-bold">القطاع العــــــام</h4>
               </div>
             </div>
 
             {/* Private Sector */}
-            <div className="bg-gradient-to-br from-gray-700 to-gray-800 p-6 rounded-2xl border border-gray-600 hover:border-mwan-green transition-all">
+            <div className="bg-gradient-to-br from-gray-800 to-gray-700 p-6 rounded-2xl border border-gray-600 hover:border-mwan-green transition-all">
               <div className="flex items-center gap-3 mb-4">
                 <img src="/icons/Briefcase.png" alt="" className="h-12 w-auto object-contain" />
                 <h4 className="text-xl font-bold">القطاع الخـــاص</h4>
@@ -356,9 +356,9 @@ export const mwanInfoData = {
             </div>
 
             {/* Non-profit Sector */}
-            <div className="bg-gradient-to-br from-gray-700 to-gray-800 p-6 rounded-2xl border border-gray-600 hover:border-mwan-green transition-all">
+            <div className="bg-gradient-to-br from-gray-800 to-gray-700 p-6 rounded-2xl border border-gray-600 hover:border-mwan-green transition-all">
               <div className="flex items-center gap-3 mb-4">
-                <img src="/icons/Hand_with_Coin_Donation.png" alt="" className="h-12 w-auto object-contain" />
+                <img src="/icons/Hand_with_Coin_(Donation).png" alt="" className="h-12 w-auto object-contain" />
                 <h4 className="text-xl font-bold">القطاع غير الربحــــي</h4>
               </div>
             </div>
@@ -375,7 +375,7 @@ export const mwanInfoData = {
             {/* Track 1 - التوعية والمعرفة */}
             <div className="bg-gradient-to-br from-mwan-green to-green-700 p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all transform hover:scale-105">
               <div className="mb-4 text-center flex justify-center">
-                <img src="/icons/Lightbulb_Idea.png" alt="" className="h-16 w-auto object-contain" />
+                <img src="/icons/Lightbulb_(Idea).png" alt="" className="h-16 w-auto object-contain" />
               </div>
               <h4 className="text-lg font-bold mb-3 text-center">التوعيــــة والمعرفــــة</h4>
               <p className="text-sm text-center leading-relaxed">
