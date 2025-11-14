@@ -57,7 +57,7 @@ const HomeScreen = ({ onNavigate }) => {
           <div key={item.id} className="w-full md:w-2/5 lg:w-1/3">
             <button
               onClick={() => onNavigate(item.id)}
-              className={`w-full h-full group relative bg-gradient-to-bl from-[#06a35b] to-[#035a38] hover:brightness-110 p-8 rounded-3xl transition-all duration-300 transform hover:scale-105 hover:shadow-2xl min-h-[180px] landscape-card flex flex-col items-center justify-center gap-4 ${
+              className={`w-full h-full group btn-card p-8 min-h-[180px] landscape-card flex flex-col items-center justify-center gap-4 ${
                 item.featured ? 'ring-2 ring-mwan-green/50' : ''
               }`}
             >

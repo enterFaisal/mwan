@@ -48,7 +48,12 @@ body {
 /* Button base styles - MWAN Brand */
 @layer components {
   .btn-primary {
-    @apply bg-mwan-green hover:bg-[#00b35a] text-white font-bold py-4 px-8 rounded-2xl shadow-lg transition-all duration-300 transform hover:scale-105 active:scale-95 min-h-[60px] flex items-center justify-center text-lg;
+    @apply text-white font-bold py-4 px-8 rounded-2xl shadow-lg transition-all duration-300 transform hover:scale-105 active:scale-95 min-h-[60px] flex items-center justify-center text-lg;
+    background: linear-gradient(to bottom left, #06a35b, #035a38);
+  }
+  
+  .btn-primary:hover {
+    filter: brightness(1.1);
   }
   
   .btn-secondary {
@@ -57,6 +62,16 @@ body {
   
   .btn-back {
     @apply bg-mwan-dark hover:bg-[#003d52] text-white font-semibold py-3 px-6 rounded-xl shadow-md border border-white/10 transition-all duration-200 flex items-center gap-2 min-h-[50px];
+  }
+  
+  /* Card-style button with gradient green */
+  .btn-card {
+    @apply relative rounded-3xl shadow-2xl transition-all duration-300 transform hover:scale-105 text-white;
+    background: linear-gradient(to bottom left, #06a35b, #035a38);
+  }
+  
+  .btn-card:hover {
+    filter: brightness(1.1);
   }
   
   /* Brand matte panel (no glass blur) */

@@ -33,7 +33,7 @@ const LicensesSection = ({ onBack, setShowParentBackButton }) => {
               <button
                 key={section.id}
                 onClick={() => setActiveSection(index)}
-                className="group relative bg-gradient-to-bl from-[#06a35b] to-[#035a38] hover:brightness-110 p-8 rounded-3xl shadow-2xl transition-all duration-300 transform hover:scale-105 min-h-[180px] flex flex-col items-center justify-center gap-4"
+                className="group btn-card p-8 min-h-[180px] flex flex-col items-center justify-center gap-4"
               >
                 <div className="mb-2 transition-transform group-hover:scale-110 flex justify-center">
                   <img src={['/icons/Certificate-Diploma.png', '/icons/Books.png', '/icons/Award_Medal.png', '/icons/ID_Card.png', '/icons/Checklist.png'][index]} alt="" className="h-16 w-auto object-contain" />

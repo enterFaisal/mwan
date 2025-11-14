@@ -20,7 +20,7 @@ const HomeScreen = ({ onNavigate }) => {
         {/* Opportunities Section */}
         <button
           onClick={() => onNavigate('opportunities')}
-          className="group relative bg-gradient-to-bl from-[#06a35b] to-[#035a38] hover:brightness-110 p-12 rounded-3xl shadow-2xl transition-all duration-300 transform hover:scale-105 min-h-[380px] landscape-card flex flex-col items-center justify-center gap-6"
+          className="group btn-card p-12 min-h-[380px] landscape-card flex flex-col items-center justify-center gap-6"
         >
           <h3 className="text-4xl font-bold text-white text-center">
             الفرص الاستثمارية
@@ -38,7 +38,7 @@ const HomeScreen = ({ onNavigate }) => {
         {/* Strategic Plan Section */}
         <button
           onClick={() => onNavigate('plan')}
-          className="group relative bg-gradient-to-bl from-[#06a35b] to-[#035a38] hover:brightness-110 p-12 rounded-3xl shadow-2xl transition-all duration-300 transform hover:scale-105 min-h-[380px] landscape-card flex flex-col items-center justify-center gap-6"
+          className="group btn-card p-12 min-h-[380px] landscape-card flex flex-col items-center justify-center gap-6"
         >
           <div className="transition-transform group-hover:scale-110">
             <img src={mkttIcon} alt="Strategic Plan Icon" className="w-64 h-64 object-contain" />

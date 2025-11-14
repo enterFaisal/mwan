@@ -13,7 +13,7 @@ const EmanifestSection = ({ onBack }) => {
     {
       id: 'producer',
       name: 'منتج النفايات',
-      icon: '/icons/Briefcase.png',
+      icon: '/icons_white/Briefcase.png',
       color: 'from-blue-600/30 to-blue-900/30',
       hoverColor: 'hover:from-blue-600/40 hover:to-blue-900/40',
       borderColor: 'border-blue-500/30 hover:border-blue-500',
@@ -22,7 +22,7 @@ const EmanifestSection = ({ onBack }) => {
     {
       id: 'transporter',
       name: 'ناقل النفايات',
-      icon: '/icons/Garbage_Truck.png',
+      icon: '/icons_white/Garbage_Truck.png',
       color: 'from-green-600/30 to-green-900/30',
       hoverColor: 'hover:from-green-600/40 hover:to-green-900/40',
       borderColor: 'border-green-500/30 hover:border-green-500',
@@ -31,7 +31,7 @@ const EmanifestSection = ({ onBack }) => {
     {
       id: 'driver',
       name: 'السائق',
-      icon: '/icons/Person_Walking.png',
+      icon: '/icons_white/Person_Walking.png',
       color: 'from-yellow-600/30 to-yellow-900/30',
       hoverColor: 'hover:from-yellow-600/40 hover:to-yellow-900/40',
       borderColor: 'border-yellow-500/30 hover:border-yellow-500',
@@ -40,7 +40,7 @@ const EmanifestSection = ({ onBack }) => {
     {
       id: 'facility',
       name: 'مرفق الاستقبال',
-      icon: '/icons/Briefcase.png',
+      icon: '/icons_white/Briefcase.png',
       color: 'from-purple-600/30 to-purple-900/30',
       hoverColor: 'hover:from-purple-600/40 hover:to-purple-900/40',
       borderColor: 'border-purple-500/30 hover:border-purple-500',
@@ -121,15 +121,15 @@ const EmanifestSection = ({ onBack }) => {
             <button
               key={role.id}
               onClick={() => setSelectedRole(role.id)}
-              className={`group btn-secondary flex flex-col items-center justify-center text-center p-6 rounded-2xl transition-all duration-300 transform hover:scale-105 hover:bg-mwan-light-blue/20`}
+              className="group btn-card flex flex-col items-center justify-center text-center p-6 min-h-[200px]"
             >
-              <div className="mb-4">
+              <div className="mb-4 transition-transform group-hover:scale-110">
                 <img src={role.icon} alt="" className="h-16 w-auto object-contain" />
               </div>
-              <h4 className="text-xl font-bold text-gray-800 mb-2">
+              <h4 className="text-xl font-bold text-white mb-2">
                 {role.name}
               </h4>
-              <p className="text-sm text-gray-600">
+              <p className="text-sm text-white/90">
                 {role.description}
               </p>
             </button>
