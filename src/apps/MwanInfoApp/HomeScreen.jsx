@@ -7,30 +7,35 @@ const HomeScreen = ({ onNavigate }) => {
       title: 'دور موان ومهامه',
       icon: '/icons/Briefcase.png',
       accentColor: 'mwan-blue',
+      showIcon: false,
     },
     {
       id: 'anzema',
       title: 'الأنظمة والتشريعات',
       icon: '/icons/Document.png',
       accentColor: 'mwan-green',
+      showIcon: false,
     },
     {
       id: 'udeem',
       title: 'برنامج يديم',
       icon: '/icons/Recycling_Symbol.png',
       accentColor: 'mwan-light-green',
+      showIcon: false,
     },
     {
       id: 'moktasabat',
       title: 'مكتسبات الاستراتيجية الوطنية لإدارة النفايات بحلول 2040',
       icon: '/icons/Target-Bullseye.png',
       accentColor: 'mwan-orange',
+      showIcon: false,
     },
     {
       id: 'contact',
       title: 'تواصل معنا',
       icon: '/icons/Telephone.png',
       accentColor: 'mwan-yellow',
+      showIcon: false,
     }
   ];
 
@@ -56,9 +61,15 @@ const HomeScreen = ({ onNavigate }) => {
                 item.featured ? 'ring-2 ring-mwan-green/50' : ''
               }`}
             >
-              <h3 className="text-2xl font-bold text-white text-center leading-snug">
-                {item.title}
-              </h3>
+              {item.showIcon ? (
+                <div className="transition-transform group-hover:scale-110">
+                  <img src={item.icon} alt={item.title} className="w-48 h-48 object-contain" />
+                </div>
+              ) : (
+                <h3 className="text-2xl font-bold text-white text-center leading-snug">
+                  {item.title}
+                </h3>
+              )}
               {item.featured && (
                 <div className="absolute top-4 left-4 bg-mwan-green text-white text-xs font-bold px-3 py-1 rounded-full">
                   مميز

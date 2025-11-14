@@ -1,6 +1,7 @@
 import React from 'react';
 import { mwanInfoData } from '../../data/mwanInfoData.jsx';
 import BackButton from '../../components/BackButton';
+import mktt3Icon from '../../../mktt3.png';
 
 const ContentScreen = ({ screenId, onBack, onPdfView }) => {
   const content = mwanInfoData[screenId];
@@ -35,6 +36,12 @@ const ContentScreen = ({ screenId, onBack, onPdfView }) => {
 
         {/* Content Section */}
         <div className="p-10 text-white">
+          {/* Udeem Logo - only show for udeem page */}
+          {screenId === 'udeem' && (
+            <div className="flex justify-center mb-8">
+              <img src={mktt3Icon} alt="برنامج يديم" className="w-64 h-64 object-contain" />
+            </div>
+          )}
           {renderedContent}
         </div>
       </div>

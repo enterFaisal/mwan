@@ -1,4 +1,5 @@
 import React from 'react';
+import mktt2Icon from '../../../mktt2.png';
 
 const HomeScreen = ({ onNavigate }) => {
   return (
@@ -39,13 +40,9 @@ const HomeScreen = ({ onNavigate }) => {
           onClick={() => onNavigate('emanifest')}
           className="group relative bg-gradient-to-bl from-[#06a35b] to-[#035a38] hover:brightness-110 p-12 rounded-3xl shadow-2xl transition-all duration-300 transform hover:scale-105 min-h-[350px] landscape-card flex flex-col items-center justify-center gap-6"
         >
-
-          <h3 className="text-4xl font-bold text-white text-center">
-            وثيقة النقل الإلكترونية
-          </h3>
-          <p className="text-xl text-white/90 text-center leading-relaxed px-4">
-            جرّب محاكاة تفاعلية لرحلة وثيقة النقل من وجهة نظر 4 أطراف مختلفة
-          </p>
+          <div className="transition-transform group-hover:scale-110">
+            <img src={mktt2Icon} alt="E-Manifest Icon" className="w-64 h-64 object-contain" />
+          </div>
           <div className="absolute bottom-6 right-6 text-white/70 opacity-0 group-hover:opacity-100 transition-opacity">
             <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
