@@ -15,7 +15,7 @@ export const emanifestIntro = {
     {
       icon: barGraphIcon,
       title: "رفع الكفاءة التشغيلية لأعمال الرقابة",
-      description: "من خلال توظيف التقنيات الحديثة",
+      description: "من خلال توظيف التقنيات الحديثة لرصد وتتبع المخالفين",
     },
     {
       icon: presentationBoardIcon,
@@ -25,7 +25,7 @@ export const emanifestIntro = {
     {
       icon: shieldCheckmarkIcon,
       title: "زيادة معدل الامتثال والحد من الرمي العشوائي",
-      description: "من خلال توظيف التقنيات الحديثة",
+      description: "",
     },
     {
       icon: globeIcon,

@@ -29,9 +29,9 @@ export const licensesData = {
             <section className="text-center">
               <div className="card bg-gradient-to-br from-mwan-green/10 to-emerald-600/10 border-2 border-mwan-green/30 p-8">
                 <p className="text-2xl leading-relaxed mb-0 text-white">
-                  يقدم النظام الإلكتروني الخاص بمنظومة التراخيص والتصاريح خدمات شاملة لإدارة
-                  النفايات (للأشخاص، المنشآت...)إلى أخره وذلك من خلال تقديم طلباتهم عبر المنصة
-                  وإنتظار الموافقة عليها!
+                يقدم النظام الإلكتروني الخاص بمنظومة التراخيص والتصاريح خدماته الخاصة بإدارة
+النفايات لـ(الشركات، المنشآت...إلى آخره) وذلك من خلال تقديم طلباتهم عبر المنصة
+وانتظار الموافقة عليها
                 </p>
               </div>
             </section>
@@ -63,10 +63,8 @@ export const licensesData = {
                   <h3 className="text-3xl font-bold mb-6 text-white text-center">الرخصة:</h3>
                   <div className="brand-panel--soft p-6">
                     <p className="text-lg leading-relaxed text-white text-center">
-                      إذن مكتوب يصدره المركز للقيام بأي نشاط
-                      يتعلق بإدارة النفايات، لما يحدده النظام
-                      واللائحة وذلك وفقًا.
-                    </p>
+                    إذن مكتوب يصدره المركز للقيام بأي نشاط يتعلق بإدارة النفايات.
+                    وذلك وفقا لما يحدده النظام و اللائحة.                    </p>
                   </div>
                 </div>
               </div>
@@ -93,16 +91,16 @@ export const licensesData = {
         title: 'مكتسبات حصول المنشآت على الرخص والتصاريح',
         content: (
           <div className="space-y-8">
-            <h3 className="text-3xl font-bold mb-8 text-center bg-gradient-to-r from-mwan-green to-emerald-500 bg-clip-text text-transparent">
+            {/* <h3 className="text-3xl font-bold mb-8 text-center bg-gradient-to-r from-mwan-green to-emerald-500 bg-clip-text text-transparent">
               مكتسبات حصول المنشآت على الرخص والتصاريح
-            </h3>
+            </h3> */}
             
             <div className="space-y-4">
               <div className="card bg-gradient-to-r from-white/5 to-white/10 hover:from-mwan-green/20 hover:to-emerald-600/20 border border-mwan-green/30 hover:border-mwan-green transition-all">
                 <div className="flex items-start gap-4">
                   <div className="bg-mwan-green text-white rounded-full w-10 h-10 flex items-center justify-center font-bold text-lg flex-shrink-0">1</div>
                   <p className="text-lg leading-relaxed text-white">
-                    الإلتزام بالحصول على التراخيص والتصاريح المطلوبة، يحقق من دخول المنافسة على المشاريع الحكومية المتاحة
+                    الإلتزام بالحصول على التراخيص والتصاريح المطلوبة، يُمكن من دخول المنافسة على المشاريع الحكومية المتاحة
                     والاستثمارات الجديدة.
                   </p>
                 </div>
@@ -141,12 +139,12 @@ export const licensesData = {
       },
       {
         id: 'types',
-        title: 'أنواع التراخيص والتصاريح التي تصدرها موان',
+        title: 'أنواع التراخيص والتصاريح التي يصدرها موان',
         content: (
           <div className="space-y-8">
-            <h3 className="text-3xl font-bold mb-8 text-center bg-gradient-to-r from-mwan-green to-emerald-500 bg-clip-text text-transparent">
-              أنواع التراخيص والتصاريح التي تصدرها موان
-            </h3>
+            {/* <h3 className="text-3xl font-bold mb-8 text-center bg-gradient-to-r from-mwan-green to-emerald-500 bg-clip-text text-transparent">
+              أنواع التراخيص والتصاريح التي يصدرها موان
+            </h3> */}
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
               {/* التراخيص */}
@@ -190,9 +188,9 @@ export const licensesData = {
         title: 'كل ما يسهل مسار الرخص والتصريح',
         content: (
           <div className="space-y-10">
-            <h3 className="text-3xl font-bold mb-8 text-center bg-gradient-to-r from-mwan-green to-emerald-500 bg-clip-text text-transparent">
+            {/* <h3 className="text-3xl font-bold mb-8 text-center bg-gradient-to-r from-mwan-green to-emerald-500 bg-clip-text text-transparent">
               كل ما يسهل مسار الرخص والتصريح
-            </h3>
+            </h3> */}
             
             {/* Video Section */}
             <section className="mb-12">

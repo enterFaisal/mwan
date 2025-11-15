@@ -7,11 +7,11 @@ const HomeScreen = ({ onNavigate }) => {
       {/* Title */}
       <div className="text-center mb-12 animate-slide-up">
         <h2 className="text-5xl font-extrabold mb-4 text-white font-ar">
-          التراخيص ووثيقة النقل الإلكترونية
+        من الوثيقة إلى التراخيص والتصاريح تكاملٌ يقود تنظيم القطاع.
         </h2>
         <p className="text-xl text-mwan-light/80">
-          استكشف منظومة التراخيص وجرّب محاكاة وثيقة النقل الإلكترونية
-        </p>
+        إنطلق في رحلتك وتعرّف على كل جانب منها.
+                </p>
       </div>
 
       {/* Two Main Options */}

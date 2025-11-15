@@ -727,7 +727,7 @@ export const strategicPlanData = {
         icon: briefcaseIcon,
         title: "فرصة استثمارية",
         value: "+500",
-        color: "orange",
+        color: "green",
       },
       {
         icon: gearsCogsIcon,
@@ -740,7 +740,7 @@ export const strategicPlanData = {
         title: "مليار ريال",
         value: "~750",
         description: "حجم الاستثمارات",
-        color: "blue",
+        color: "green",
       },
       {
         icon: stackOfMoneyIcon,
