@@ -102,8 +102,48 @@ const EmanifestSection = ({ onBack }) => {
         </div>
       </div>
 
-      {/* Waste Types */}
+
+
+      {/* System Components */}
       <div className="mb-16">
+        <h3 className="text-3xl font-bold text-mwan-green text-center mb-8">
+          مكونات منظومة وثيقة النقل الإلكترونية
+        </h3>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {emanifestIntro.systemComponents.map((component, index) => (
+            <div key={index} className="card bg-white/5 border-mwan-green/30">
+              <div className="p-6">
+                <div className="flex items-start gap-4">
+                  {/* Icon */}
+                  <div className="flex-shrink-0 relative">
+                    <div className="absolute top-0 left-0 w-1 h-full bg-mwan-green"></div>
+                    <div className="ml-3">
+                      <img src={component.icon} alt="" className="h-20 w-20 object-contain" />
+                    </div>
+                  </div>
+                  {/* Content */}
+                  <div className="flex-1">
+                    <h4 className="text-xl font-bold text-mwan-green mb-4 text-right">
+                      {component.title}
+                    </h4>
+                    <ul className="space-y-3 text-right">
+                      {component.points.map((point, pointIndex) => (
+                        <li key={pointIndex} className="text-white/90 text-sm leading-relaxed flex items-start gap-2">
+                          <span className="text-mwan-green flex-shrink-0 text-xl font-bold">•</span>
+                          <span>{point}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+            {/* Waste Types */}
+            <div className="mb-16">
         <h3 className="text-3xl font-bold text-mwan-green text-center mb-8">
           أنواع النفايات التي تغطيها الوثيقة
         </h3>

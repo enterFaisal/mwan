@@ -6,6 +6,10 @@ import presentationBoardIcon from "../assets/icons_white/Presentation_Board_(Lin
 import shieldCheckmarkIcon from "../assets/icons_white/Shield_with_Checkmark.png";
 import globeIcon from "../assets/icons_white/Globe.png";
 import dollarSignIcon from "../assets/icons_white/Dollar_Sign.png";
+import circularArrowsIcon from "../assets/icons_white/Circular_Arrows_(Process).png";
+import garbageTruckIcon from "../assets/icons_white/Garbage_Truck.png";
+import handsShakingIcon from "../assets/icons_white/PersontoPerson_Communication.png";
+import computerMonitorIcon from "../assets/icons_white/Computer_Monitor.png";
 
 export const emanifestIntro = {
   title: "وثيقة النقل الإلكترونية",
@@ -46,6 +50,44 @@ export const emanifestIntro = {
     "النفايات الزراعية",
     "النفايات الخاصة",
     "نفايات الرعاية الصحية",
+  ],
+  systemComponents: [
+    {
+      icon: circularArrowsIcon,
+      title: "التتبع والتوثيق اللحظي للنفايات",
+      points: [
+        "تسجيل جميع مراحل سلسلة قيمة النفايات من الانتاج وحتى معالجتها أو التخلص النهائي منها.",
+        "تتبع المركبات والمسارات عبر الربط بنظام تحديد المواقع (GPS)",
+        "تحديد مواقع وكميات وأنواع النفايات المنتجة وآلية المعالجة أو التخلص",
+      ],
+    },
+    {
+      icon: garbageTruckIcon,
+      title: "تحليل سلوك المركبات ورصد المخالفات رقميا",
+      points: [
+        "مراقبة ورصد التغير بوزن المركبة",
+        "الفشل بإيصال النفاية إلى موقع التخلص أو المعالجة",
+        "الدخول إلى المواقع المصنفة كمواقع رمي عشوائي",
+      ],
+    },
+    {
+      icon: handsShakingIcon,
+      title: "دعم اتخاذ القرار",
+      points: [
+        "التحليل الجيومكاني والتنبؤ للمستقبل لدعم التخطيط",
+        "الاستفادة المثلى وكفاءة الأعمال التشغيلية الرقابية والتوعوية وقياس أثر حقيقي",
+        "بناء قاعدة البيانات الوطنية لإدارة النفايات ومشاركتها لدعم المستهدفات الوطنية",
+      ],
+    },
+    {
+      icon: computerMonitorIcon,
+      title: "البيانات والتقارير",
+      points: [
+        "بيانات داعمة ومحفزة للاستثمار",
+        "بناء قاعدة البيانات الوطنية لإدارة النفايات ومشاركتها لدعم المستهدفات الوطنية",
+        "إصدار التقارير المبنية على البيانات",
+      ],
+    },
   ],
 };
 
