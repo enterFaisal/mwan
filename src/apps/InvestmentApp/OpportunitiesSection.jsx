@@ -99,8 +99,23 @@ const OpportunitiesSection = ({ onBack }) => {
               </div>
 
               {/* Right Column - Data Panel */}
-              <div ref={dataPanelRef} className="min-h-[600px]">
+              <div ref={dataPanelRef} className="min-h-[600px] flex flex-col">
                 <DataPanel selectedCity={selectedCity} onCitySelect={handleCitySelect} />
+                {/* Medina Details Button */}
+                {selectedCity === 'madinah' && (
+                  <div className="mt-6 animate-fade-in">
+                    <button
+                      onClick={() => setActiveTab('city')}
+                      className="w-full card bg-gradient-to-br from-mwan-green/30 to-green-800/30 border-mwan-green/50 hover:border-mwan-green hover:from-mwan-green/40 hover:to-green-800/40 text-white font-semibold py-4 px-6 rounded-xl shadow-lg transition-all duration-300 flex items-center justify-center gap-3 group"
+                    >
+                      <img src={targetWhiteIcon} alt="" className="h-6 w-auto object-contain transition-transform group-hover:scale-110" />
+                      <span className="text-lg">عرض تفاصيل المدينة المنورة</span>
+                      <svg className="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                      </svg>
+                    </button>
+                  </div>
+                )}
               </div>
             </div>
 

@@ -22,9 +22,14 @@ export const investmentData = {
     nameEn: "Madinah",
     facilities: 26,
     stats: {
-      population: 1.5,
-      populationUnit: "مليون نسمة",
+      population: 1614425,
+      populationUnit: "نسمة",
       municipalities: 4,
+      totalArea: 88593,
+      totalAreaUnit: "كم²",
+      agriculturalArea: 559,
+      agriculturalAreaUnit: "كم²",
+      industrialAreas: 239,
       wasteGeneration: 2.8,
       wasteUnit: "مليون طن/سنة",
       recyclingTarget: 79,
@@ -32,10 +37,11 @@ export const investmentData = {
     },
     wasteComposition: [
       { type: "النفايات البلدية الصلبة", percentage: 64 },
-      { type: "نفايات البناء والهدم", percentage: 20 },
-      { type: "النفايات الصناعية", percentage: 9 },
-      { type: "محطة استخدام السماد", percentage: 4 },
-      { type: "أخرى", percentage: 3 },
+      { type: "النفايات الصناعية", percentage: 20 },
+      { type: "النفايات الزراعية", percentage: 9 },
+      { type: "حمأة الصرف الصحي", percentage: 4 },
+      { type: "النفايات الخاصة", percentage: 3 },
+      { type: "نفايات الرعاية الصحية", percentage: 0.13 },
     ],
     opportunities: [
       {
