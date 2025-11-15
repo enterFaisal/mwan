@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { strategicPlanData } from '../../data/investmentData.js';
 import { getPartnerLogo } from '../../data/partnersLogos.js';
 import BackButton from '../../components/BackButton';
@@ -9,6 +9,73 @@ import checklistIcon from '../../assets/icons/Checklist.png';
 import checklistWhiteIcon from '../../assets/icons_white/Checklist.png';
 import barGraphIcon from '../../assets/icons/Bar_Graph.png';
 import barGraphWhiteIcon from '../../assets/icons_white/Bar_Graph.png';
+
+// Animated Counter Component
+const AnimatedCounter = ({ value, isActive }) => {
+  const [displayValue, setDisplayValue] = useState(0);
+  const animationRef = useRef(null);
+
+  useEffect(() => {
+    // Clear any existing animation
+    if (animationRef.current) {
+      clearInterval(animationRef.current);
+      animationRef.current = null;
+    }
+
+    if (!isActive) {
+      setDisplayValue(0);
+      return;
+    }
+
+    // Extract prefix (like "+" or "~") and numeric value
+    const match = value.match(/^([^\d]*)(\d+)$/);
+    if (!match) {
+      setDisplayValue(value);
+      return;
+    }
+
+    const prefix = match[1] || '';
+    const targetNumber = parseInt(match[2], 10);
+    
+    setDisplayValue(0);
+
+    const duration = 2000; // 2 seconds
+    const steps = 60;
+    const increment = targetNumber / steps;
+    const stepDuration = duration / steps;
+
+    let currentStep = 0;
+    animationRef.current = setInterval(() => {
+      currentStep++;
+      const nextValue = Math.min(Math.floor(increment * currentStep), targetNumber);
+      setDisplayValue(nextValue);
+
+      if (nextValue >= targetNumber) {
+        if (animationRef.current) {
+          clearInterval(animationRef.current);
+          animationRef.current = null;
+        }
+        setDisplayValue(targetNumber);
+      }
+    }, stepDuration);
+
+    return () => {
+      if (animationRef.current) {
+        clearInterval(animationRef.current);
+        animationRef.current = null;
+      }
+    };
+  }, [isActive, value]);
+
+  // Extract prefix and format the display
+  const match = value.match(/^([^\d]*)(\d+)$/);
+  if (!match) {
+    return <span>{value}</span>;
+  }
+
+  const prefix = match[1] || '';
+  return <span>{prefix}{displayValue.toLocaleString()}</span>;
+};
 
 const PlanSection = ({ onBack }) => {
   const [activeTab, setActiveTab] = useState('introduction');
@@ -183,7 +250,7 @@ const PlanSection = ({ onBack }) => {
                     </div>
                   </div>
                   <p className="text-5xl font-bold text-white mb-2">
-                    {stat.value}
+                    <AnimatedCounter value={stat.value} isActive={activeTab === 'outputs'} />
                   </p>
                   <p className="text-lg font-semibold text-white mb-1">
                     {stat.title}

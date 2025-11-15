@@ -107,9 +107,9 @@ const EmanifestSection = ({ onBack }) => {
         <h3 className="text-3xl font-bold text-mwan-green text-center mb-8">
           أنواع النفايات التي تغطيها الوثيقة
         </h3>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div className="flex flex-wrap justify-center gap-4">
           {emanifestIntro.wasteTypes.map((type, index) => (
-            <div key={index} className="btn-secondary py-4 text-center">
+            <div key={index} className="btn-secondary py-4 text-center w-[calc(50%-0.5rem)] md:w-[calc(25%-0.75rem)]">
               {type}
             </div>
           ))}

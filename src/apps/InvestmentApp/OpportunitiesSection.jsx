@@ -67,7 +67,7 @@ const OpportunitiesSection = ({ onBack }) => {
       </div>
 
       {/* Summary Stats */}
-      <div className="mt-12 grid grid-cols-1 md:grid-cols-4 gap-6">
+      <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
         <div className="card bg-orange-600/20 border-orange-500 text-center">
           <p className="text-4xl font-bold text-orange-400 mb-2">45</p>
           <p className="text-white font-semibold">مليار ريال سعودي</p>
@@ -83,11 +83,11 @@ const OpportunitiesSection = ({ onBack }) => {
           <p className="text-white font-semibold">مليون طن/سنة</p>
           <p className="text-sm text-gray-300 mt-1">قدر النفايات المنتجة في عام 2023</p>
         </div>
-        <div className="card bg-purple-600/20 border-purple-500 text-center">
+        {/* <div className="card bg-purple-600/20 border-purple-500 text-center">
           <p className="text-4xl font-bold text-purple-400 mb-2">1.5</p>
           <p className="text-white font-semibold">مليون نسمة</p>
           <p className="text-sm text-gray-300 mt-1">مجموعة المدينة المنورة</p>
-        </div>
+        </div> */}
       </div>
     </div>
   );
