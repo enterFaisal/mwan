@@ -6,8 +6,8 @@ import ConstructionDemolitionOpportunities from './ConstructionDemolitionOpportu
 
 import globeIcon from '../../assets/icons/Globe.png';
 import globeWhiteIcon from '../../assets/icons_white/Globe.png';
-import documentIcon from '../../assets/icons/Document.png';
-import documentWhiteIcon from '../../assets/icons_white/Document.png';
+import targetIcon from '../../assets/icons/Target-Bullseye.png';
+import targetWhiteIcon from '../../assets/icons_white/Target-Bullseye.png';
 import briefcaseIcon from '../../assets/icons/Briefcase.png';
 import briefcaseWhiteIcon from '../../assets/icons_white/Briefcase.png';
 
@@ -36,8 +36,8 @@ const OpportunitiesSection = ({ onBack }) => {
 
   const tabs = [
     { id: 'map', label: 'خريطة', icon: globeIcon, activeIcon: globeWhiteIcon },
-    { id: 'city', label: 'فرصة المدينه', icon: documentIcon, activeIcon: documentWhiteIcon },
-    { id: 'construction', label: 'الفرص استثماريه في البناء والهدم', icon: briefcaseIcon, activeIcon: briefcaseWhiteIcon }
+    { id: 'city', label: 'فرصة المدينة المنورة', icon: targetIcon, activeIcon: targetWhiteIcon },
+    { id: 'construction', label: 'الفرص استثمارية في البناء والهدم', icon: briefcaseIcon, activeIcon: briefcaseWhiteIcon }
   ];
 
   return (

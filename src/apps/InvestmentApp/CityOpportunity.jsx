@@ -6,7 +6,7 @@ const CityOpportunity = ({ onBack }) => {
       {/* Header */}
       <div className="text-center mb-8">
         <h3 className="text-3xl font-bold text-mwan-green mb-4">
-          فرصة المدينه
+          فرصة المدينة المنورة
         </h3>
       </div>
 
