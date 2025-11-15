@@ -285,6 +285,147 @@ const CityOpportunity = ({ onBack }) => {
           )}
         </div>
       </div>
+
+      {/* Infrastructure Section */}
+      <div className="mb-8">
+        <h4 className="text-2xl font-bold text-mwan-green mb-6 text-center">
+          تم تحديد البنية التحتية المقترحة لمعالجة النفايات والتخلص منها في مجموعة المدينة المنورة
+        </h4>
+        
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          {/* Left: Infrastructure Facilities */}
+          <div className="card bg-white/5 border-mwan-green/30">
+            <h5 className="text-xl font-bold text-mwan-green mb-6 text-center">
+              أمثلة لأهم مرافق البنية التحتية
+            </h5>
+            <div className="space-y-4">
+              {/* Facility 1 - Red Circle */}
+              <div className="flex items-start gap-4 p-4 bg-white/5 rounded-xl">
+                <div className="flex-shrink-0">
+                  <div className="w-12 h-12 rounded-full bg-red-500 flex items-center justify-center text-white font-bold">
+                    3
+                  </div>
+                </div>
+                <div className="flex-1">
+                  <p className="text-white font-semibold">
+                    مراكز بيئية متكاملة لمعالجة النفايات
+                  </p>
+                  <p className="text-gray-400 text-sm mt-1">
+                    تشمل مصانع الفرز والتسميد واستعادة الطاقة
+                  </p>
+                  <p className="text-gray-500 text-xs mt-2">
+                    مواقع: خيبر، المدينة المنورة (2)، المهد
+                  </p>
+                </div>
+              </div>
+
+              {/* Facility 2 - Green Hexagon */}
+              <div className="flex items-start gap-4 p-4 bg-white/5 rounded-xl">
+                <div className="flex-shrink-0">
+                  <div className="w-12 h-12 bg-green-500 flex items-center justify-center text-white font-bold" style={{ clipPath: 'polygon(30% 0%, 70% 0%, 100% 50%, 70% 100%, 30% 100%, 0% 50%)' }}>
+                    1
+                  </div>
+                </div>
+                <div className="flex-1">
+                  <p className="text-white font-semibold">
+                    مرفق معالجة مخلفات المسالخ
+                  </p>
+                  <p className="text-gray-400 text-sm mt-1">
+                    معالجة النفايات العضوية من المسالخ
+                  </p>
+                </div>
+              </div>
+
+              {/* Facility 3 - Light Blue Square */}
+              <div className="flex items-start gap-4 p-4 bg-white/5 rounded-xl">
+                <div className="flex-shrink-0">
+                  <div className="w-12 h-12 bg-cyan-400 flex items-center justify-center text-white font-bold">
+                    1
+                  </div>
+                </div>
+                <div className="flex-1">
+                  <p className="text-white font-semibold">
+                    مرفق لمعالجة النفايات الصناعية الخطرة
+                  </p>
+                  <p className="text-gray-400 text-sm mt-1">
+                    معالجة متخصصة للنفايات الخطرة
+                  </p>
+                </div>
+              </div>
+
+              {/* Facility 4 - Purple Hexagon */}
+              <div className="flex items-start gap-4 p-4 bg-white/5 rounded-xl">
+                <div className="flex-shrink-0">
+                  <div className="w-12 h-12 bg-purple-500 flex items-center justify-center text-white font-bold" style={{ clipPath: 'polygon(30% 0%, 70% 0%, 100% 50%, 70% 100%, 30% 100%, 0% 50%)' }}>
+                    1
+                  </div>
+                </div>
+                <div className="flex-1">
+                  <p className="text-white font-semibold">
+                    مرفق لمعالجة نفايات الرعاية الصحية الخطرة
+                  </p>
+                  <p className="text-gray-400 text-sm mt-1">
+                    معالجة آمنة للنفايات الطبية الخطرة
+                  </p>
+                </div>
+              </div>
+
+              {/* Facility 5 - Yellow Circle */}
+              <div className="flex items-start gap-4 p-4 bg-white/5 rounded-xl">
+                <div className="flex-shrink-0">
+                  <div className="w-12 h-12 rounded-full bg-yellow-500 flex items-center justify-center text-white font-bold">
+                    1
+                  </div>
+                </div>
+                <div className="flex-1">
+                  <p className="text-white font-semibold">
+                    مرافق لمعالجة النفايات الخاصة
+                  </p>
+                  <p className="text-gray-400 text-sm mt-1">
+                    معالجة النفايات الإلكترونية والخاصة الأخرى
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Right: Key Performance Indicators */}
+          <div className="space-y-6">
+            {/* 97% Diversion */}
+            <div className="card bg-gradient-to-br from-green-600/20 to-green-800/20 border-green-500 text-center p-6">
+              <div className="flex items-center justify-center mb-4">
+                <img src={gearsCogsIcon} alt="" className="w-12 h-12 object-contain" />
+              </div>
+              <p className="text-6xl font-bold text-green-400 mb-2">97%</p>
+              <p className="text-xl text-white font-semibold">نسبة الاستبعاد عن المرادم</p>
+            </div>
+
+            {/* Breakdown Stats */}
+            <div className="grid grid-cols-2 gap-4">
+              <div className="card bg-green-600/20 border-green-500 text-center p-4">
+                <p className="text-3xl font-bold text-green-400 mb-1">29%</p>
+                <p className="text-sm text-white">تحويل النفايات إلى طاقة</p>
+              </div>
+              <div className="card bg-green-600/20 border-green-500 text-center p-4">
+                <p className="text-3xl font-bold text-green-400 mb-1">83%</p>
+                <p className="text-sm text-white">إعادة التدوير والتسميد</p>
+              </div>
+            </div>
+
+            {/* Investment Opportunities */}
+            <div className="card bg-gradient-to-br from-orange-600/20 to-orange-800/20 border-orange-500 text-center p-6">
+              <div className="flex items-center justify-center mb-4">
+                <svg className="w-12 h-12 text-orange-400" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z" />
+                </svg>
+              </div>
+              <p className="text-4xl font-bold text-orange-400 mb-2">45</p>
+              <p className="text-xl text-white font-semibold mb-1">مليار ريال سعودي</p>
+              <p className="text-sm text-gray-300">إجمالي قيمة الفرص الاستثمارية</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
