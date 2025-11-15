@@ -13,21 +13,28 @@ import leafIcon from '../assets/icons/Leaf.png';
 import envelopeIcon from '../assets/icons/Envelope.png';
 import telephoneIcon from '../assets/icons/Telephone.png';
 import compassIcon from '../assets/icons/Compass.png';
+import podiumLecternIcon from '../assets/icons/Shield_with_Star_and_Laurels.png';
+import briefcaseIcon from '../assets/icons/Briefcase.png';
+import handWithCoinIcon from '../assets/icons/Hand_with_Coin_(Donation).png';
+import udeemWebImage from '../../udeemWebImage.png';
 
 const socials = [
   {
     name: 'X',
+    username: 'ncwmsa@',
     href: 'https://x.com/ncwmsa',
     // Use high-quality brand icon from CDN
     iconUrl: 'https://cdn.simpleicons.org/x/FFFFFF',
   },
   {
     name: 'YouTube',
+    username: 'MWAN-SA@',
     href: 'https://www.youtube.com/channel/UC0Fl3my86TrSTqOgsjRsTmA',
     iconPath: 'M21.58 7.19c-.23-.86-.9-1.52-1.76-1.75C18.26 5 12 5 12 5s-6.26 0-7.82.44c-.86.23-1.52.9-1.76 1.75C2 8.05 2 12 2 12s0 3.95.42 4.81c.23.86.9 1.52 1.76 1.75C5.74 19 12 19 12 19s6.26 0 7.82-.44c.86-.23 1.52-.9 1.76-1.75C22 15.95 22 12 22 12s0-3.95-.42-4.81zM9.54 15.58V8.42L15.82 12l-6.28 3.58z',
   },
   {
     name: 'LinkedIn',
+    username: 'mwansa@',
     href: 'https://www.linkedin.com/company/mwansa/',
     iconPath: 'M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z',
   },
@@ -42,7 +49,7 @@ export const mwanInfoData = {
           <h3 className="text-2xl font-bold mb-4 text-mwan-green">نبذة عن موان</h3>
           <p className="text-lg leading-relaxed mb-6">
             تم تأسيس المركز الوطني لإدارة النفايات بموجب قرار مجلس الوزراء رقم 457 بتاريخ 1440/8/11هـ،
-            بهدف تنظيم أنشطة إدارة النفايات والإشراف عليها، وتحفيز الاستثمار فيها، والارتقاء بها إلى
+            بهدف تنظيم أنشطة إدارة النفايات والإشراف عليها، وتحفيز الاستثمار فيها، والارتقاء بجودتها بناء 
             على مبدأ الاقتصاد الدائري في إدارة النفايات لتحقيق أهداف التنمية المستدامة.
           </p>
         </section>
@@ -69,20 +76,20 @@ export const mwanInfoData = {
             </div>
 
             <div className="card hover:bg-white/20 transition-all">
-              <img src={personToPersonIcon} alt="" className="h-16 w-auto object-contain mb-4" />
+              <img src={lightbulbIcon} alt="" className="h-16 w-auto object-contain mb-4" />
               <h4 className="font-bold text-xl mb-2">التوعية وبناء القدرات</h4>
               <p className="text-sm">رفع مستوى الوعي وبناء القدرات الوطنية</p>
             </div>
 
             <div className="card hover:bg-white/20 transition-all">
               <img src={documentIcon} alt="" className="h-16 w-auto object-contain mb-4" />
-              <h4 className="font-bold text-xl mb-2">الترخيص والرقابة للعمر الأفضل</h4>
+              <h4 className="font-bold text-xl mb-2">الترخيص والرقابة لتعزيز الامتثال</h4>
               <p className="text-sm">إصدار التراخيص ومراقبة الامتثال للمعايير</p>
             </div>
 
             <div className="card hover:bg-white/20 transition-all">
               <img src={globeIcon} alt="" className="h-16 w-auto object-contain mb-4" />
-              <h4 className="font-bold text-xl mb-2">التحول الرقمي والدعم الصناعي</h4>
+              <h4 className="font-bold text-xl mb-2">التحول الرقمي والذكاء الاصطناعي</h4>
               <p className="text-sm">تطوير الحلول الرقمية ودعم الابتكار</p>
             </div>
           </div>
@@ -157,46 +164,46 @@ export const mwanInfoData = {
                   {
                     title: 'مخالفات أحكام التراخيص والتصاريح',
                     url: 'https://drive.google.com/file/d/1v61_I_HQi-o1sPV__L19ue5Zkw3Y3DyL/preview',
-                    description: 'المخالفات المتعلقة بالتراخيص والتصاريح'
+                    // description: 'المخالفات المتعلقة بالتراخيص والتصاريح'
                   },
                   {
                     title: 'مخالفات أحكام مسؤولية المنتج الممتد',
-                    url: 'https://drive.google.com/file/d/1UKWQujryEfZ0A1nTTMtWJ5W-zb3k_OTK/preview',
-                    description: 'المخالفات المتعلقة بمسؤولية المنتج الممتد'
+                    url: 'https://drive.google.com/file/d/13y11I4zX6NGgP03KZgHTxKI6kq8Ae2BC/preview',
+                    // description: 'المخالفات المتعلقة بمسؤولية المنتج الممتد'
                   },
                   {
                     title: 'مخالفات أحكام سلسلة القيمة للنفايات',
-                    url: 'https://drive.google.com/file/d/13y11I4zX6NGgP03KZgHTxKI6kq8Ae2BC/preview',
-                    description: 'المخالفات المتعلقة بسلسلة القيمة للنفايات'
+                    url: 'https://drive.google.com/file/d/1RVWDpHK5x9K6yfd_PRMkTR6U1rkxuPi8/preview',
+                    // description: 'المخالفات المتعلقة بسلسلة القيمة للنفايات'
                   },
                   {
                     title: 'مخالفات أحكام التعاقد على خدمات إدارة النفايات',
-                    url: 'https://drive.google.com/file/d/1RVWDpHK5x9K6yfd_PRMkTR6U1rkxuPi8/preview',
-                    description: 'المخالفات المتعلقة بالتعاقد على الخدمات'
+                    url: 'https://drive.google.com/file/d/1cTN95gPDJcKSNKbN3CS375dso3pVnXQ0/preview',
+                    // description: 'المخالفات المتعلقة بالتعاقد على الخدمات'
                   },
                   {
                     title: 'مخالفات أحكام استيراد وتصدير النفايات',
-                    url: 'https://drive.google.com/file/d/1cTN95gPDJcKSNKbN3CS375dso3pVnXQ0/preview',
-                    description: 'المخالفات المتعلقة باستيراد وتصدير النفايات'
+                    url: 'https://drive.google.com/file/d/1rg7_JGM4_BGC3rgZERRaLYyvigT_bf5r/preview',
+                    // description: 'المخالفات المتعلقة باستيراد وتصدير النفايات'
                   },
                   {
                     title: 'مخالفات أحكام خطط إدارة النفايات',
-                    url: 'https://drive.google.com/file/d/1rg7_JGM4_BGC3rgZERRaLYyvigT_bf5r/preview',
-                    description: 'المخالفات المتعلقة بخطط إدارة النفايات'
+                    url: 'https://drive.google.com/file/d/1dtESDiZCHlkTNmrpD58Z65vIgHVpm4CZ/preview',
+                    // description: 'المخالفات المتعلقة بخطط إدارة النفايات'
                   },
                   {
                     title: 'مخالفات أحكام التفتيش والتحقيق',
-                    url: 'https://drive.google.com/file/d/1dtESDiZCHlkTNmrpD58Z65vIgHVpm4CZ/preview',
-                    description: 'المخالفات المتعلقة بالتفتيش والتحقيق'
+                    url: 'https://drive.google.com/file/d/1W9arvueSGnBnVk0ZZXjUTk2cmipbNia/preview',
+                    // description: 'المخالفات المتعلقة بالتفتيش والتحقيق'
                   },
                   {
                     title: 'مخالفات عامة',
-                    url: 'https://drive.google.com/file/d/1W9arvueSGnBnVk0ZZXjUTk2cmipbNia-/preview',
-                    description: 'المخالفات العامة'
+                    url: 'https://drive.google.com/file/d/1t3gMv_hT-FuQ9v6myrs4ySp31iWGvqUw/preview',
+                    // description: 'المخالفات العامة'
                   },
                   {
                     title: 'كامل ملف المخالفات',
-                    url: 'https://drive.google.com/file/d/1t3gMv_hT-FuQ9v6myrs4ySp31iWGvqUw/preview',
+                    url: 'https://drive.google.com/file/d/1UKWQujryEfZ0A1nTTMtWJ5W-zb3k_OTK/preview',
                     description: 'الملف الشامل لجميع المخالفات'
                   }
                 ]
@@ -248,11 +255,11 @@ export const mwanInfoData = {
                   },
                   {
                     title: 'الضوابط والأدلة الفنية للتخزين المؤقت للنفايات',
-                    url: 'https://drive.google.com/file/d/1Ka12am8vjO3ROAUI6VATYxgdCMNUdtkJ-kpdK5g/preview',
+                    url: 'https://drive.google.com/file/d/1Ka12am8vjO3ROAUI6VATYxgdCMNUdtkJ/preview',
                     description: 'معايير التخزين المؤقت الآمن للنفايات'
                   },
                   {
-                    title: 'الضوابط والأدلة الفنية للتراخيص',
+                    title: 'الضوابط و الأدلة الفنية لترخيص الأنشطة والمنشآت',
                     url: 'https://drive.google.com/file/d/1stKIAW18FtvmyQ0IS3zQFtN9f2X9Ecro/preview',
                     description: 'متطلبات وإجراءات الحصول على التراخيص'
                   },
@@ -340,9 +347,9 @@ export const mwanInfoData = {
         {/* Introduction */}
         <section className="text-center">
           <p className="text-2xl leading-relaxed mb-6">
-            برنامج يعنى بتنظيم وتمكين مبادرات سلوكية شتى ممارسات سليمة لدعم التحول نحو الاقتصاد الدائري ضمن
-            منظومة متكاملة لدعم المبادرين بالمعرفة والابتكار وتقديم الحلول.
-          </p>
+          برنامج يعنى بتنظيم وتمكين مبادرات مسؤولة تتبنى ممارسات سليمة لدعم التحول نحو الاقتصاد الدائري ضمن
+          منظومة متكاملة تدعم المبادرين بالمعرفة والأفكار وتقيس الأثر وتقدّر الجهود.
+                    </p>
         </section>
 
         {/* Targeted Sectors */}
@@ -355,15 +362,15 @@ export const mwanInfoData = {
             {/* Public Sector */}
             <div className="bg-gradient-to-br from-gray-800 to-gray-700 p-6 rounded-2xl border border-gray-600 hover:border-mwan-green transition-all">
               <div className="flex items-center gap-3 mb-4">
-                {/* <img src="../assets/icons/Podium-Lectern.png" alt="" className="h-12 w-auto object-contain" /> */}
-                <h4 className="text-xl font-bold">القطاع العــــــام</h4>
+                <img src={podiumLecternIcon} alt="" className="h-12 w-auto object-contain" />
+                <h4 className="text-xl font-bold">القطاع الحــــكومــــي</h4>
               </div>
             </div>
 
             {/* Private Sector */}
             <div className="bg-gradient-to-br from-gray-800 to-gray-700 p-6 rounded-2xl border border-gray-600 hover:border-mwan-green transition-all">
               <div className="flex items-center gap-3 mb-4">
-                {/* <img src="../assets/icons/Briefcase.png" alt="" className="h-12 w-auto object-contain" /> */}
+                <img src={briefcaseIcon} alt="" className="h-12 w-auto object-contain" />
                 <h4 className="text-xl font-bold">القطاع الخـــاص</h4>
               </div>
             </div>
@@ -371,7 +378,7 @@ export const mwanInfoData = {
             {/* Non-profit Sector */}
             <div className="bg-gradient-to-br from-gray-800 to-gray-700 p-6 rounded-2xl border border-gray-600 hover:border-mwan-green transition-all">
               <div className="flex items-center gap-3 mb-4">
-                {/* <img src="../assets/icons/Hand_with_Coin_(Donation).png" alt="" className="h-12 w-auto object-contain" /> */}
+                <img src={handWithCoinIcon} alt="" className="h-12 w-auto object-contain" />
                 <h4 className="text-xl font-bold">القطاع غير الربحــــي</h4>
               </div>
             </div>
@@ -435,8 +442,8 @@ export const mwanInfoData = {
         <section className="mt-12">
           <div className="bg-gradient-to-r from-mwan-green/20 to-emerald-600/20 border border-mwan-green/30 p-8 rounded-3xl">
             <div className="text-center mb-6">
-              <h3 className="text-3xl font-bold mb-4">نحو يدعوكم لتكونوا جزءًا من المبادرات التي تصنع الاستدامة البيئية.</h3>
-              <p className="text-xl">ولكن بدأنا معه نحو بيئة نحو.</p>
+              <h3 className="text-3xl font-bold mb-4">ندعوكم لتكونوا جزءًا من المبادرات التي تصنع الاستدامة البيئية.</h3>
+              <p className="text-xl">ولتكن بدايتنا مع يُديم نحو بيئةٍ تدوم.</p>
             </div>
             
             <div className="flex flex-col md:flex-row items-center justify-center gap-8 mt-8">
@@ -463,21 +470,18 @@ export const mwanInfoData = {
                       </div>
                       <div className="text-xs text-mwan-light/60">mwan.gov.sa</div>
                     </div>
-                    <div className="py-8">
-                      <div className="mb-4 flex justify-center">
-                        <img src={recyclingSymbolIcon} alt="" className="w-20 h-20" />
-                      </div>
-                      <h4 className="text-2xl font-bold mb-3">مرحبًا بكم في برنامج يديم</h4>
-                      <p className="text-sm text-mwan-light/80 mb-4">
-                        معًا نحو مستقبل مستدام
-                      </p>
+                    <div className="py-4">
                       <a 
                         href="https://mwan.gov.sa/en/about/udeem" 
                         target="_blank" 
                         rel="noopener noreferrer"
-                        className="inline-block bg-mwan-green hover:bg-emerald-600 text-white font-bold px-8 py-3 rounded-full transition-all transform hover:scale-105"
+                        className="block cursor-pointer hover:opacity-90 transition-opacity"
                       >
-                        زيارة الموقع الإلكتروني
+                        <img 
+                          src={udeemWebImage} 
+                          alt="Udeem Program Website" 
+                          className="w-full h-auto rounded-lg"
+                        />
                       </a>
                     </div>
                   </div>
@@ -494,13 +498,13 @@ export const mwanInfoData = {
     title: "مكتسبات الاستراتيجية الوطنية لإدارة النفايات بحلول 2040",
     content: (
       <div className="space-y-8">
-        <section>
+        {/* <section>
           <h3 className="text-2xl font-bold mb-4 text-mwan-green">الإنجازات الرئيسية</h3>
           <p className="text-lg leading-relaxed mb-6">
             حققت المملكة العربية السعودية تقدماً ملموساً في تنفيذ الاستراتيجية الوطنية
             لإدارة النفايات، مع تحقيق العديد من المستهدفات الطموحة.
           </p>
-        </section>
+        </section> */}
 
         <section>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -513,7 +517,7 @@ export const mwanInfoData = {
             <div className="card bg-mwan-green/20 border-mwan-green">
               <div className="text-5xl font-bold mb-2 text-mwan-green">~76</div>
               <p className="text-lg font-semibold">ألف وظيفة</p>
-              <p className="text-sm mt-2">المساهمة في توليد</p>
+              <p className="text-sm mt-2">ساهم في توليدها</p>
             </div>
 
             <div className="card bg-mwan-green/20 border-mwan-green">
@@ -591,7 +595,7 @@ export const mwanInfoData = {
         <section className="mt-8">
           <div className="card bg-mwan-green/10 text-center">
             <h4 className="font-bold text-2xl mb-6">منصات التواصل الاجتماعي</h4>
-            <div className="flex gap-8 justify-center items-center mt-4">
+            <div className="flex gap-8 justify-center items-center mt-4 flex-wrap">
               {socials.map((social) => (
                 <a
                   key={social.name}
@@ -599,7 +603,7 @@ export const mwanInfoData = {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={social.name}
-                  className="text-mwan-light hover:text-mwan-green transition-colors duration-300"
+                  className="flex flex-col items-center gap-2 text-mwan-light hover:text-mwan-green transition-colors duration-300"
                 >
                   {social.iconUrl ? (
                     <img
@@ -620,6 +624,7 @@ export const mwanInfoData = {
                       <path d={social.iconPath} fillRule="evenodd" clipRule="evenodd" />
                     </svg>
                   )}
+                  <span className="text-sm font-medium">{social.username}</span>
                 </a>
               ))}
             </div>
