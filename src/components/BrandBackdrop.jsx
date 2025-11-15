@@ -28,7 +28,7 @@ const BrandBackdrop = () => {
         <img
           src={pattern}
           alt=""
-          className="absolute bottom-5 lg:-bottom-10 -left-10 w-full h-auto max-w-none opacity-50 select-none"
+          className="absolute bottom-5 lg:bottom-10 -left-10 w-full h-auto max-w-none opacity-50 select-none"
         />
       </div>
     </>

@@ -34,12 +34,12 @@ const MwanInfoApp = ({ onBack }) => {
   };
 
   return (
-    <div className="min-h-screen relative bg-mwan-dark">
+    <div className="min-h-screen relative bg-mwan-dark flex flex-col">
       <BrandBackdrop />
-      <div className="relative z-10">
+      <div className="relative z-10 flex-1 flex flex-col">
         <Header />
         
-        <div className="container mx-auto px-6 pt-32 pb-8">
+        <div className="flex-1 container mx-auto px-6 pt-32 pb-32 flex flex-col justify-end">
         {/* Content Area */}
         <div className="animate-fade-in">
           {pdfViewData ? (
