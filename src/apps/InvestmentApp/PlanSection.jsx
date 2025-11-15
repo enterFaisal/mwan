@@ -161,24 +161,24 @@ const PlanSection = ({ onBack }) => {
                   {strategicPlanData.approach.steps.map((step, index) => (
                     <div
                       key={step.number}
-                      className="relative w-72 text-white"
+                      className="relative w-96 text-white"
                       style={{
-                        clipPath: 'polygon(0% 50%, 12% 0%, 100% 0%, 88% 50%, 100% 100%, 12% 100%)',
+                        clipPath: 'polygon(0% 50%, 10% 0%, 100% 0%, 90% 50%, 100% 100%, 10% 100%)',
                         background: index % 2 === 0
                           ? 'linear-gradient(225deg, #1f8a5b 0%, #0e4933 100%)'
                           : 'linear-gradient(225deg, #1f6d92 0%, #103452 100%)'
                       }}
                     >
-                      <div className="flex flex-col gap-4 h-full px-7 py-6">
+                      <div className="flex flex-col gap-4 h-full px-8 py-6">
                         <div className="flex items-center gap-3">
-                          <span className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-white/20 text-2xl font-bold">
+                          <span className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-white/20 text-2xl font-bold flex-shrink-0">
                             {formatStepNumber(index + 1)}
                           </span>
                           <h4 className="font-bold text-lg leading-snug">
                             {step.title}
                           </h4>
                         </div>
-                        <p className="text-sm leading-relaxed text-white/90">
+                        <p className="text-sm leading-relaxed text-white/90 break-words px-4">
                           {step.description}
                         </p>
                       </div>
