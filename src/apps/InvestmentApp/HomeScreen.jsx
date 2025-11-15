@@ -8,11 +8,10 @@ const HomeScreen = ({ onNavigate }) => {
       {/* Title */}
       <div className="text-center mb-12 animate-slide-up">
         <h2 className="text-5xl font-extrabold mb-4 text-white font-ar">
-          الفرص الاستثمارية والمخطط الاستراتيجي
-        </h2>
+        رحلة التطوير تبدأ من التخطيط وتزدهر بالاستثمار.
+             </h2>
         <p className="text-xl text-mwan-light/80">
-          استكشف فرص الاستثمار في قطاع إدارة النفايات عبر مناطق المملكة
-        </p>
+        انتقل بين محطّاتها واكتشف مسار التنمية          </p>
       </div>
 
       {/* Two Main Options */}

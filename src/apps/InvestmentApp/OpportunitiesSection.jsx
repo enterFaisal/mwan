@@ -29,10 +29,11 @@ const OpportunitiesSection = ({ onBack }) => {
       {/* Title */}
       <div className="text-center mb-12">
         <h2 className="text-4xl font-bold text-white mb-4">
-          الفرص الاستثمارية في قطاع إدارة النفايات
+        الاستثمار في قطاع إدارة النفايات
+        
         </h2>
         <p className="text-xl text-gray-300">
-          اختر مدينة على الخريطة لعرض الفرص الاستثمارية المتاحة
+        بوابة نحو فرصٍ واعدة، ومستقبلٍ مستدام
         </p>
       </div>
 
