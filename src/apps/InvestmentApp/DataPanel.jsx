@@ -165,36 +165,59 @@ const DataPanel = ({ selectedCity, onCitySelect }) => {
       {/* Key Statistics */}
       <div className="card bg-white/5 border-mwan-green/30">
         <h4 className="text-xl font-bold text-mwan-green mb-4">المعلومات الرئيسية</h4>
-        <div className="grid grid-cols-2 gap-4">
-          <div className="bg-white/5 rounded-xl p-4">
-            <p className="text-sm text-gray-400 mb-1">عدد السكان</p>
-            <p className="text-2xl font-bold text-white">
-              {cityData.stats.population} {cityData.stats.populationUnit}
-            </p>
-          </div>
-          <div className="bg-white/5 rounded-xl p-4">
-            <p className="text-sm text-gray-400 mb-1">عدد البلديات</p>
-            <p className="text-2xl font-bold text-white">
-              {cityData.stats.municipalities}
-            </p>
-          </div>
-          <div className="bg-white/5 rounded-xl p-4">
-            <p className="text-sm text-gray-400 mb-1">النفايات المنتجة</p>
-            <p className="text-2xl font-bold text-white">
-              {cityData.stats.wasteGeneration} {cityData.stats.wasteUnit}
-            </p>
-          </div>
-          <div className="bg-white/5 rounded-xl p-4">
-            <p className="text-sm text-gray-400 mb-1">هدف إعادة التدوير</p>
-            <p className="text-2xl font-bold text-mwan-green">
-              {cityData.stats.recyclingTarget}%
-            </p>
-          </div>
-        </div>
+        {(() => {
+          // Calculate total budget
+          const totalMillions = cityData.opportunities.reduce((sum, opp) => {
+            const investmentStr = opp.investment;
+            const numMatch = investmentStr.match(/[\d.]+/);
+            if (!numMatch) return sum;
+            const numValue = parseFloat(numMatch[0]);
+            if (investmentStr.includes('مليار')) {
+              return sum + (numValue * 1000);
+            } else {
+              return sum + numValue;
+            }
+          }, 0);
+          const isBillions = totalMillions >= 1000;
+          const budgetValue = isBillions 
+            ? `${(totalMillions / 1000).toFixed(0)}` 
+            : totalMillions.toLocaleString();
+          const budgetUnit = isBillions ? 'مليار ريال' : 'مليون ريال';
+          const opportunitiesCount = cityData.opportunities.length;
+          const facilitiesCount = cityData.facilities || 0;
+          
+          return (
+            <div className="space-y-4">
+              <div className="grid grid-cols-2 gap-4">
+                <div className="bg-white/5 rounded-xl p-4">
+                  <p className="text-sm text-gray-400 mb-1">فرصة استثمارية</p>
+                  <p className="text-2xl font-bold text-white">
+                    {opportunitiesCount}
+                  </p>
+                </div>
+                <div className="bg-white/5 rounded-xl p-4">
+                  <p className="text-sm text-gray-400 mb-1">مرفق</p>
+                  <p className="text-2xl font-bold text-white">
+                    {facilitiesCount}
+                  </p>
+                </div>
+              </div>
+              <div className="card bg-gradient-to-br from-mwan-green/20 to-green-900/20 border-mwan-green">
+                <div className="text-center p-4">
+                  <p className="text-sm text-gray-300 mb-2">ميزانية</p>
+                  <p className="text-4xl font-bold text-mwan-green mb-2">
+                    {budgetValue}
+                  </p>
+                  <p className="text-sm text-gray-300">{budgetUnit}</p>
+                </div>
+              </div>
+            </div>
+          );
+        })()}
       </div>
 
       {/* Waste Composition */}
-      {cityData.wasteComposition && (
+      {/* {cityData.wasteComposition && (
         <div className="card bg-white/5 border-mwan-green/30">
           <h4 className="text-xl font-bold text-mwan-green mb-4">تكوين النفايات</h4>
           <div className="space-y-3">
@@ -214,69 +237,43 @@ const DataPanel = ({ selectedCity, onCitySelect }) => {
             ))}
           </div>
         </div>
-      )}
-
-      {/* Investment Opportunities */}
-      <div className="card bg-white/5 border-orange-500/30">
-        <h4 className="text-xl font-bold text-orange-400 mb-4">
-          الفرص الاستثمارية ({cityData.opportunities.length})
-        </h4>
-        <div className="space-y-4 max-h-96 overflow-y-auto pr-2">
-          {cityData.opportunities.map((opportunity) => (
-            <div
-              key={opportunity.id}
-              className="bg-white/5 rounded-xl p-4 hover:bg-white/10 transition-all border border-orange-500/20 hover:border-orange-500"
-            >
-              <div className="flex items-start justify-between mb-3">
-                <h5 className="font-bold text-lg text-white flex-1">
-                  {opportunity.name}
-                </h5>
-                <span className="bg-orange-600/30 text-orange-400 text-xs px-3 py-1 rounded-full whitespace-nowrap mr-3">
-                  #{opportunity.id}
-                </span>
-              </div>
-              
-              <p className="text-sm text-gray-400 mb-3">{opportunity.type}</p>
-              
-              <div className="grid grid-cols-3 gap-3">
-                <div>
-                  <p className="text-xs text-gray-400 mb-1">الطاقة الإنتاجية</p>
-                  <p className="text-sm font-semibold text-white">
-                    {opportunity.capacity}
-                  </p>
-                  <p className="text-xs text-gray-500">{opportunity.unit}</p>
-                </div>
-                <div>
-                  <p className="text-xs text-gray-400 mb-1">الاستثمار المقدر</p>
-                  <p className="text-sm font-semibold text-mwan-green">
-                    {opportunity.investment}
-                  </p>
-                </div>
-                <div>
-                  <p className="text-xs text-gray-400 mb-1">فرص العمل</p>
-                  <p className="text-sm font-semibold text-blue-400">
-                    {opportunity.jobs} وظيفة
-                  </p>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
+      )} */}
 
       {/* Summary Card */}
-      <div className="card bg-gradient-to-br from-mwan-green/20 to-green-900/20 border-mwan-green">
+      {/* <div className="card bg-gradient-to-br from-mwan-green/20 to-green-900/20 border-mwan-green">
         <div className="text-center">
           <p className="text-sm text-gray-300 mb-2">إجمالي قيمة الفرص الاستثمارية</p>
-          <p className="text-4xl font-bold text-mwan-green mb-2">
-            {cityData.opportunities.reduce((sum, opp) => {
-              const value = parseInt(opp.investment.replace(/[^\d]/g, ''));
-              return sum + value;
-            }, 0).toLocaleString()}
-          </p>
-          <p className="text-sm text-gray-300">مليون ريال سعودي</p>
+          {(() => {
+            const totalMillions = cityData.opportunities.reduce((sum, opp) => {
+              const investmentStr = opp.investment;
+              // Extract number (handles decimals)
+              const numMatch = investmentStr.match(/[\d.]+/);
+              if (!numMatch) return sum;
+              const numValue = parseFloat(numMatch[0]);
+              // Check if it's in billions (مليار) or millions (مليون)
+              if (investmentStr.includes('مليار')) {
+                return sum + (numValue * 1000); // Convert billions to millions
+              } else {
+                return sum + numValue; // Already in millions
+              }
+            }, 0);
+            const isBillions = totalMillions >= 1000;
+            const displayValue = isBillions 
+              ? `${(totalMillions / 1000).toFixed(0)}` 
+              : totalMillions.toLocaleString();
+            const unit = isBillions ? 'مليار ريال سعودي' : 'مليون ريال سعودي';
+            
+            return (
+              <>
+                <p className="text-4xl font-bold text-mwan-green mb-2">
+                  {displayValue}
+                </p>
+                <p className="text-sm text-gray-300">{unit}</p>
+              </>
+            );
+          })()}
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };
