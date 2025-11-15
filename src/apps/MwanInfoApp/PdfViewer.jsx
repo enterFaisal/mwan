@@ -1,5 +1,6 @@
 import React from 'react';
 import BackButton from '../../components/BackButton';
+import QRCodeDisplay from './components/QRCodeDisplay';
 
 const PdfViewer = ({ title, pdfUrl, onBack }) => {
   return (
@@ -31,6 +32,7 @@ const PdfViewer = ({ title, pdfUrl, onBack }) => {
       <div className="mt-6 flex justify-center">
         <BackButton onClick={onBack} label="العودة" />
       </div>
+      <QRCodeDisplay url={pdfUrl} />
     </div>
   );
 };
