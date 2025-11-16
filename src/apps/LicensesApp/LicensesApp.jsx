@@ -32,7 +32,7 @@ const LicensesApp = ({ onBack }) => {
         
         <div className="container mx-auto px-6 pt-32 pb-8">
         {/* Back Button - only show on sub-pages and when LicensesSection is not showing its own */}
-        {view !== 'home' && showBackButton && (
+        {view !== 'home' && showBackButton && view !== 'emanifest' && (
           <div className="mb-6">
             <BackButton onClick={handleBackToHome} label="العودة" />
           </div>
