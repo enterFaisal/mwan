@@ -29,8 +29,9 @@ const LicensesSection = ({ onBack, setShowParentBackButton }) => {
         <div className="animate-fade-in">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-white mb-4">
-            خطوتك الأولى نحو الامتثال تبدأ
-            بترخيصك من موان            </h2>
+            خطوتك الأولى نحو الامتثال      
+            
+                  </h2>
             {/* <p className="text-xl text-gray-300">
               اختر أحد المواضيع لاستكشاف المزيد من التفاصيل
             </p> */}

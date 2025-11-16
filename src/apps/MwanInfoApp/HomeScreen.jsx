@@ -4,7 +4,8 @@ const HomeScreen = ({ onNavigate }) => {
   const menuItems = [
     {
       id: 'dorMwan',
-      title: 'دور موان ومهامه',
+      title: 'نبذة عنه',
+
       icon: '../assets/icons/Briefcase.png',
       accentColor: 'mwan-blue',
       showIcon: false,

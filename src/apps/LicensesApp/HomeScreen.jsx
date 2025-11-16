@@ -8,11 +8,9 @@ const HomeScreen = ({ onNavigate }) => {
       {/* Title */}
       <div className="text-center mb-12 animate-slide-up">
         <h2 className="text-5xl font-extrabold mb-4 text-white font-ar">
-        من الوثيقة إلى التراخيص والتصاريح تكاملٌ يقود تنظيم القطاع.
+        تكاملٌ يقود تنظيم قطاع إدارة النفايات
         </h2>
-        <p className="text-xl text-mwan-light/80">
-        إنطلق في رحلتك وتعرّف على كل جانب منها.
-                </p>
+
       </div>
 
       {/* Two Main Options */}

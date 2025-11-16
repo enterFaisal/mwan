@@ -53,7 +53,7 @@ export const licensesData = {
       },
       {
         id: 'difference',
-        title: 'الفرق بين الترخيص والتصريح',
+        title: 'الفرق بينهم',
         content: (
           <div className="space-y-8">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -75,9 +75,9 @@ export const licensesData = {
                   <h3 className="text-3xl font-bold mb-6 text-white text-center">التصريح:</h3>
                   <div className="brand-panel--soft p-6">
                     <p className="text-lg leading-relaxed text-white text-center">
-                      وثيقة يمنحها المركز لمنشآت تدوير النفايات تفيد بتحديدها
-                      ضوابط المركز واشتراطاته، قبل حصولها على التراخيص التي تصدرها
-                      الجهات المختصة وفق أنظمتها.
+                    وثيقة يمنحها المركز لمنشآت تدوير النفايات تفيد بتحقيقها ضوابط
+المركز واشتراطاته، قبل حصولها على التراخيص التي تصدرها
+الجهات المختصة وفق أنظمتها.
                     </p>
                   </div>
                 </div>
@@ -88,7 +88,7 @@ export const licensesData = {
       },
       {
         id: 'benefits',
-        title: 'مكتسبات حصول المنشآت على الرخص والتصاريح',
+        title: 'فوائد حصول المنشآت عليهم',
         content: (
           <div className="space-y-8">
             {/* <h3 className="text-3xl font-bold mb-8 text-center bg-gradient-to-r from-mwan-green to-emerald-500 bg-clip-text text-transparent">
@@ -139,7 +139,7 @@ export const licensesData = {
       },
       {
         id: 'types',
-        title: 'أنواع التراخيص والتصاريح التي يصدرها موان',
+        title: 'أنواعهم',
         content: (
           <div className="space-y-8">
             {/* <h3 className="text-3xl font-bold mb-8 text-center bg-gradient-to-r from-mwan-green to-emerald-500 bg-clip-text text-transparent">
@@ -185,7 +185,7 @@ export const licensesData = {
       },
       {
         id: 'process',
-        title: 'كل ما يسهل مسار الرخص والتصريح',
+        title: 'معلومات تهمّك',
         content: (
           <div className="space-y-10">
             {/* <h3 className="text-3xl font-bold mb-8 text-center bg-gradient-to-r from-mwan-green to-emerald-500 bg-clip-text text-transparent">
