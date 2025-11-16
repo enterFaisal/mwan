@@ -1,7 +1,9 @@
 // Data for Application 1: Discover MWAN
 // Extracted from slides 4-14
 
+import React from 'react';
 import recyclingSymbolIcon from '../assets/icons/Recycling_Symbol.png';
+import MoktasabatContent from '../apps/MwanInfoApp/MoktasabatContent.jsx';
 import barGraphIcon from '../assets/icons/Bar_Graph.png';
 import dollarSignIcon from '../assets/icons/Dollar_Sign.png';
 import personToPersonIcon from '../assets/icons/PersontoPerson_Communication.png';
@@ -214,7 +216,7 @@ export const mwanInfoData = {
                   },
                   {
                     title: 'مخالفات أحكام التفتيش والتحقيق',
-                    url: 'https://drive.google.com/file/d/1W9arvueSGnBnVk0ZZXjUTk2cmipbNia/preview',
+                    url: 'https://drive.google.com/file/d/1W9arvueSGnBnVk0ZZXjUTk2cmipbNia-/preview',
                     // description: 'المخالفات المتعلقة بالتفتيش والتحقيق'
                   },
                   {
@@ -247,97 +249,97 @@ export const mwanInfoData = {
               onClick={() => onPdfView({
                 type: 'list',
                 title: 'الأدلة الفنية',
-                description: 'مجموعة من الأدلة والمواصفات الفنية لمختلف أنشطة إدارة النفايات',
+                description: '',
                 pdfs: [
                   {
-                    title: 'الضوابط والأدلة الفنية لإدارة نفايات الرعاية الصحية',
+                    title: 'إدارة نفايات الرعاية الصحية',
                     url: 'https://drive.google.com/file/d/1kzjROGnONF35Caa0rX6wrXq5Ia_QPmV_/preview',
-                    description: 'الضوابط والإرشادات لإدارة نفايات الرعاية الصحية'
+                    // description: 'الضوابط والإرشادات لإدارة نفايات الرعاية الصحية'
                   },
                   {
-                    title: 'الضوابط والأدلة الفنية لتصميم مرافق استرداد المواد وإنشائها وتشغيلها',
+                    title: 'تصميم مرافق استرداد المواد وإنشائها وتشغيلها',
                     url: 'https://drive.google.com/file/d/1LLnt3ODLDRKyJMlkmT-nzKLXSwWuH8H6/preview',
-                    description: 'معايير تصميم وتشغيل مرافق استرداد المواد'
+                    // description: 'معايير تصميم وتشغيل مرافق استرداد المواد'
                   },
                   {
-                    title: 'الضوابط والأدلة الفنية لتصميم وإنشاء وتشغيل منشآت المعالجة الفيزيائية الكيميائية',
+                    title: 'تصميم وإنشاء وتشغيل منشآت المعالجة الفيزيائية الكيميائية',
                     url: 'https://drive.google.com/file/d/127ZMVWnlFk2gKlyKGorE7XUATaZ6TmMi/preview',
-                    description: 'معايير منشآت المعالجة الفيزيائية والكيميائية'
+                    // description: 'معايير منشآت المعالجة الفيزيائية والكيميائية'
                   },
                   {
-                    title: 'الضوابط والأدلة الفنية لتصنيف النفايات',
+                    title: 'تصنيف النفايات',
                     url: 'https://drive.google.com/file/d/1hD_sCSUxcm8S-5ow7Uc-HZ9qMPeMLnJR/preview',
-                    description: 'معايير تصنيف أنواع النفايات المختلفة'
+                    // description: 'معايير تصنيف أنواع النفايات المختلفة'
                   },
                   {
-                    title: 'الضوابط والأدلة الفنية لخطط إدارة النفايات',
+                    title: 'خطط إدارة النفايات',
                     url: 'https://drive.google.com/file/d/1RkUIRk12RstsTUo1ixWKQGjmC_yXmNBg/preview',
-                    description: 'إرشادات إعداد خطط إدارة النفايات'
+                    // description: 'إرشادات إعداد خطط إدارة النفايات'
                   },
                   {
-                    title: 'الضوابط والأدلة الفنية للتخزين المؤقت للنفايات',
+                    title: 'لتخزين المؤقت للنفايات',
                     url: 'https://drive.google.com/file/d/1Ka12am8vjO3ROAUI6VATYxgdCMNUdtkJ/preview',
-                    description: 'معايير التخزين المؤقت الآمن للنفايات'
+                    // description: 'معايير التخزين المؤقت الآمن للنفايات'
                   },
                   {
                     title: 'الضوابط و الأدلة الفنية لترخيص الأنشطة والمنشآت',
                     url: 'https://drive.google.com/file/d/1stKIAW18FtvmyQ0IS3zQFtN9f2X9Ecro/preview',
-                    description: 'متطلبات وإجراءات الحصول على التراخيص'
+                    // description: 'متطلبات وإجراءات الحصول على التراخيص'
                   },
                   {
-                    title: 'الضوابط والأدلة الفنية للتفتيش والتدقيق',
+                    title: 'لتفتيش والتدقيق',
                     url: 'https://drive.google.com/file/d/1T4itGzsjB-Vpl8LqgjhR7x3R5zrVIk-P/preview',
-                    description: 'معايير وإجراءات التفتيش والتدقيق'
+                    // description: 'معايير وإجراءات التفتيش والتدقيق'
                   },
                   {
-                    title: 'الضوابط والأدلة الفنية للمعالجة البيولوجية للنفايات',
+                    title: 'لمعالجة البيولوجية للنفايات',
                     url: 'https://drive.google.com/file/d/1EqlVQNKFcOP8hc3Nh5y9vwb6Mwx5wiOM/preview',
-                    description: 'معايير المعالجة البيولوجية للنفايات'
+                    // description: 'معايير المعالجة البيولوجية للنفايات'
                   },
                   {
-                    title: 'الضوابط والأدلة الفنية للمعالجة الميكانيكية البيولوجية للنفايات',
+                    title: 'لمعالجة الميكانيكية البيولوجية للنفايات',
                     url: 'https://drive.google.com/file/d/1cPPC4sBPleuGq-WdlnTdVv2KpX9bqTU8/preview',
-                    description: 'معايير المعالجة الميكانيكية البيولوجية'
+                    // description: 'معايير المعالجة الميكانيكية البيولوجية'
                   },
                   {
-                    title: 'الضوابط والأدلة الفنية لمعايير قبول النفايات في المرادم',
+                    title: 'معايير قبول النفايات في المرادم',
                     url: 'https://drive.google.com/file/d/11CIXsbN47TFlHovwLwXlEmD5aM_Nr6zg/preview',
-                    description: 'معايير قبول النفايات في المرادم الصحية'
+                    // description: 'معايير قبول النفايات في المرادم الصحية'
                   },
                   {
-                    title: 'الضوابط والأدلة الفنية لنقل النفايات',
+                    title: 'نقل النفايات',
                     url: 'https://drive.google.com/file/d/1n0rZyxSfmjxZd4ACaEBNrWsQ29bR6Ut1/preview',
-                    description: 'المواصفات الفنية لعمليات نقل النفايات'
+                    // description: 'المواصفات الفنية لعمليات نقل النفايات'
                   },
                   {
-                    title: 'الضوابط والأدلة الفنية لتصميم مرافق حرق النفايات وإنشائها وتشغيلها',
+                    title: 'تصميم مرافق حرق النفايات وإنشائها وتشغيلها',
                     url: 'https://drive.google.com/file/d/1Da7lvlVxfPMuI6KW26Yl1S4MV-kpdK5g/preview',
-                    description: 'معايير تصميم وتشغيل مرافق الحرق'
+                    // description: 'معايير تصميم وتشغيل مرافق الحرق'
                   },
                   {
-                    title: 'الضوابط والأدلة الفنية لتصميم وإنشاء وتشغيل المرادم',
+                    title: 'تصميم وإنشاء وتشغيل المرادم',
                     url: 'https://drive.google.com/file/d/1c4QAhRN6d6bKY4RMnmbNxPFB2o8iQNu7/preview',
-                    description: 'المواصفات الفنية لتصميم وتشغيل المرادم'
+                    // description: 'المواصفات الفنية لتصميم وتشغيل المرادم'
                   },
                   {
                     title: 'الضوابط والاشتراطات للمبادرات التطوعية في قطاع إدارة النفايات',
                     url: 'https://drive.google.com/file/d/1NJd9oFi93QfWCGyrEntnqNX1Fw3UkMjK/preview',
-                    description: 'اشتراطات المبادرات التطوعية'
+                    // description: 'اشتراطات المبادرات التطوعية'
                   },
                   {
-                    title: 'الضوابط والأدلة الفنية لإدارة نفايات مسالخ الدواجن',
+                    title: 'إدارة نفايات مسالخ الدواجن',
                     url: 'https://drive.google.com/file/d/1CaWlA-h619CORJXiMYdYD10UuQaI3P4T/preview',
-                    description: 'إرشادات إدارة نفايات مسالخ الدواجن'
+                    // description: 'إرشادات إدارة نفايات مسالخ الدواجن'
                   },
                   {
-                    title: 'الضوابط والأدلة الفنية لإدارة نفايات مسالخ المواشي',
+                    title: 'إدارة نفايات مسالخ المواشي',
                     url: 'https://drive.google.com/file/d/1383gtWurSe1LI6WvMHGvFFMc6c4RhqHr/preview',
-                    description: 'إرشادات إدارة نفايات مسالخ المواشي'
+                    // description: 'إرشادات إدارة نفايات مسالخ المواشي'
                   },
                   {
                     title: 'نظام إدارة ميزان الشاحنات الإلكتروني عند مدخل منشأة استلام النفايات',
                     url: 'https://drive.google.com/file/d/1UMpSeGpsh_AZHiP5kzoailj42Z8kuoCj/preview',
-                    description: 'متطلبات نظام الميزان الإلكتروني'
+                    // description: 'متطلبات نظام الميزان الإلكتروني'
                   }
                 ]
               })}
@@ -442,7 +444,7 @@ export const mwanInfoData = {
               </div>
               <h4 className="text-lg font-bold mb-3 text-center">التدويــــر والاسترداد</h4>
               <p className="text-sm text-center leading-relaxed">
-                تعزيز إعادة توجيه النفايات من خلال إعادة التدوير واسترداد الموارد لإطالة دورة حياة المنتجات.
+                تعزيز إعادة تدوير النفايات من خلال إعادة التدوير واسترداد الموارد لإطالة دورة حياة المنتجات.
               </p>
             </div>
 
@@ -517,58 +519,7 @@ export const mwanInfoData = {
 
   moktasabat: {
     title: "مكتسبات الاستراتيجية الوطنية لإدارة النفايات بحلول 2040",
-    content: (
-      <div className="space-y-8">
-        {/* <section>
-          <h3 className="text-2xl font-bold mb-4 text-mwan-green">الإنجازات الرئيسية</h3>
-          <p className="text-lg leading-relaxed mb-6">
-            حققت المملكة العربية السعودية تقدماً ملموساً في تنفيذ الاستراتيجية الوطنية
-            لإدارة النفايات، مع تحقيق العديد من المستهدفات الطموحة.
-          </p>
-        </section> */}
-
-        <section>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div className="card bg-mwan-green/20 border-mwan-green">
-              <div className="text-5xl font-bold mb-2 text-mwan-green">~1.2</div>
-              <p className="text-lg font-semibold">مليار طن</p>
-              <p className="text-sm mt-2">من النفايات المعالجة</p>
-            </div>
-
-            <div className="card bg-mwan-green/20 border-mwan-green">
-              <div className="text-5xl font-bold mb-2 text-mwan-green">~76</div>
-              <p className="text-lg font-semibold">ألف وظيفة</p>
-              <p className="text-sm mt-2">ساهم في توليدها</p>
-            </div>
-
-            <div className="card bg-mwan-green/20 border-mwan-green">
-              <div className="text-5xl font-bold mb-2 text-mwan-green">~650</div>
-              <p className="text-lg font-semibold">مليار ر.س</p>
-              <p className="text-sm mt-2">المساهمة في الناتج المحلي الإجمالي</p>
-            </div>
-
-            <div className="card bg-mwan-green/20 border-mwan-green">
-              <div className="text-5xl font-bold mb-2 text-mwan-green">~848</div>
-              <p className="text-lg font-semibold">مرافق رئيسية</p>
-              <p className="text-sm mt-2">لمعالجة النفايات</p>
-            </div>
-
-            <div className="card bg-mwan-green/20 border-mwan-green">
-              <div className="text-5xl font-bold mb-2 text-mwan-green">~37</div>
-              <p className="text-lg font-semibold">مليون طن متري</p>
-              <p className="text-sm mt-2">مساهمة قطاع إدارة النفايات في تجنب انبعاثات مكافئ ثاني أكسيد الكربون</p>
-            </div>
-
-            <div className="card bg-mwan-green/20 border-mwan-green">
-              <div className="text-5xl font-bold mb-2 text-mwan-green">~420</div>
-              <p className="text-lg font-semibold">مليار ر.س</p>
-              <p className="text-sm mt-2">قيمة فرص القطاع الخاص</p>
-              <p className="text-xs mt-1">(CAPEX + OPEX)</p>
-            </div>
-          </div>
-        </section>
-      </div>
-    )
+    content: <MoktasabatContent />
   },
 
   contact: {
@@ -581,7 +532,7 @@ export const mwanInfoData = {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="card">
               <h4 className="font-bold text-xl mb-4 flex items-center gap-3">
-                <img src={emailIcon} alt="" className="h-8 w-auto object-contain" />
+                <img src={emailIcon} alt="" className="h-16 w-auto object-contain" />
                 البريد الإلكتروني
               </h4>
               <p className="text-lg" dir="ltr">info@mwan.gov.sa</p>
@@ -589,7 +540,7 @@ export const mwanInfoData = {
 
             <div className="card">
               <h4 className="font-bold text-xl mb-4 flex items-center gap-3">
-                <img src={websiteIcon} alt="" className="h-8 w-auto object-contain" />
+                <img src={websiteIcon} alt="" className="h-16 w-auto object-contain" />
                 الموقع الإلكتروني
               </h4>
               <p className="text-lg" dir="ltr">www.mwan.gov.sa</p>
@@ -597,7 +548,7 @@ export const mwanInfoData = {
 
             <div className="card">
               <h4 className="font-bold text-xl mb-4 flex items-center gap-3">
-                <img src={phoneIcon} alt="" className="h-8 w-auto object-contain" />
+                <img src={phoneIcon} alt="" className="h-16 w-auto object-contain" />
                 الهاتف
               </h4>
               <p className="text-lg" dir="ltr">920009110</p>
@@ -605,7 +556,7 @@ export const mwanInfoData = {
 
             <div className="card">
               <h4 className="font-bold text-xl mb-4 flex items-center gap-3">
-                <img src={addressIcon} alt="" className="h-8 w-auto object-contain" />
+                <img src={addressIcon} alt="" className="h-16 w-auto object-contain" />
                 العنوان
               </h4>
               <p className="text-lg"> 3186 طريق الأمير محمد بن سلمان بن عبدالعزيز، حي, قرطبة، الرياض 13248-6329</p>

@@ -87,14 +87,14 @@ const EmanifestSection = ({ onBack }) => {
       content: 'intro'
     },
     {
-      id: 'monitoring',
-      title: 'منظومة الرقابة الإلكترونية ',
-      content: 'monitoring'
-    },
-    {
       id: 'components',
       title: 'مكوناتها',
       content: 'components'
+    },
+    {
+      id: 'wasteTypes',
+      title: 'أنواع النفايات التي تغطيها',
+      content: 'wasteTypes'
     },
     {
       id: 'howItWorks',
@@ -102,9 +102,14 @@ const EmanifestSection = ({ onBack }) => {
       content: 'howItWorks'
     },
     {
-      id: 'wasteTypes',
-      title: 'أنواع النفايات التي تغطيها',
-      content: 'wasteTypes'
+      id: 'monitoring',
+      title: 'منظومة الرقابة الإلكترونية ',
+      content: 'monitoring'
+    },
+    {
+      id: 'useCases',
+      title: 'أمثلة على حالات الاستخدام',
+      content: 'useCases'
     }
   ];
 
@@ -144,9 +149,13 @@ const EmanifestSection = ({ onBack }) => {
               <p className="text-xl text-gray-300 leading-relaxed text-center mb-8">
                 منصة رقمية مطوّرة من قبل المركز الوطني لإدارة النفايات تدعم تنفيذ الجولات التفتيشية الميدانية لرصد المخالفات وتوثيق المحاضر وإصدارها رقميا
               </p>
-
             </div>
-
+          </div>
+        );
+      
+      case 'useCases':
+        return (
+          <div className="space-y-12">
             {/* أمثلة على حالات الاستخدام */}
             <div>
               <h3 className="text-3xl font-bold text-mwan-green text-center mb-8">

@@ -1,7 +1,18 @@
 import React, { useState } from 'react';
-import compassIcon from '../../assets/icons/Compass.png';
-import leafIcon from '../../assets/icons/Leaf.png';
-import gearsCogsIcon from '../../assets/icons/Gears-Cogs.png';
+// Icons from تصاميم سيتي سكيب - ايقونات الفرص الاستثمارية
+import khareetaIcon from '../../assets/تصاميم سيتي سكيب/ايقونات الفرص الاستثمارية/خريطة@4x.png';
+import ikhtarIcon from '../../assets/تصاميم سيتي سكيب/ايقونات الفرص الاستثمارية/اختر مدينة@4x.png';
+import fursIcon from '../../assets/تصاميم سيتي سكيب/ايقونات الفرص الاستثمارية/فرص@4x.png';
+import furs1Icon from '../../assets/تصاميم سيتي سكيب/ايقونات الفرص الاستثمارية/فرص_1@4x.png';
+// Icons from تصاميم سيتي سكيب - ايقونات المخطط
+import makhrajatIcon from '../../assets/تصاميم سيتي سكيب/ايقونات المخطط/مخرجات المخطط@4x.png';
+import nabdhaIcon from '../../assets/تصاميم سيتي سكيب/ايقونات المخطط/نبذة@4x.png';
+// Icons from تصاميم سيتي سكيب - ايقونات مهام المركز
+import istidamaIcon from '../../assets/تصاميم سيتي سكيب/ايقونات اكتشف موان/ايقونات مهام المركز/الاستدامة المالية وتحفيز الاستثمار_@4x.png';
+import takhtitIcon from '../../assets/تصاميم سيتي سكيب/ايقونات اكتشف موان/ايقونات مهام المركز/التخطيط والتطوير_@4x.png';
+import madinaImage from '../../assets/simages/madina.png';
+import madina2Image from '../../assets/simages/madina2.png';
+import blueprintImage from '../../assets/simages/blueprint.png';
 
 const CityOpportunity = ({ onBack }) => {
   const [selectedSegment, setSelectedSegment] = useState(null);
@@ -106,9 +117,7 @@ const CityOpportunity = ({ onBack }) => {
           {/* Population */}
           <div className="bg-white/5 rounded-xl p-4 text-center">
             <div className="flex justify-center mb-2">
-              <svg className="w-8 h-8 text-mwan-green" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z" />
-              </svg>
+              <img src={ikhtarIcon} alt="" className="w-8 h-8 object-contain" />
             </div>
             <p className="text-2xl font-bold text-white mb-1">1,614,425</p>
             <p className="text-sm text-gray-400">التعداد السكاني</p>
@@ -117,7 +126,7 @@ const CityOpportunity = ({ onBack }) => {
           {/* Governorates */}
           <div className="bg-white/5 rounded-xl p-4 text-center">
             <div className="flex justify-center mb-2">
-              <img src={compassIcon} alt="" className="w-8 h-8 object-contain" />
+              <img src={khareetaIcon} alt="" className="w-8 h-8 object-contain" />
             </div>
             <p className="text-2xl font-bold text-white mb-1">4</p>
             <p className="text-sm text-gray-400">محافظات</p>
@@ -126,9 +135,7 @@ const CityOpportunity = ({ onBack }) => {
           {/* Total Area */}
           <div className="bg-white/5 rounded-xl p-4 text-center">
             <div className="flex justify-center mb-2">
-              <svg className="w-8 h-8 text-mwan-green" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
-              </svg>
+              <img src={makhrajatIcon} alt="" className="w-8 h-8 object-contain" />
             </div>
             <p className="text-2xl font-bold text-white mb-1">88,593</p>
             <p className="text-sm text-gray-400">المساحة الكلية (كم²)</p>
@@ -137,7 +144,7 @@ const CityOpportunity = ({ onBack }) => {
           {/* Agricultural Area */}
           <div className="bg-white/5 rounded-xl p-4 text-center">
             <div className="flex justify-center mb-2">
-              <img src={leafIcon} alt="" className="w-8 h-8 object-contain" />
+              <img src={nabdhaIcon} alt="" className="w-8 h-8 object-contain" />
             </div>
             <p className="text-2xl font-bold text-white mb-1">559</p>
             <p className="text-sm text-gray-400">المساحة الزراعية (كم²)</p>
@@ -146,7 +153,7 @@ const CityOpportunity = ({ onBack }) => {
           {/* Industrial Areas */}
           <div className="bg-white/5 rounded-xl p-4 text-center">
             <div className="flex justify-center mb-2">
-              <img src={gearsCogsIcon} alt="" className="w-8 h-8 object-contain" />
+              <img src={furs1Icon} alt="" className="w-8 h-8 object-contain" />
             </div>
             <p className="text-2xl font-bold text-white mb-1">239</p>
             <p className="text-sm text-gray-400">المناطق الصناعية</p>
@@ -271,6 +278,13 @@ const CityOpportunity = ({ onBack }) => {
             </div>
           ) : (
             <div className="text-center p-8 animate-fade-in">
+              <div className="mb-6">
+                <img 
+                  src={madinaImage} 
+                  alt="خريطة منطقة المدينة المنورة" 
+                  className="w-full max-w-full h-auto rounded-2xl mx-auto"
+                />
+              </div>
               <h4 className="text-2xl font-bold text-mwan-green mb-6">
                 تقدر النفايات المنتجة في عام 2023 م
               </h4>
@@ -278,9 +292,6 @@ const CityOpportunity = ({ onBack }) => {
                 <p className="text-5xl font-bold text-white mb-4">2.8</p>
                 <p className="text-2xl text-mwan-green font-semibold">مليون طن/سنة</p>
               </div>
-              <p className="text-gray-400 mt-6 text-sm">
-                👆 اضغط على أي قطاع في الرسم البياني لعرض التفاصيل
-              </p>
             </div>
           )}
         </div>
@@ -389,40 +400,65 @@ const CityOpportunity = ({ onBack }) => {
             </div>
           </div>
 
-          {/* Right: Key Performance Indicators */}
-          <div className="space-y-6">
-            {/* 97% Diversion */}
-            <div className="card bg-gradient-to-br from-green-600/20 to-green-800/20 border-green-500 text-center p-6">
-              <div className="flex items-center justify-center mb-4">
-                <img src={gearsCogsIcon} alt="" className="w-12 h-12 object-contain" />
-              </div>
-              <p className="text-6xl font-bold text-green-400 mb-2">97%</p>
-              <p className="text-xl text-white font-semibold">نسبة الاستبعاد عن المرادم</p>
+          {/* Right: Map Image */}
+          <div className="card bg-white/5 border-mwan-green/30">
+            <div className="w-full">
+              <img 
+                src={madina2Image} 
+                alt="خريطة مرافق البنية التحتية للمدينة المنورة" 
+                className="w-full h-auto rounded-2xl"
+              />
             </div>
+          </div>
+        </div>
 
-            {/* Breakdown Stats */}
-            <div className="grid grid-cols-2 gap-4">
-              <div className="card bg-green-600/20 border-green-500 text-center p-4">
-                <p className="text-3xl font-bold text-green-400 mb-1">29%</p>
-                <p className="text-sm text-white">تحويل النفايات إلى طاقة</p>
-              </div>
-              <div className="card bg-green-600/20 border-green-500 text-center p-4">
-                <p className="text-3xl font-bold text-green-400 mb-1">83%</p>
-                <p className="text-sm text-white">إعادة التدوير والتسميد</p>
-              </div>
+        {/* Key Performance Indicators Section */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
+          {/* 97% Diversion */}
+          <div className="card bg-gradient-to-br from-green-600/20 to-green-800/20 border-green-500 text-center p-6">
+            <div className="flex items-center justify-center mb-4">
+              <img src={takhtitIcon} alt="" className="w-12 h-12 object-contain" />
             </div>
+            <p className="text-6xl font-bold text-green-400 mb-2">97%</p>
+            <p className="text-xl text-white font-semibold">نسبة الاستبعاد عن المرادم</p>
+          </div>
 
-            {/* Investment Opportunities */}
-            <div className="card bg-gradient-to-br from-orange-600/20 to-orange-800/20 border-orange-500 text-center p-6">
-              <div className="flex items-center justify-center mb-4">
-                <svg className="w-12 h-12 text-orange-400" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z" />
-                </svg>
-              </div>
-              <p className="text-4xl font-bold text-orange-400 mb-2">45</p>
-              <p className="text-xl text-white font-semibold mb-1">مليار ريال سعودي</p>
-              <p className="text-sm text-gray-300">إجمالي قيمة الفرص الاستثمارية</p>
+          {/* Breakdown Stat 1 */}
+          <div className="card bg-green-600/20 border-green-500 text-center p-4 flex flex-col items-center justify-center">
+            <p className="text-3xl font-bold text-green-400 mb-1">29%</p>
+            <p className="text-sm text-white">تحويل النفايات إلى طاقة</p>
+          </div>
+
+          {/* Breakdown Stat 2 */}
+          <div className="card bg-green-600/20 border-green-500 text-center p-4 flex flex-col items-center justify-center">
+            <p className="text-3xl font-bold text-green-400 mb-1">83%</p>
+            <p className="text-sm text-white">إعادة التدوير والتسميد</p>
+          </div>
+
+          {/* Investment Opportunities */}
+          <div className="card bg-gradient-to-br from-orange-600/20 to-orange-800/20 border-orange-500 text-center p-6">
+            <div className="flex items-center justify-center mb-4">
+              <img src={istidamaIcon} alt="" className="w-12 h-12 object-contain" />
             </div>
+            <p className="text-4xl font-bold text-orange-400 mb-2">45</p>
+            <p className="text-xl text-white font-semibold mb-1">مليار ريال سعودي</p>
+            <p className="text-sm text-gray-300">إجمالي قيمة الفرص الاستثمارية</p>
+          </div>
+        </div>
+      </div>
+
+      {/* Strategic Plan Blueprint Section */}
+      <div className="mb-8">
+        <div className="card bg-white/5 border-mwan-green/30">
+          <p className="text-lg text-gray-300 mb-6 text-center leading-relaxed">
+            مثال على المخطط الاستراتيجي باستخدام النهج التكاملي لإدارة النفايات لتحقيق أعلى المستويات في الاستفادة والاستراداد
+          </p>
+          <div className="w-full">
+            <img 
+              src={blueprintImage} 
+              alt="مخطط استراتيجي للنهج التكاملي لإدارة النفايات" 
+              className="w-full h-auto rounded-2xl"
+            />
           </div>
         </div>
       </div>

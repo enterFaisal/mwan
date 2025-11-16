@@ -214,7 +214,7 @@ export const licensesData = {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {/* Licensed Companies QR Code */}
                 <div className="bg-gradient-to-br from-mwan-green/10 to-emerald-600/10 border-2 border-mwan-green/30 rounded-3xl p-8 shadow-2xl text-center">
-                  <h4 className="text-2xl font-bold text-white mb-6">رابط الجهات المرخصة</h4>
+                  {/* <h4 className="text-2xl font-bold text-white mb-6">رابط الجهات المرخصة</h4> */}
                   <div className="bg-white p-6 rounded-2xl inline-block shadow-xl">
                     <img 
                       src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://mwan.gov.sa/licened_companies&color=000000&bgcolor=FFFFFF" 
@@ -236,7 +236,7 @@ export const licensesData = {
 
                 {/* Permitted Companies QR Code */}
                 <div className="bg-gradient-to-br from-mwan-green/10 to-emerald-600/10 border-2 border-mwan-green/30 rounded-3xl p-8 shadow-2xl text-center">
-                  <h4 className="text-2xl font-bold text-white mb-6">رابط الجهات المصرحة</h4>
+                  {/* <h4 className="text-2xl font-bold text-white mb-6">رابط الجهات المصرحة</h4> */}
                   <div className="bg-white p-6 rounded-2xl inline-block shadow-xl">
                     <img 
                       src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://mwan.gov.sa/permited_companies&color=000000&bgcolor=FFFFFF" 

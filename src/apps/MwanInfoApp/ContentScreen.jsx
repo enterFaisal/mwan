@@ -42,7 +42,9 @@ const ContentScreen = ({ screenId, onBack, onPdfView }) => {
               <img src={mktt3Icon} alt="برنامج يديم" className="w-64 h-64 object-contain" />
             </div>
           )}
-          {renderedContent}
+          <div key={screenId}>
+            {renderedContent}
+          </div>
         </div>
       </div>
 
