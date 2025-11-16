@@ -1,5 +1,6 @@
 import React from 'react';
 import mktt2Icon from '../../../mktt2.png';
+import mktt5Icon from '../../../mktt5.png';
 
 const HomeScreen = ({ onNavigate }) => {
   return (
@@ -22,12 +23,15 @@ const HomeScreen = ({ onNavigate }) => {
           className="group btn-card p-12 min-h-[350px] landscape-card flex flex-col items-center justify-center gap-6"
         >
 
-          <h3 className="text-4xl font-bold text-white text-center">
+          {/* <h3 className="text-4xl font-bold text-white text-center">
             التراخيص والتصاريح
           </h3>
           <p className="text-xl text-white/90 text-center leading-relaxed px-4">
             تعرف على أنواع التراخيص، الإجراءات، الفوائد، وخطوات الحصول على الترخيص
-          </p>
+          </p> */}
+          <div className="transition-transform group-hover:scale-110">
+            <img src={mktt5Icon} alt="Strategic Plan Icon" className="w-64 h-64 object-contain" />
+          </div>
           <div className="absolute bottom-6 right-6 text-white/70 opacity-0 group-hover:opacity-100 transition-opacity">
             <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
