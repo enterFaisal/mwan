@@ -1,4 +1,5 @@
 import React from 'react';
+import { QRCodeCanvas } from 'qrcode.react';
 
 const ConstructionDemolitionOpportunities = ({ onBack }) => {
   const wasteManagementOpportunities = [
@@ -42,7 +43,7 @@ const ConstructionDemolitionOpportunities = ({ onBack }) => {
           
           {/* Table */}
           <div className="overflow-x-auto">
-            <table className="w-full text-right">
+            <table className="max-w-5xl text-right mx-auto">
               <thead>
                 <tr className="border-b border-mwan-green/50">
                   <th className="px-4 py-3 text-mwan-green font-bold text-sm">#</th>
@@ -65,6 +66,37 @@ const ConstructionDemolitionOpportunities = ({ onBack }) => {
                 ))}
               </tbody>
             </table>
+          </div>
+        </div>
+      </div>
+
+      {/* QR Code Section */}
+      <div className="card bg-white/5 border-mwan-green/30 mt-6">
+        <div className="p-6">
+          <div className="flex flex-col md:flex-row items-center justify-center gap-8">
+            <div className="bg-white p-6 rounded-2xl shadow-xl">
+              <QRCodeCanvas 
+                value="https://mwan.gov.sa/en/lfrs-lstthmry" 
+                size={200}
+                level="H"
+              />
+            </div>
+            <div className="text-center md:text-right">
+              <h4 className="text-2xl font-bold text-mwan-green mb-4">
+                امسح الرمز للاطلاع على المزيد
+              </h4>
+              <p className="text-white text-lg mb-4">
+                قم بمسح رمز الاستجابة السريعة للوصول إلى رابط الفرص الاستثمارية
+              </p>
+              <a 
+                href="https://mwan.gov.sa/en/lfrs-lstthmry" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-block mt-4 text-mwan-green hover:text-emerald-400 transition-colors underline text-lg"
+              >
+                أو اضغط هنا للزيارة
+              </a>
+            </div>
           </div>
         </div>
       </div>

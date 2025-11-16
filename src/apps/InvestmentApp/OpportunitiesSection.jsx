@@ -8,6 +8,10 @@ import ConstructionDemolitionOpportunities from './ConstructionDemolitionOpportu
 import khareetaIcon from '../../assets/تصاميم سيتي سكيب/ايقونات الفرص الاستثمارية/خريطة@4x.png';
 import ikhtarIcon from '../../assets/تصاميم سيتي سكيب/ايقونات الفرص الاستثمارية/اختر مدينة@4x.png';
 import fursIcon from '../../assets/تصاميم سيتي سكيب/ايقونات الفرص الاستثمارية/فرص@4x.png';
+import furs1Icon from '../../assets/تصاميم سيتي سكيب/ايقونات الفرص الاستثمارية/فرص_1@4x.png';
+// Icons from تصاميم سيتي سكيب - ايقونات برنامج يديم
+import tadwirIcon from '../../assets/تصاميم سيتي سكيب/ايقونات اكتشف موان/ايقونات برنامج يديم/التدويــــر والاسترداد_@4x.png';
+import taqleelIcon from '../../assets/تصاميم سيتي سكيب/ايقونات اكتشف موان/ايقونات برنامج يديم/تقليل إنتاج النفايات_@4x.png';
 
 const OpportunitiesSection = ({ onBack }) => {
   const [activeTab, setActiveTab] = useState('map');
@@ -35,7 +39,8 @@ const OpportunitiesSection = ({ onBack }) => {
   const tabs = [
     { id: 'map', label: 'خريطة', icon: khareetaIcon, activeIcon: khareetaIcon },
     { id: 'city', label: 'فرصة المدينة المنورة', icon: ikhtarIcon, activeIcon: ikhtarIcon },
-    { id: 'construction', label: 'الفرص استثمارية في البناء والهدم', icon: fursIcon, activeIcon: fursIcon }
+    { id: 'construction', label: 'الفرص استثمارية في البناء والهدم', icon: fursIcon, activeIcon: fursIcon },
+    { id: 'waste-areas', label: 'مجالات الاستثمار في النفايات', icon: furs1Icon, activeIcon: furs1Icon }
   ];
 
   return (
@@ -118,7 +123,7 @@ const OpportunitiesSection = ({ onBack }) => {
             </div>
 
             {/* Summary Stats */}
-            <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
+            {/* <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
               <div className="card bg-orange-600/20 border-orange-500 text-center">
                 <p className="text-4xl font-bold text-orange-400 mb-2">45</p>
                 <p className="text-white font-semibold">مليار ريال سعودي</p>
@@ -134,7 +139,7 @@ const OpportunitiesSection = ({ onBack }) => {
                 <p className="text-white font-semibold">مليون طن/سنة</p>
                 <p className="text-sm text-gray-300 mt-1">قدر النفايات المنتجة في عام 2023</p>
               </div>
-            </div>
+            </div> */}
           </div>
         )}
 
@@ -149,6 +154,88 @@ const OpportunitiesSection = ({ onBack }) => {
         {activeTab === 'construction' && (
           <div className="animate-fade-in p-6">
             <ConstructionDemolitionOpportunities onBack={onBack} />
+          </div>
+        )}
+
+        {/* Waste Investment Areas Tab */}
+        {activeTab === 'waste-areas' && (
+          <div className="animate-fade-in p-6">
+            <div className="text-center mb-8">
+              <h3 className="text-3xl font-bold text-mwan-green mb-4">
+                مجالات الاستثمار في النفايات
+              </h3>
+            </div>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+              {/* Solid Municipal Waste */}
+              <div className="card bg-white/5 border-mwan-green/30 text-center p-6 hover:bg-white/10 transition-all">
+                <div className="mb-4 flex justify-center">
+                  <div className="w-20 h-20 rounded-full bg-white flex items-center justify-center p-3">
+                    <img src={tadwirIcon} alt="البلدية الصلبة" className="w-full h-full object-contain" />
+                  </div>
+                </div>
+                <p className="text-lg font-semibold text-white">البلدية الصلبة</p>
+              </div>
+
+              {/* Industrial Waste */}
+              <div className="card bg-white/5 border-mwan-green/30 text-center p-6 hover:bg-white/10 transition-all">
+                <div className="mb-4 flex justify-center">
+                  <div className="w-20 h-20 rounded-full bg-white flex items-center justify-center p-3">
+                    <img src={tadwirIcon} alt="الصناعية" className="w-full h-full object-contain" />
+                  </div>
+                </div>
+                <p className="text-lg font-semibold text-white">الصناعية</p>
+              </div>
+
+              {/* Healthcare Waste */}
+              <div className="card bg-white/5 border-mwan-green/30 text-center p-6 hover:bg-white/10 transition-all">
+                <div className="mb-4 flex justify-center">
+                  <div className="w-20 h-20 rounded-full bg-white flex items-center justify-center p-3">
+                    <img src={tadwirIcon} alt="الرعاية الصحية" className="w-full h-full object-contain" />
+                  </div>
+                </div>
+                <p className="text-lg font-semibold text-white">الرعاية الصحية</p>
+              </div>
+
+              {/* Construction and Demolition */}
+              <div className="card bg-white/5 border-mwan-green/30 text-center p-6 hover:bg-white/10 transition-all">
+                <div className="mb-4 flex justify-center">
+                  <div className="w-20 h-20 rounded-full bg-white flex items-center justify-center p-3">
+                    <img src={tadwirIcon} alt="البناء والهدم" className="w-full h-full object-contain" />
+                  </div>
+                </div>
+                <p className="text-lg font-semibold text-white">البناء والهدم</p>
+              </div>
+
+              {/* Sludge */}
+              <div className="card bg-white/5 border-mwan-green/30 text-center p-6 hover:bg-white/10 transition-all">
+                <div className="mb-4 flex justify-center">
+                  <div className="w-20 h-20 rounded-full bg-white flex items-center justify-center p-3">
+                    <img src={tadwirIcon} alt="الحمأة" className="w-full h-full object-contain" />
+                  </div>
+                </div>
+                <p className="text-lg font-semibold text-white">الحمأة</p>
+              </div>
+
+              {/* Agricultural Waste */}
+              <div className="card bg-white/5 border-mwan-green/30 text-center p-6 hover:bg-white/10 transition-all">
+                <div className="mb-4 flex justify-center">
+                  <div className="w-20 h-20 rounded-full bg-white flex items-center justify-center p-3">
+                    <img src={tadwirIcon} alt="الزراعية" className="w-full h-full object-contain" />
+                  </div>
+                </div>
+                <p className="text-lg font-semibold text-white">الزراعية</p>
+              </div>
+
+              {/* Special Waste */}
+              <div className="card bg-white/5 border-mwan-green/30 text-center p-6 hover:bg-white/10 transition-all">
+                <div className="mb-4 flex justify-center">
+                  <div className="w-20 h-20 rounded-full bg-white flex items-center justify-center p-3">
+                    <img src={tadwirIcon} alt="النفايات الخاصة" className="w-full h-full object-contain" />
+                  </div>
+                </div>
+                <p className="text-lg font-semibold text-white">النفايات الخاصة</p>
+              </div>
+            </div>
           </div>
         )}
       </div>

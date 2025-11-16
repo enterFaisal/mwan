@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { investmentData } from '../../data/investmentData.js';
-import compassIcon from '../../assets/icons/Compass.png';
+import ikhtarIcon from '../../assets/تصاميم سيتي سكيب/ايقونات الفرص الاستثمارية/اختر مدينة@4x.png';
 
 const DataPanel = ({ selectedCity, onCitySelect }) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -45,7 +45,7 @@ const DataPanel = ({ selectedCity, onCitySelect }) => {
       <div className="card bg-white/5 border-mwan-green/30 h-full flex flex-col">
         <div className="text-center py-8 flex-1 flex flex-col items-center justify-center">
           <div className="mb-6 flex justify-center">
-            <img src={compassIcon} alt="" className="h-20 w-auto object-contain" />
+            <img src={ikhtarIcon} alt="" className="h-20 w-auto object-contain" />
           </div>
           <h3 className="text-2xl font-bold text-white mb-4">
             اختر مدينة
@@ -183,7 +183,7 @@ const DataPanel = ({ selectedCity, onCitySelect }) => {
             ? `${(totalMillions / 1000).toFixed(0)}` 
             : totalMillions.toLocaleString();
           const budgetUnit = isBillions ? 'مليار ريال' : 'مليون ريال';
-          const opportunitiesCount = cityData.opportunities.length;
+          const opportunitiesCount = cityData.stats?.numberOfOpportunities || cityData.opportunities.length;
           const facilitiesCount = cityData.facilities || 0;
           
           return (

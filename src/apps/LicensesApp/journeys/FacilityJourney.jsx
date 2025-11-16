@@ -45,7 +45,7 @@ const FacilityJourney = ({ onBack }) => {
       </div>
 
       {/* Role Header */}
-      <div className="card bg-gradient-to-l from-purple-600/30 to-purple-900/30 border-purple-500 mb-8">
+      <div className="card bg-gradient-to-l from-green-600/30 to-green-900/30 border-green-500 mb-8">
         <div className="flex items-center gap-6">
           <div className="flex justify-center">
             <img src="../assets/icons/Briefcase.png" alt="" className="h-16 w-auto object-contain" />
@@ -69,22 +69,22 @@ const FacilityJourney = ({ onBack }) => {
         </div>
         <div className="w-full bg-gray-700 rounded-full h-3 overflow-hidden">
           <div
-            className="bg-purple-600 h-full transition-all duration-500 rounded-full"
+            className="bg-green-600 h-full transition-all duration-500 rounded-full"
             style={{ width: `${((currentStep + 1) / journey.steps.length) * 100}%` }}
           ></div>
         </div>
       </div>
 
       {/* Step Content */}
-  <div className="card border-purple-500/50 min-h-[500px]">
+  <div className="card border-green-500/50 min-h-[500px]">
         <div className="border-b border-white/10 pb-6 mb-6">
           <div className="flex items-center gap-4 mb-4">
-            <div className="bg-purple-600 text-white rounded-full w-14 h-14 flex items-center justify-center font-bold text-2xl">
+            <div className="bg-green-600 text-white rounded-full w-14 h-14 flex items-center justify-center font-bold text-2xl">
               {step.number}
             </div>
             <h3 className="text-3xl font-bold text-white">{step.title}</h3>
           </div>
-          <p className="text-xl text-purple-400 font-semibold mb-3">
+          <p className="text-xl text-green-400 font-semibold mb-3">
             {step.interactiveText}
           </p>
           <p className="text-base text-gray-300 leading-relaxed">
@@ -102,7 +102,7 @@ const FacilityJourney = ({ onBack }) => {
                   </label>
                   {field.type === 'select' ? (
                     <select
-                      className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white focus:outline-none focus:border-purple-500 transition-colors"
+                      className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white focus:outline-none focus:border-green-500 transition-colors"
                       onChange={(e) => handleInputChange(field.label, e.target.value)}
                       value={formData[field.label] || ''}
                     >
@@ -114,7 +114,7 @@ const FacilityJourney = ({ onBack }) => {
                       ))}
                     </select>
                   ) : field.type === 'file' ? (
-                    <div className="border-2 border-dashed border-white/20 rounded-xl p-6 text-center hover:border-purple-500 transition-colors">
+                    <div className="border-2 border-dashed border-white/20 rounded-xl p-6 text-center hover:border-green-500 transition-colors">
                       <div className="mb-2 flex justify-center">
                         <img src="../assets/icons/Upload_Arrow.png" alt="" className="h-12 w-auto object-contain" />
                       </div>
@@ -127,7 +127,7 @@ const FacilityJourney = ({ onBack }) => {
                     </div>
                   ) : field.type === 'textarea' ? (
                     <textarea
-                      className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white focus:outline-none focus:border-purple-500 transition-colors resize-none"
+                      className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white focus:outline-none focus:border-green-500 transition-colors resize-none"
                       rows="3"
                       placeholder={field.placeholder}
                       onChange={(e) => handleInputChange(field.label, e.target.value)}
@@ -136,7 +136,7 @@ const FacilityJourney = ({ onBack }) => {
                   ) : (
                     <input
                       type={field.type}
-                      className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white focus:outline-none focus:border-purple-500 transition-colors"
+                      className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white focus:outline-none focus:border-green-500 transition-colors"
                       placeholder={field.placeholder}
                       onChange={(e) => handleInputChange(field.label, e.target.value)}
                       value={formData[field.label] || ''}
@@ -148,7 +148,7 @@ const FacilityJourney = ({ onBack }) => {
           )}
 
           {step.listView && (
-            <div className="card bg-purple-600/10 border-purple-500">
+            <div className="card bg-green-600/10 border-green-500">
               <h4 className="text-xl font-bold text-white mb-4">الوثائق الواردة</h4>
               <div className="space-y-3">
                 {[
@@ -192,7 +192,7 @@ const FacilityJourney = ({ onBack }) => {
           )}
 
           {step.reportsView && (
-            <div className="card bg-purple-600/10 border-purple-500">
+            <div className="card bg-green-600/10 border-green-500">
               <div className="text-center py-12">
                 <div className="mb-4 flex justify-center">
                   <img src="../assets/icons/Bar_Graph.png" alt="" className="h-16 w-auto object-contain" />
@@ -200,15 +200,15 @@ const FacilityJourney = ({ onBack }) => {
                 <p className="text-xl text-white font-semibold mb-4">الأرشيف والتقارير الدورية</p>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
                   <div className="bg-white/10 rounded-xl p-4">
-                    <p className="text-3xl font-bold text-purple-400">142</p>
+                    <p className="text-3xl font-bold text-green-400">142</p>
                     <p className="text-sm text-gray-300 mt-1">وثيقة مكتملة</p>
                   </div>
                   <div className="bg-white/10 rounded-xl p-4">
-                    <p className="text-3xl font-bold text-purple-400">2,450</p>
+                    <p className="text-3xl font-bold text-green-400">2,450</p>
                     <p className="text-sm text-gray-300 mt-1">طن تم استقباله</p>
                   </div>
                   <div className="bg-white/10 rounded-xl p-4">
-                    <p className="text-3xl font-bold text-purple-400">87%</p>
+                    <p className="text-3xl font-bold text-green-400">87%</p>
                     <p className="text-sm text-gray-300 mt-1">نسبة الاسترداد</p>
                   </div>
                 </div>
@@ -239,9 +239,9 @@ const FacilityJourney = ({ onBack }) => {
               onClick={() => setCurrentStep(index)}
               className={`w-3 h-3 rounded-full transition-all ${
                 index === currentStep
-                  ? 'bg-purple-600 w-8'
+                  ? 'bg-green-600 w-8'
                   : index < currentStep
-                  ? 'bg-purple-600/50'
+                  ? 'bg-green-600/50'
                   : 'bg-gray-600'
               }`}
             />
@@ -249,11 +249,11 @@ const FacilityJourney = ({ onBack }) => {
         </div>
 
         {currentStep < journey.steps.length - 1 ? (
-          <Button onClick={handleNext} variant="primary" className="bg-purple-600 hover:bg-purple-700">
+          <Button onClick={handleNext} variant="primary" className="bg-green-600 hover:bg-green-700">
             {step.action || 'التالي'} →
           </Button>
         ) : (
-          <Button onClick={handleReset} variant="primary" className="bg-purple-600 hover:bg-purple-700">
+          <Button onClick={handleReset} variant="primary" className="bg-green-600 hover:bg-green-700">
             ✓ إنهاء وإعادة البدء
           </Button>
         )}

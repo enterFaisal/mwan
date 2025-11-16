@@ -1,15 +1,19 @@
 // Data for Application 3: Investment Opportunities
 // Extracted from slides 40-49
 
+// Icons from تصاميم سيتي سكيب for outputs section
+import fursIcon from "../assets/تصاميم سيتي سكيب/ايقونات المخطط/فرص@4x.png";
+import takhtitIcon from "../assets/تصاميم سيتي سكيب/ايقونات اكتشف موان/ايقونات مهام المركز/التخطيط والتطوير_@4x.png";
+import istidamaIcon from "../assets/تصاميم سيتي سكيب/ايقونات اكتشف موان/ايقونات مهام المركز/الاستدامة المالية وتحفيز الاستثمار_@4x.png";
+import tanthimIcon from "../assets/تصاميم سيتي سكيب/ايقونات اكتشف موان/ايقونات مهام المركز/التنظيم والحوكمة_ 2@4x.png";
+import tawiyaIcon from "../assets/تصاميم سيتي سكيب/ايقونات اكتشف موان/ايقونات مهام المركز/التوعية وبناء القدرات_@4x.png";
+import taqleelIcon from "../assets/تصاميم سيتي سكيب/ايقونات اكتشف موان/ايقونات برنامج يديم/تقليل إنتاج النفايات_@4x.png";
+import tadwirIcon from "../assets/تصاميم سيتي سكيب/ايقونات اكتشف موان/ايقونات برنامج يديم/التدويــــر والاسترداد_@4x.png";
+import tawareeIcon from "../assets/تصاميم سيتي سكيب/ايقونات اكتشف موان/ايقونات برنامج يديم/التوعيــــة والمعرفــــة_@4x.png";
+import rafaaIcon from "../assets/تصاميم سيتي سكيب/ايقونات وثيقة النقل/ايقونات الاهداف/رفع الكفاءة.png";
+
+// Keep other icons for infrastructure section
 import briefcaseIcon from "../assets/icons/Briefcase.png";
-import gearsCogsIcon from "../assets/icons/Gears-Cogs.png";
-import dollarSignIcon from "../assets/icons/Dollar_Sign.png";
-import stackOfMoneyIcon from "../assets/icons/Stack_of_Money.png";
-import personToPersonIcon from "../assets/icons/PersontoPerson_Communication.png";
-import targetBullseyeIcon from "../assets/icons/Target-Bullseye.png";
-import recyclingSymbolIcon from "../assets/icons/Recycling_Symbol.png";
-import leafIcon from "../assets/icons/Leaf.png";
-import calendarIcon from "../assets/icons/Calendar.png";
 import garbageBagIcon from "../assets/icons/Garbage_Bag.png";
 import biohazardSymbolIcon from "../assets/icons/Biohazard_Symbol.png";
 import caduceusMedicalSymbolIcon from "../assets/icons/Caduceus_(Medical_Symbol).png";
@@ -34,6 +38,7 @@ export const investmentData = {
       wasteUnit: "مليون طن/سنة",
       recyclingTarget: 79,
       diversionTarget: 90,
+      numberOfOpportunities: 19,
     },
     wasteComposition: [
       { type: "النفايات البلدية الصلبة", percentage: 64 },
@@ -343,6 +348,7 @@ export const investmentData = {
       wasteUnit: "مليون طن/سنة",
       recyclingTarget: 74,
       diversionTarget: 84,
+      numberOfOpportunities: 12,
     },
     wasteComposition: [
       { type: "النفايات البلدية الصلبة", percentage: 60 },
@@ -374,6 +380,7 @@ export const investmentData = {
       wasteUnit: "مليون طن/سنة",
       recyclingTarget: 77,
       diversionTarget: 87,
+      numberOfOpportunities: 17,
     },
     wasteComposition: [
       { type: "النفايات البلدية الصلبة", percentage: 63 },
@@ -544,6 +551,7 @@ export const investmentData = {
       wasteUnit: "مليون طن/سنة",
       recyclingTarget: 75,
       diversionTarget: 85,
+      numberOfOpportunities: 8,
     },
     opportunities: [
       {
@@ -644,26 +652,26 @@ export const strategicPlanData = {
     subtitle: "تنمية اقتصادية وطنية تحافظ على الموارد وترتقي بالبيئة والمجتمع",
     mainStats: [
       {
-        icon: briefcaseIcon,
+        icon: fursIcon,
         title: "فرصة استثمارية",
         value: "+500",
         color: "green",
       },
       {
-        icon: gearsCogsIcon,
+        icon: takhtitIcon,
         title: "بنية تحتية مخطط لها",
         value: "~900",
         color: "green",
       },
       {
-        icon: dollarSignIcon,
+        icon: istidamaIcon,
         title: "مليار ريال",
         value: "~750",
         description: "حجم الاستثمارات",
         color: "green",
       },
       {
-        icon: stackOfMoneyIcon,
+        icon: tanthimIcon,
         title: "مليار ريال خلال فترة الاستثمار",
         value: "650",
         description: "تتجاوز المساهمة في الناتج المحلي",
@@ -672,27 +680,27 @@ export const strategicPlanData = {
     ],
     bottomStats: [
       {
-        icon: personToPersonIcon,
+        icon: tawiyaIcon,
         title: "تتجاوز 76 ألف وظيفة",
         description: "مباشرة",
       },
       {
-        icon: targetBullseyeIcon,
+        icon: taqleelIcon,
         title: "90% نسبة الاستبعاد عن",
         description: "المرادم التي سيتم تحقيقها",
       },
       {
-        icon: recyclingSymbolIcon,
+        icon: tadwirIcon,
         title: "79% نسبة إعادة التدوير",
         description: "التي سيتم تحقيقها",
       },
       {
-        icon: leafIcon,
+        icon: tawareeIcon,
         title: "حياد صفري في أنشطة",
         description: "إدارة النفايات",
       },
       {
-        icon: calendarIcon,
+        icon: rafaaIcon,
         title: "مدة الاستثمار 20 - 25 سنة",
         description: "",
       },

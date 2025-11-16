@@ -53,9 +53,9 @@ const EmanifestSection = ({ onBack }) => {
       id: 'facility',
       name: 'مرفق الاستقبال',
       icon: briefcaseIcon,
-      color: 'from-purple-600/30 to-purple-900/30',
-      hoverColor: 'hover:from-purple-600/40 hover:to-purple-900/40',
-      borderColor: 'border-purple-500/30 hover:border-purple-500',
+      color: 'from-green-600/30 to-green-900/30',
+      hoverColor: 'hover:from-green-600/40 hover:to-green-900/40',
+      borderColor: 'border-green-500/30 hover:border-green-500',
       description: 'تعرف على دور المرفق في استلام النفايات'
     }
   ];

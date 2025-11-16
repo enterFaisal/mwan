@@ -243,7 +243,7 @@ const PlanSection = ({ onBack }) => {
                   className={`card bg-${stat.color}-600/20 border-${stat.color}-500 text-center hover:scale-105 transition-all`}
                 >
                   <div className="mb-4 flex justify-center">
-                    <div className="bg-white rounded-full p-3 shadow-lg">
+                    <div className="p-3">
                       <img src={stat.icon} alt="" className="h-16 w-16 object-contain" />
                     </div>
                   </div>
@@ -270,7 +270,7 @@ const PlanSection = ({ onBack }) => {
                   className="card bg-white/5 border-mwan-green/30 text-center hover:border-mwan-green transition-all"
                 >
                   <div className="mb-3 flex justify-center">
-                    <div className="bg-white rounded-full p-2 shadow-lg">
+                    <div className="p-2">
                       <img src={stat.icon} alt="" className="h-12 w-12 object-contain" />
                     </div>
                   </div>
