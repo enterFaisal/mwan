@@ -3,12 +3,10 @@ import { strategicPlanData } from '../../data/investmentData.js';
 import { getPartnerLogo } from '../../data/partnersLogos.js';
 import BackButton from '../../components/BackButton';
 
-import documentIcon from '../../assets/icons/Document.png';
-import documentWhiteIcon from '../../assets/icons_white/Document.png';
-import checklistIcon from '../../assets/icons/Checklist.png';
-import checklistWhiteIcon from '../../assets/icons_white/Checklist.png';
-import barGraphIcon from '../../assets/icons/Bar_Graph.png';
-import barGraphWhiteIcon from '../../assets/icons_white/Bar_Graph.png';
+// New icons from تصاميم سيتي سكيب - ايقونات المخطط
+import nabdhaIcon from '../../assets/تصاميم سيتي سكيب/ايقونات المخطط/نبذة@4x.png';
+import fursManhajiaIcon from '../../assets/تصاميم سيتي سكيب/ايقونات المخطط/فرص@4x.png';
+import makhrajatIcon from '../../assets/تصاميم سيتي سكيب/ايقونات المخطط/مخرجات المخطط@4x.png';
 
 // Animated Counter Component
 const AnimatedCounter = ({ value, isActive }) => {
@@ -81,9 +79,9 @@ const PlanSection = ({ onBack }) => {
   const [activeTab, setActiveTab] = useState('introduction');
 
   const tabs = [
-    { id: 'introduction', label: 'نبذة تعريفية عن المخطط الاستراتيجي الشامل', icon: documentIcon, activeIcon: documentWhiteIcon },
-    { id: 'approach', label: 'منهجية عمل المخطط', icon: checklistIcon, activeIcon: checklistWhiteIcon },
-    { id: 'outputs', label: 'مخرجات المخطط', icon: barGraphIcon, activeIcon: barGraphWhiteIcon }
+    { id: 'introduction', label: 'نبذة تعريفية عن المخطط الاستراتيجي الشامل', icon: nabdhaIcon, activeIcon: nabdhaIcon },
+    { id: 'approach', label: 'منهجية عمل المخطط', icon: fursManhajiaIcon, activeIcon: fursManhajiaIcon },
+    { id: 'outputs', label: 'مخرجات المخطط', icon: makhrajatIcon, activeIcon: makhrajatIcon }
   ];
 
   // Display plain Western digits for step numbers (e.g., 1, 2, 3 ... 6)

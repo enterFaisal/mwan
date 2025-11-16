@@ -4,12 +4,10 @@ import DataPanel from './DataPanel';
 import CityOpportunity from './CityOpportunity';
 import ConstructionDemolitionOpportunities from './ConstructionDemolitionOpportunities';
 
-import globeIcon from '../../assets/icons/Globe.png';
-import globeWhiteIcon from '../../assets/icons_white/Globe.png';
-import targetIcon from '../../assets/icons/Target-Bullseye.png';
-import targetWhiteIcon from '../../assets/icons_white/Target-Bullseye.png';
-import briefcaseIcon from '../../assets/icons/Briefcase.png';
-import briefcaseWhiteIcon from '../../assets/icons_white/Briefcase.png';
+// New icons from تصاميم سيتي سكيب - ايقونات الفرص الاستثمارية
+import khareetaIcon from '../../assets/تصاميم سيتي سكيب/ايقونات الفرص الاستثمارية/خريطة@4x.png';
+import ikhtarIcon from '../../assets/تصاميم سيتي سكيب/ايقونات الفرص الاستثمارية/اختر مدينة@4x.png';
+import fursIcon from '../../assets/تصاميم سيتي سكيب/ايقونات الفرص الاستثمارية/فرص@4x.png';
 
 const OpportunitiesSection = ({ onBack }) => {
   const [activeTab, setActiveTab] = useState('map');
@@ -35,9 +33,9 @@ const OpportunitiesSection = ({ onBack }) => {
   };
 
   const tabs = [
-    { id: 'map', label: 'خريطة', icon: globeIcon, activeIcon: globeWhiteIcon },
-    { id: 'city', label: 'فرصة المدينة المنورة', icon: targetIcon, activeIcon: targetWhiteIcon },
-    { id: 'construction', label: 'الفرص استثمارية في البناء والهدم', icon: briefcaseIcon, activeIcon: briefcaseWhiteIcon }
+    { id: 'map', label: 'خريطة', icon: khareetaIcon, activeIcon: khareetaIcon },
+    { id: 'city', label: 'فرصة المدينة المنورة', icon: ikhtarIcon, activeIcon: ikhtarIcon },
+    { id: 'construction', label: 'الفرص استثمارية في البناء والهدم', icon: fursIcon, activeIcon: fursIcon }
   ];
 
   return (
@@ -108,7 +106,7 @@ const OpportunitiesSection = ({ onBack }) => {
                       onClick={() => setActiveTab('city')}
                       className="w-full card bg-gradient-to-br from-mwan-green/30 to-green-800/30 border-mwan-green/50 hover:border-mwan-green hover:from-mwan-green/40 hover:to-green-800/40 text-white font-semibold py-4 px-6 rounded-xl shadow-lg transition-all duration-300 flex items-center justify-center gap-3 group"
                     >
-                      <img src={targetWhiteIcon} alt="" className="h-6 w-auto object-contain transition-transform group-hover:scale-110" />
+                      <img src={ikhtarIcon} alt="" className="h-6 w-auto object-contain transition-transform group-hover:scale-110" />
                       <span className="text-lg">عرض تفاصيل المدينة المنورة</span>
                       <svg className="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />

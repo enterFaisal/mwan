@@ -6,7 +6,7 @@ import BackButton from '../../components/BackButton';
 import iconTaarif from '../../assets/تصاميم سيتي سكيب/ايقونات التراخيص/التعريف بنظام التصاريح والتراخيص_@4x.png';
 import iconFarq from '../../assets/تصاميم سيتي سكيب/ايقونات التراخيص/الفرق بين الترخيص والتصريح_@4x.png';
 import iconMaktasabat from '../../assets/تصاميم سيتي سكيب/ايقونات التراخيص/مكتسبات حصول المنشآت @4x.png';
-import iconAnwaa from '../../assets/تصاميم سيتي سكيب/ايقونات التراخيص/أنواع التراخيص والتصاريح@4x.png';
+import iconAnwaa from '../../assets/تصاميم سيتي سكيب/ايقونات التراخيص/أنواع التراخيص والتصاريح@4x.png';
 import iconKulMa from '../../assets/تصاميم سيتي سكيب/ايقونات التراخيص/كل ما يسهل مسار@4x.png';
 
 const LicensesSection = ({ onBack, setShowParentBackButton }) => {

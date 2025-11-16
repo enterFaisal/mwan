@@ -6,7 +6,7 @@ import rafKifayaIcon from "../assets/تصاميم سيتي سكيب/ايقونا
 import taazimIcon from "../assets/تصاميم سيتي سكيب/ايقونات وثيقة النقل/ايقونات الاهداف/تعظيم الاستفادة.png";
 import ziyadaIcon from "../assets/تصاميم سيتي سكيب/ايقونات وثيقة النقل/ايقونات الاهداف/زيادة معدل الامتثال.png";
 import tahqiqIcon from "../assets/تصاميم سيتي سكيب/ايقونات وثيقة النقل/ايقونات الاهداف/تحقيق تغطية شاملة.png";
-import taazizIcon from "../assets/تصاميم سيتي سكيب/ايقونات وثيقة النقل/ايقونات الاهداف/تعزيز إطار الاستثمار.png";
+import taazizIcon from "../assets/تصاميم سيتي سكيب/ايقونات وثيقة النقل/ايقونات الاهداف/تعزيز إطار الاستثمار.png";
 
 // New icons from تصاميم سيتي سكيب - ايقونات المكونات
 import tataabIcon from "../assets/تصاميم سيتي سكيب/ايقونات وثيقة النقل/ايقونات المكونات/التتبع@4x.png";
