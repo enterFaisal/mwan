@@ -18,6 +18,29 @@ import briefcaseIcon from '../assets/icons/Briefcase.png';
 import handWithCoinIcon from '../assets/icons/Hand_with_Coin_(Donation).png';
 import udeemWebImage from '../../udeemWebImage.png';
 
+// New icons from تصاميم سيتي سكيب
+// مهام المركز icons
+import takhtitIcon from '../assets/تصاميم سيتي سكيب/ايقونات اكتشف موان/ايقونات مهام المركز/التخطيط والتطوير_@4x.png';
+import tanzimIcon from '../assets/تصاميم سيتي سكيب/ايقونات اكتشف موان/ايقونات مهام المركز/التنظيم والحوكمة_ 2@4x.png';
+import istidamaIcon from '../assets/تصاميم سيتي سكيب/ايقونات اكتشف موان/ايقونات مهام المركز/الاستدامة المالية وتحفيز الاستثمار_@4x.png';
+import tawiyaIcon from '../assets/تصاميم سيتي سكيب/ايقونات اكتشف موان/ايقونات مهام المركز/التوعية وبناء القدرات_@4x.png';
+import tarjizIcon from '../assets/تصاميم سيتي سكيب/ايقونات اكتشف موان/ايقونات مهام المركز/الترخيص والرقابة لتعزيز الامتثال_@4x.png';
+import tahawulIcon from '../assets/تصاميم سيتي سكيب/ايقونات اكتشف موان/ايقونات مهام المركز/التحول الرقمي والذكاء الاصطناعي_@4x.png';
+
+// برنامج يديم icons
+import qitaaHukumiIcon from '../assets/تصاميم سيتي سكيب/ايقونات اكتشف موان/ايقونات برنامج يديم/القطاع الحــــكومــــي_@4x.png';
+import qitaaKhasIcon from '../assets/تصاميم سيتي سكيب/ايقونات اكتشف موان/ايقونات برنامج يديم/القطاع الخـــاص_@4x.png';
+import qitaaGhairRibhiIcon from '../assets/تصاميم سيتي سكيب/ايقونات اكتشف موان/ايقونات برنامج يديم/القطاع غير الربحــــي_@4x.png';
+import tawiyaMaarifaIcon from '../assets/تصاميم سيتي سكيب/ايقونات اكتشف موان/ايقونات برنامج يديم/التوعيــــة والمعرفــــة_@4x.png';
+import tadwirIcon from '../assets/تصاميم سيتي سكيب/ايقونات اكتشف موان/ايقونات برنامج يديم/التدويــــر والاسترداد_@4x.png';
+import taqleelIcon from '../assets/تصاميم سيتي سكيب/ايقونات اكتشف موان/ايقونات برنامج يديم/تقليل إنتاج النفايات_@4x.png';
+
+// تواصل معنا icons
+import emailIcon from '../assets/تصاميم سيتي سكيب/ايقونات اكتشف موان/ايقونات تواصل معنا/ايميل@4x.png';
+import phoneIcon from '../assets/تصاميم سيتي سكيب/ايقونات اكتشف موان/ايقونات تواصل معنا/تلفون@4x.png';
+import addressIcon from '../assets/تصاميم سيتي سكيب/ايقونات اكتشف موان/ايقونات تواصل معنا/عنوان@4x.png';
+import websiteIcon from '../assets/تصاميم سيتي سكيب/ايقونات اكتشف موان/ايقونات تواصل معنا/موقع@4x.png';
+
 const socials = [
   {
     name: 'X',
@@ -58,37 +81,37 @@ export const mwanInfoData = {
           <h3 className="text-2xl font-bold mb-6 text-mwan-green">مهام المركز</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <div className="card hover:bg-white/20 transition-all">
-              <img src={recyclingSymbolIcon} alt="" className="h-16 w-auto object-contain mb-4" />
+              <img src={takhtitIcon} alt="" className="h-16 w-auto object-contain mb-4" />
               <h4 className="font-bold text-xl mb-2">التخطيط والتطوير</h4>
               <p className="text-sm">تطوير وتنفيذ الخطط والاستراتيجيات الوطنية لإدارة النفايات</p>
             </div>
 
             <div className="card hover:bg-white/20 transition-all">
-              <img src={barGraphIcon} alt="" className="h-16 w-auto object-contain mb-4" />
+              <img src={tanzimIcon} alt="" className="h-16 w-auto object-contain mb-4" />
               <h4 className="font-bold text-xl mb-2">التنظيم والحوكمة</h4>
               <p className="text-sm">وضع الأنظمة واللوائح والمعايير لإدارة النفايات</p>
             </div>
 
             <div className="card hover:bg-white/20 transition-all">
-              <img src={dollarSignIcon} alt="" className="h-16 w-auto object-contain mb-4" />
+              <img src={istidamaIcon} alt="" className="h-16 w-auto object-contain mb-4" />
               <h4 className="font-bold text-xl mb-2">الاستدامة المالية وتحفيز الاستثمار</h4>
               <p className="text-sm">تطوير نماذج التمويل المستدامة وجذب الاستثمارات</p>
             </div>
 
             <div className="card hover:bg-white/20 transition-all">
-              <img src={lightbulbIcon} alt="" className="h-16 w-auto object-contain mb-4" />
+              <img src={tawiyaIcon} alt="" className="h-16 w-auto object-contain mb-4" />
               <h4 className="font-bold text-xl mb-2">التوعية وبناء القدرات</h4>
               <p className="text-sm">رفع مستوى الوعي وبناء القدرات الوطنية</p>
             </div>
 
             <div className="card hover:bg-white/20 transition-all">
-              <img src={documentIcon} alt="" className="h-16 w-auto object-contain mb-4" />
+              <img src={tarjizIcon} alt="" className="h-16 w-auto object-contain mb-4" />
               <h4 className="font-bold text-xl mb-2">الترخيص والرقابة لتعزيز الامتثال</h4>
               <p className="text-sm">إصدار التراخيص ومراقبة الامتثال للمعايير</p>
             </div>
 
             <div className="card hover:bg-white/20 transition-all">
-              <img src={globeIcon} alt="" className="h-16 w-auto object-contain mb-4" />
+              <img src={tahawulIcon} alt="" className="h-16 w-auto object-contain mb-4" />
               <h4 className="font-bold text-xl mb-2">التحول الرقمي والذكاء الاصطناعي</h4>
               <p className="text-sm">تطوير الحلول الرقمية ودعم الابتكار</p>
             </div>
@@ -362,7 +385,7 @@ export const mwanInfoData = {
             {/* Public Sector */}
             <div className="bg-gradient-to-br from-gray-800 to-gray-700 p-6 rounded-2xl border border-gray-600 hover:border-mwan-green transition-all">
               <div className="flex items-center gap-3 mb-4">
-                <img src={podiumLecternIcon} alt="" className="h-12 w-auto object-contain" />
+                <img src={qitaaHukumiIcon} alt="" className="h-12 w-auto object-contain" />
                 <h4 className="text-xl font-bold">القطاع الحــــكومــــي</h4>
               </div>
             </div>
@@ -370,7 +393,7 @@ export const mwanInfoData = {
             {/* Private Sector */}
             <div className="bg-gradient-to-br from-gray-800 to-gray-700 p-6 rounded-2xl border border-gray-600 hover:border-mwan-green transition-all">
               <div className="flex items-center gap-3 mb-4">
-                <img src={briefcaseIcon} alt="" className="h-12 w-auto object-contain" />
+                <img src={qitaaKhasIcon} alt="" className="h-12 w-auto object-contain" />
                 <h4 className="text-xl font-bold">القطاع الخـــاص</h4>
               </div>
             </div>
@@ -378,7 +401,7 @@ export const mwanInfoData = {
             {/* Non-profit Sector */}
             <div className="bg-gradient-to-br from-gray-800 to-gray-700 p-6 rounded-2xl border border-gray-600 hover:border-mwan-green transition-all">
               <div className="flex items-center gap-3 mb-4">
-                <img src={handWithCoinIcon} alt="" className="h-12 w-auto object-contain" />
+                <img src={qitaaGhairRibhiIcon} alt="" className="h-12 w-auto object-contain" />
                 <h4 className="text-xl font-bold">القطاع غير الربحــــي</h4>
               </div>
             </div>
@@ -395,7 +418,7 @@ export const mwanInfoData = {
             {/* Track 1 - التوعية والمعرفة */}
             <div className="bg-gradient-to-br from-mwan-green to-green-700 p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all transform hover:scale-105">
               <div className="mb-4 text-center flex justify-center">
-                <img src={lightbulbIcon} alt="" className="h-16 w-auto object-contain" />
+                <img src={tawiyaMaarifaIcon} alt="" className="h-16 w-auto object-contain" />
               </div>
               <h4 className="text-lg font-bold mb-3 text-center">التوعيــــة والمعرفــــة</h4>
               <p className="text-sm text-center leading-relaxed">
@@ -417,7 +440,7 @@ export const mwanInfoData = {
             {/* Track 3 - التدوير والاسترداد */}
             <div className="bg-gradient-to-br from-mwan-green to-green-700 p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all transform hover:scale-105">
               <div className="mb-4 text-center flex justify-center">
-                <img src={recyclingSymbolIcon} alt="" className="h-16 w-auto object-contain" />
+                <img src={tadwirIcon} alt="" className="h-16 w-auto object-contain" />
               </div>
               <h4 className="text-lg font-bold mb-3 text-center">التدويــــر والاسترداد</h4>
               <p className="text-sm text-center leading-relaxed">
@@ -428,7 +451,7 @@ export const mwanInfoData = {
             {/* Track 4 - تقليل إنتاج النفايات */}
             <div className="bg-gradient-to-br from-mwan-green to-green-700 p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all transform hover:scale-105">
               <div className="mb-4 text-center flex justify-center">
-                <img src={leafIcon} alt="" className="h-16 w-auto object-contain" />
+                <img src={taqleelIcon} alt="" className="h-16 w-auto object-contain" />
               </div>
               <h4 className="text-lg font-bold mb-3 text-center">تقليل إنتاج النفايات</h4>
               <p className="text-sm text-center leading-relaxed">
@@ -560,7 +583,7 @@ export const mwanInfoData = {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="card">
               <h4 className="font-bold text-xl mb-4 flex items-center gap-3">
-                <img src={envelopeIcon} alt="" className="h-8 w-auto object-contain" />
+                <img src={emailIcon} alt="" className="h-8 w-auto object-contain" />
                 البريد الإلكتروني
               </h4>
               <p className="text-lg" dir="ltr">info@mwan.gov.sa</p>
@@ -568,7 +591,7 @@ export const mwanInfoData = {
 
             <div className="card">
               <h4 className="font-bold text-xl mb-4 flex items-center gap-3">
-                <img src={globeIcon} alt="" className="h-8 w-auto object-contain" />
+                <img src={websiteIcon} alt="" className="h-8 w-auto object-contain" />
                 الموقع الإلكتروني
               </h4>
               <p className="text-lg" dir="ltr">www.mwan.gov.sa</p>
@@ -576,7 +599,7 @@ export const mwanInfoData = {
 
             <div className="card">
               <h4 className="font-bold text-xl mb-4 flex items-center gap-3">
-                <img src={telephoneIcon} alt="" className="h-8 w-auto object-contain" />
+                <img src={phoneIcon} alt="" className="h-8 w-auto object-contain" />
                 الهاتف
               </h4>
               <p className="text-lg" dir="ltr">920009110</p>
@@ -584,7 +607,7 @@ export const mwanInfoData = {
 
             <div className="card">
               <h4 className="font-bold text-xl mb-4 flex items-center gap-3">
-                <img src={compassIcon} alt="" className="h-8 w-auto object-contain" />
+                <img src={addressIcon} alt="" className="h-8 w-auto object-contain" />
                 العنوان
               </h4>
               <p className="text-lg"> 3186 طريق الأمير محمد بن سلمان بن عبدالعزيز، حي, قرطبة، الرياض 13248-6329</p>
