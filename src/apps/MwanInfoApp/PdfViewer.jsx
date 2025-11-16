@@ -1,6 +1,6 @@
 import React from 'react';
 import BackButton from '../../components/BackButton';
-import QRCodeDisplay from './components/QRCodeDisplay.jsx';
+import QRCodeDisplay from './components/QrCodeDisplay';
 
 const PdfViewer = ({ title, pdfUrl, onBack }) => {
   return (
