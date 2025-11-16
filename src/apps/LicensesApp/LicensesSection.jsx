@@ -2,17 +2,18 @@ import React, { useState } from 'react';
 import { licensesData } from '../../data/licensesData.jsx';
 import BackButton from '../../components/BackButton';
 
-import iconCert from '../../assets/icons_white/Certificate-Diploma.png';
-import iconBooks from '../../assets/icons_white/Books.png';
-import iconMedal from '../../assets/icons_white/Award_Medal.png';
-import iconID from '../../assets/icons_white/ID_Card.png';
-import iconChecklist from '../../assets/icons_white/Checklist.png';
+// New icons from تصاميم سيتي سكيب
+import iconTaarif from '../../assets/تصاميم سيتي سكيب/ايقونات التراخيص/التعريف بنظام التصاريح والتراخيص_@4x.png';
+import iconFarq from '../../assets/تصاميم سيتي سكيب/ايقونات التراخيص/الفرق بين الترخيص والتصريح_@4x.png';
+import iconMaktasabat from '../../assets/تصاميم سيتي سكيب/ايقونات التراخيص/مكتسبات حصول المنشآت @4x.png';
+import iconAnwaa from '../../assets/تصاميم سيتي سكيب/ايقونات التراخيص/أنواع التراخيص والتصاريح@4x.png';
+import iconKulMa from '../../assets/تصاميم سيتي سكيب/ايقونات التراخيص/كل ما يسهل مسار@4x.png';
 
 const LicensesSection = ({ onBack, setShowParentBackButton }) => {
   const [activeSection, setActiveSection] = useState(null);
 
   const sections = licensesData.main.sections;
-  const sectionIcons = [iconCert, iconBooks, iconMedal, iconID, iconChecklist];
+  const sectionIcons = [iconTaarif, iconFarq, iconMaktasabat, iconAnwaa, iconKulMa];
 
   // Hide parent back button when viewing a section
   React.useEffect(() => {

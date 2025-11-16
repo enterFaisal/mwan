@@ -429,7 +429,7 @@ export const mwanInfoData = {
             {/* Track 2 - الابتكار الدائري */}
             <div className="bg-gradient-to-br from-mwan-green to-green-700 p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all transform hover:scale-105">
               <div className="mb-4 text-center flex justify-center">
-                <img src={globeIcon} alt="" className="h-16 w-auto object-contain" />
+                <img src={tawiyaIcon} alt="" className="h-16 w-auto object-contain" />
               </div>
               <h4 className="text-lg font-bold mb-3 text-center">الابتكار الدائــــري</h4>
               <p className="text-sm text-center leading-relaxed">

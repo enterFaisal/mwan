@@ -1,15 +1,18 @@
 // Data for E-Manifest Simulation
 // Extracted from slides 27-34 (content.md lines 263-431)
 
-import barGraphIcon from "../assets/icons_white/Bar_Graph.png";
-import presentationBoardIcon from "../assets/icons_white/Presentation_Board_(Line_Graph).png";
-import shieldCheckmarkIcon from "../assets/icons_white/Shield_with_Checkmark.png";
-import globeIcon from "../assets/icons_white/Globe.png";
-import dollarSignIcon from "../assets/icons_white/Dollar_Sign.png";
-import circularArrowsIcon from "../assets/icons_white/Circular_Arrows_(Process).png";
-import garbageTruckIcon from "../assets/icons_white/Garbage_Truck.png";
-import handsShakingIcon from "../assets/icons_white/PersontoPerson_Communication.png";
-import computerMonitorIcon from "../assets/icons_white/Computer_Monitor.png";
+// New icons from تصاميم سيتي سكيب - ايقونات الاهداف
+import rafKifayaIcon from "../assets/تصاميم سيتي سكيب/ايقونات وثيقة النقل/ايقونات الاهداف/رفع الكفاءة.png";
+import taazimIcon from "../assets/تصاميم سيتي سكيب/ايقونات وثيقة النقل/ايقونات الاهداف/تعظيم الاستفادة.png";
+import ziyadaIcon from "../assets/تصاميم سيتي سكيب/ايقونات وثيقة النقل/ايقونات الاهداف/زيادة معدل الامتثال.png";
+import tahqiqIcon from "../assets/تصاميم سيتي سكيب/ايقونات وثيقة النقل/ايقونات الاهداف/تحقيق تغطية شاملة.png";
+import taazizIcon from "../assets/تصاميم سيتي سكيب/ايقونات وثيقة النقل/ايقونات الاهداف/تعزيز إطار الاستثمار.png";
+
+// New icons from تصاميم سيتي سكيب - ايقونات المكونات
+import tataabIcon from "../assets/تصاميم سيتي سكيب/ايقونات وثيقة النقل/ايقونات المكونات/التتبع@4x.png";
+import tahlilIcon from "../assets/تصاميم سيتي سكيب/ايقونات وثيقة النقل/ايقونات المكونات/تحليل سلوك@4x.png";
+import daamIcon from "../assets/تصاميم سيتي سكيب/ايقونات وثيقة النقل/ايقونات المكونات/دعم@4x.png";
+import bayanatIcon from "../assets/تصاميم سيتي سكيب/ايقونات وثيقة النقل/ايقونات المكونات/البيانات@4x.png";
 
 export const emanifestIntro = {
   title: "وثيقة النقل الإلكترونية",
@@ -17,27 +20,27 @@ export const emanifestIntro = {
     "أداة رقابية تعمل على رصد وتتبع وجمع وتحليل البيانات الخاصة بحركة النفايات من نقطة إنتاجها وحتى مرحلة المعالجة والتخلص النهائي باستخدام التقنيات الناشئة وتقنيات الذكاء الاصطناعي",
   objectives: [
     {
-      icon: barGraphIcon,
+      icon: rafKifayaIcon,
       title: "رفع الكفاءة التشغيلية لأعمال الرقابة",
       description: "من خلال توظيف التقنيات الحديثة لرصد وتتبع المخالفين",
     },
     {
-      icon: presentationBoardIcon,
+      icon: taazimIcon,
       title: "تعظيم الاستفادة من البيانات",
       description: "لدعم المستهدفات الوطنية",
     },
     {
-      icon: shieldCheckmarkIcon,
+      icon: ziyadaIcon,
       title: "زيادة معدل الامتثال والحد من الرمي العشوائي",
       description: "",
     },
     {
-      icon: globeIcon,
+      icon: tahqiqIcon,
       title: "تحقيق تغطية شاملة لحركة النفايات",
       description: "على المستوى دون الحاجة للاستثمار في العامل البشري",
     },
     {
-      icon: dollarSignIcon,
+      icon: taazizIcon,
       title: "تعزيز إطار الاستثمار",
       description: "من خلال ضمان وصول النفايات للمرافق الاستثمارية",
     },
@@ -53,7 +56,7 @@ export const emanifestIntro = {
   ],
   systemComponents: [
     {
-      icon: circularArrowsIcon,
+      icon: tataabIcon,
       title: "التتبع والتوثيق اللحظي للنفايات",
       points: [
         "تسجيل جميع مراحل سلسلة قيمة النفايات من الانتاج وحتى معالجتها أو التخلص النهائي منها.",
@@ -62,7 +65,7 @@ export const emanifestIntro = {
       ],
     },
     {
-      icon: garbageTruckIcon,
+      icon: tahlilIcon,
       title: "تحليل سلوك المركبات ورصد المخالفات رقميا",
       points: [
         "مراقبة ورصد التغير بوزن المركبة",
@@ -71,7 +74,7 @@ export const emanifestIntro = {
       ],
     },
     {
-      icon: handsShakingIcon,
+      icon: daamIcon,
       title: "دعم اتخاذ القرار",
       points: [
         "التحليل الجيومكاني والتنبؤ للمستقبل لدعم التخطيط",
@@ -80,7 +83,7 @@ export const emanifestIntro = {
       ],
     },
     {
-      icon: computerMonitorIcon,
+      icon: bayanatIcon,
       title: "البيانات والتقارير",
       points: [
         "بيانات داعمة ومحفزة للاستثمار",

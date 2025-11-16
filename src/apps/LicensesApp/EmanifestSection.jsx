@@ -6,10 +6,11 @@ import TransporterJourney from './journeys/TransporterJourney';
 import DriverJourney from './journeys/DriverJourney';
 import FacilityJourney from './journeys/FacilityJourney';
 
-import recycleBinIcon from '../../assets/icons_white/Recycle_Bin.png';
-import garbageTruckIcon from '../../assets/icons_white/Garbage_Truck.png';
-import personWalkingIcon from '../../assets/icons_white/Person_Walking.png';
-import briefcaseIcon from '../../assets/icons_white/Briefcase.png';
+// New icons from تصاميم سيتي سكيب - ايقونات اختر دورك
+import recycleBinIcon from '../../assets/تصاميم سيتي سكيب/ايقونات وثيقة النقل/ايقونات اختر دورك/منتج@4x.png';
+import garbageTruckIcon from '../../assets/تصاميم سيتي سكيب/ايقونات وثيقة النقل/ايقونات اختر دورك/سلة@4x.png';
+import personWalkingIcon from '../../assets/تصاميم سيتي سكيب/ايقونات وثيقة النقل/ايقونات اختر دورك/سائق@4x.png';
+import briefcaseIcon from '../../assets/تصاميم سيتي سكيب/ايقونات وثيقة النقل/ايقونات اختر دورك/استقبال@4x.png';
 
 const EmanifestSection = ({ onBack }) => {
   const [selectedRole, setSelectedRole] = useState(null);
