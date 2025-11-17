@@ -129,11 +129,11 @@ const EmanifestSection = ({ onBack }) => {
                 <div className="youtube-container relative w-full" style={{ paddingBottom: '56.25%' }}>
                   <iframe
                     className="absolute top-0 left-0 w-full h-full rounded-lg"
-                    src="https://www.youtube.com/embed/le8-LNdry4E?modestbranding=1&rel=0&showinfo=0"
+                    src="https://www.youtube.com/embed/le8-LNdry4E?modestbranding=1&rel=0&showinfo=0&autoplay=1&loop=1&color=white&modestbranding=1&playsinline=1&rel=0&enablejsapi=1"
                     title="وثيقة النقل الإلكترونية"
                     frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    
+                    autoplay="1"
                   ></iframe>
                 </div>
               </div>
