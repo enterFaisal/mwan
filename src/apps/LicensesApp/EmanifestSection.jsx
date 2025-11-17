@@ -122,6 +122,23 @@ const EmanifestSection = ({ onBack }) => {
             <p className="text-xl text-gray-300 leading-relaxed text-center">
               أداة رقابية تعمل على رصد وتتبع وجمع وتحليل البيانات الخاصة بحركة النفايات من نقطة إنتاجها وحتى مرحلة المعالجة والتخلص النهائي باستخدام التقنيات الناشئة وتقنيات الذكاء الاصطناعي
             </p>
+            
+            {/* YouTube Video */}
+            <div className="mt-8 mb-12">
+              <div className="max-w-4xl mx-auto">
+                <div className="youtube-container relative w-full" style={{ paddingBottom: '56.25%' }}>
+                  <iframe
+                    className="absolute top-0 left-0 w-full h-full rounded-lg"
+                    src="https://www.youtube.com/embed/le8-LNdry4E?modestbranding=1&rel=0&showinfo=0"
+                    title="وثيقة النقل الإلكترونية"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    
+                  ></iframe>
+                </div>
+              </div>
+            </div>
+
             <div className="mt-12">
               <h3 className="text-3xl font-bold text-mwan-green text-center mb-8">
                 أهداف المنظومة
