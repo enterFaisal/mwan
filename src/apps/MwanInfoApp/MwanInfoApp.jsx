@@ -39,9 +39,9 @@ const MwanInfoApp = ({ onBack }) => {
       <div className="relative z-10 flex-1 flex flex-col">
         <Header />
         
-        <div className="flex-1 container mx-auto px-6 pt-32 pb-32 flex flex-col justify-end">
+        <div className="flex-1 container mx-auto px-6 pt-32 pb-36 flex flex-col justify-end">
         {/* Content Area */}
-        <div className="animate-fade-in">
+        <div className="animate-fade-in pb-32">
           {pdfViewData ? (
             pdfViewData.type === 'single' ? (
               <PdfViewer

@@ -43,8 +43,8 @@ const HomeScreen = ({ onNavigate }) => {
   return (
     <div className="max-w-6xl mx-auto horizontal-layout">
       {/* Title */}
-      <div className="text-center mb-12 animate-slide-up">
-        <h2 className="text-7xl font-extrabold mb-4 text-white font-ar">
+      <div className="text-center mb-12 animate-slide-up pb-24">
+        <h2 className="text-7xl font-extrabold mb-4 text-white font-ar pb-12">
           اكتشف موان
         </h2>
         <p className="text-xl text-mwan-light/80">
